@@ -1,6 +1,6 @@
 {
   "name": "@software-dlc/tile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A compact tabular encoding for JSON values.",
   "type": "module",
   "license": "MIT",
@@ -31,11 +31,13 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "engines": {
     "node": ">=20"
   },
@@ -48,7 +50,9 @@
     "benchmark:fixtures": "tsx scripts/fetch-benchmark-fixtures.ts",
     "benchmark:reasoning": "tsx scripts/run-reasoning-eval.ts",
     "benchmark:run": "tsx scripts/run-benchmarks.ts",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "pnpm build:esm && pnpm build:cjs",
+    "build:cjs": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --sourcemap --outfile=dist/index.cjs",
+    "build:esm": "tsc -p tsconfig.build.json",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "harness:design": "tsx scripts/design-first-class-tile.ts",
     "lint": "eslint .",
@@ -59,6 +63,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/node": "^20.19.25",
+    "esbuild": "^0.28.0",
     "eslint": "^9.39.1",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",

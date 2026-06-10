@@ -14,6 +14,9 @@ importers:
       '@types/node':
         specifier: ^20.19.25
         version: 20.19.42
+      esbuild:
+        specifier: ^0.28.0
+        version: 0.28.0
       eslint:
         specifier: ^9.39.1
         version: 9.39.4
