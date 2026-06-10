@@ -1,6 +1,6 @@
 {
   "name": "@software-dlc/tile",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A compact tabular encoding for JSON values.",
   "type": "module",
   "license": "MIT",
@@ -35,6 +35,9 @@
       "require": "./dist/index.cjs"
     }
   },
+  "bin": {
+    "tile": "./dist/cli.js"
+  },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -52,7 +55,7 @@
     "benchmark:run": "tsx scripts/run-benchmarks.ts",
     "build": "pnpm build:esm && pnpm build:cjs",
     "build:cjs": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --sourcemap --outfile=dist/index.cjs",
-    "build:esm": "tsc -p tsconfig.build.json",
+    "build:esm": "tsc -p tsconfig.build.json && node -e \"require('node:fs').chmodSync('dist/cli.js', 0o755)\"",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "harness:design": "tsx scripts/design-first-class-tile.ts",
     "lint": "eslint .",

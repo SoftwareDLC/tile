@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { Readable } from 'node:stream';
 
 import { describe, expect, it } from 'vitest';
 
@@ -10,6 +11,25 @@ import {
   escapeTileText,
   unescapeTileText
 } from './index.js';
+import { runTileCli } from './cli.js';
+
+function stdinFrom(text: string): AsyncIterable<Buffer> {
+  return Readable.from([Buffer.from(text)]);
+}
+
+function createWritableCapture(): {
+  output: () => string;
+  write: (chunk: string) => void;
+} {
+  const chunks: string[] = [];
+
+  return {
+    output: () => chunks.join(''),
+    write: (chunk: string) => {
+      chunks.push(chunk);
+    }
+  };
+}
 
 describe('jsonTile', () => {
   const fixture_names = [
@@ -188,6 +208,66 @@ describe('jsonTile', () => {
         ]
       })
     ).toThrow('embedded column names cannot contain comma or brackets');
+  });
+
+  it('runs the CLI encode, decode, and size commands', async () => {
+    const encoded_stdout = createWritableCapture();
+    const encoded_stderr = createWritableCapture();
+    const encode_exit_code = await runTileCli({
+      argv: ['encode'],
+      stdin: stdinFrom('{"users":[{"id":"u1","name":"Ada"}]}'),
+      stdout: encoded_stdout,
+      stderr: encoded_stderr
+    });
+
+    expect(encode_exit_code).toBe(0);
+    expect(encoded_stderr.output()).toBe('');
+    expect(encoded_stdout.output()).toContain('TILE/5');
+
+    const decoded_stdout = createWritableCapture();
+    const decoded_exit_code = await runTileCli({
+      argv: ['decode', '--pretty'],
+      stdin: stdinFrom(encoded_stdout.output()),
+      stdout: decoded_stdout,
+      stderr: createWritableCapture()
+    });
+
+    expect(decoded_exit_code).toBe(0);
+    expect(JSON.parse(decoded_stdout.output())).toEqual({
+      users: [{ id: 'u1', name: 'Ada' }]
+    });
+    expect(decoded_stdout.output()).toContain('\n  "users"');
+
+    const size_stdout = createWritableCapture();
+    const size_exit_code = await runTileCli({
+      argv: ['size'],
+      stdin: stdinFrom('{"users":[{"id":"u1","name":"Ada"}]}'),
+      stdout: size_stdout,
+      stderr: createWritableCapture()
+    });
+
+    expect(size_exit_code).toBe(0);
+    const size_output = JSON.parse(size_stdout.output()) as unknown;
+    expect(size_output).toMatchObject({ compact_json_chars: 36 });
+    expect(typeof (size_output as { pretty_json_chars?: unknown }).pretty_json_chars).toBe(
+      'number'
+    );
+    expect(typeof (size_output as { tile_chars?: unknown }).tile_chars).toBe(
+      'number'
+    );
+  });
+
+  it('returns a nonzero CLI exit code for invalid arguments', async () => {
+    const stderr = createWritableCapture();
+    const exit_code = await runTileCli({
+      argv: ['encode', '--pretty'],
+      stdin: stdinFrom('{}'),
+      stdout: createWritableCapture(),
+      stderr
+    });
+
+    expect(exit_code).toBe(1);
+    expect(stderr.output()).toContain('--pretty is only valid for decode');
   });
 
   it('keeps empty objects and arrays distinct from missing object fields', () => {

@@ -23,6 +23,32 @@ const tile = encodeJsonToTile({
 const json = decodeTileToJson(tile);
 ```
 
+## CLI
+
+The npm package also installs a `tile` command:
+
+```sh
+pnpm exec tile encode data.json --out data.tile
+pnpm exec tile decode data.tile --pretty --out data.json
+pnpm exec tile size data.json
+```
+
+The CLI reads from stdin when no input path is provided, so it can be used in
+shell pipelines:
+
+```sh
+cat data.json | pnpm exec tile encode > data.tile
+pnpm exec tile decode data.tile --pretty
+pnpm exec tile encode data.json --strategy normalized_shape
+```
+
+You can also run it without adding the package to a project first:
+
+```sh
+pnpm dlx @software-dlc/tile encode data.json
+npx @software-dlc/tile size data.json
+```
+
 ## API
 
 - `encodeJsonToTile(value, options?)` encodes a JSON-compatible value as TILE text.
