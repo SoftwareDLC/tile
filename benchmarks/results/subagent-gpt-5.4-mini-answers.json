@@ -1,0 +1,509 @@
+{
+  "model": "gpt-5.4-mini",
+  "answers": [
+    {
+      "id": "compact_json-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "Compact JSON",
+      "answer": "1232818464|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "compact_json-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "Compact JSON",
+      "answer": "5669962|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "compact_json-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "Compact JSON",
+      "answer": "5668989|residential|5671663|residential|42421877"
+    },
+    {
+      "id": "compact_json-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "Compact JSON",
+      "answer": "Douglas Adams|Cambridge|8"
+    },
+    {
+      "id": "compact_json-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "Compact JSON",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "compact_json-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "Compact JSON",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "compact_json-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "Compact JSON",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "compact_json-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "Compact JSON",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|62"
+    },
+    {
+      "id": "compact_json-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "Compact JSON",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "compact_json-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "Compact JSON",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "compact_json-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "Compact JSON",
+      "answer": "radix-ui|59|dependency:@radix-ui/primitive;dependency:@radix-ui/react-accessible-icon;dependency:@radix-ui/react-accordion;dependency:@radix-ui/react-alert-dialog;dependency:@radix-ui/react-arrow"
+    },
+    {
+      "id": "compact_json-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "Compact JSON",
+      "answer": "react|18|@radix-ui/react-dialog;@radix-ui/react-dropdown-menu;@radix-ui/react-select;@radix-ui/react-tooltip;@react-three/drei;@react-three/fiber;@reduxjs/toolkit;@storybook/react-vite;@tanstack/react-query;@tanstack/react-table;framer-motion;lucide-react;next;radix-ui;react-dom;react-router;recharts;zustand"
+    },
+    {
+      "id": "pretty_json-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "Pretty JSON",
+      "answer": "1232818464|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "pretty_json-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "Pretty JSON",
+      "answer": "5669962|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "pretty_json-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "Pretty JSON",
+      "answer": "5668989|residential|5671663|residential|42421877"
+    },
+    {
+      "id": "pretty_json-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "Pretty JSON",
+      "answer": "insufficient information"
+    },
+    {
+      "id": "pretty_json-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "Pretty JSON",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "pretty_json-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "Pretty JSON",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "pretty_json-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "Pretty JSON",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "pretty_json-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "Pretty JSON",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|63"
+    },
+    {
+      "id": "pretty_json-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "Pretty JSON",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "pretty_json-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "Pretty JSON",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "pretty_json-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "Pretty JSON",
+      "answer": "radix-ui|59|dependency:@radix-ui/primitive;dependency:@radix-ui/react-accessible-icon;dependency:@radix-ui/react-accordion;dependency:@radix-ui/react-alert-dialog;dependency:@radix-ui/react-arrow"
+    },
+    {
+      "id": "pretty_json-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "Pretty JSON",
+      "answer": "react|18|@radix-ui/react-dialog;@radix-ui/react-dropdown-menu;@radix-ui/react-select;@radix-ui/react-tooltip;@react-three/drei;@react-three/fiber;@reduxjs/toolkit;@storybook/react-vite;@tanstack/react-query;@tanstack/react-table;framer-motion;lucide-react;next;radix-ui;react-dom;react-router;recharts;zustand"
+    },
+    {
+      "id": "tile_path-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "TILE path",
+      "answer": "1232818464|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "tile_path-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "TILE path",
+      "answer": "5669962|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "tile_path-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "TILE path",
+      "answer": "5668989|residential|5671663|residential|42421877"
+    },
+    {
+      "id": "tile_path-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "TILE path",
+      "answer": "Douglas Adams|Cambridge|8"
+    },
+    {
+      "id": "tile_path-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "TILE path",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "tile_path-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "TILE path",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "tile_path-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "TILE path",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "tile_path-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "TILE path",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|62"
+    },
+    {
+      "id": "tile_path-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "TILE path",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "tile_path-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "TILE path",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "tile_path-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "TILE path",
+      "answer": "radix-ui|59|dependency:@radix-ui/primitive;dependency:@radix-ui/react-accessible-icon;dependency:@radix-ui/react-accordion;dependency:@radix-ui/react-alert-dialog;dependency:@radix-ui/react-arrow"
+    },
+    {
+      "id": "tile_path-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "TILE path",
+      "answer": "react|18|@radix-ui/react-dialog;@radix-ui/react-dropdown-menu;@radix-ui/react-select;@radix-ui/react-tooltip;@react-three/drei;@react-three/fiber;@reduxjs/toolkit;@storybook/react-vite;@tanstack/react-query;@tanstack/react-table;framer-motion;lucide-react;next;radix-ui;react-dom;react-router;recharts;zustand"
+    },
+    {
+      "id": "tile_normalized-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "TILE normalized",
+      "answer": "r1oj|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "tile_normalized-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "TILE normalized",
+      "answer": "r1e4|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "tile_normalized-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "TILE normalized",
+      "answer": "r1e2|residential|r1ei|residential|42421877"
+    },
+    {
+      "id": "tile_normalized-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "TILE normalized",
+      "answer": "Douglas Adams|Cambridge|8"
+    },
+    {
+      "id": "tile_normalized-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "TILE normalized",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "tile_normalized-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "TILE normalized",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "tile_normalized-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "TILE normalized",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "tile_normalized-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "TILE normalized",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|62"
+    },
+    {
+      "id": "tile_normalized-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "TILE normalized",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "tile_normalized-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "TILE normalized",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "tile_normalized-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "TILE normalized",
+      "answer": "radix-ui|59|dependency:@radix-ui/primitive;dependency:@radix-ui/react-accessible-icon;dependency:@radix-ui/react-accordion;dependency:@radix-ui/react-alert-dialog;dependency:@radix-ui/react-arrow"
+    },
+    {
+      "id": "tile_normalized-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "TILE normalized",
+      "answer": "react|18|@radix-ui/react-dialog;@radix-ui/react-dropdown-menu;@radix-ui/react-select;@radix-ui/react-tooltip;@react-three/drei;@react-three/fiber;@reduxjs/toolkit;@storybook/react-vite;@tanstack/react-query;@tanstack/react-table;framer-motion;lucide-react;next;radix-ui;react-dom;react-router;recharts;zustand"
+    },
+    {
+      "id": "tile_first_class-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "TILE first-class relational",
+      "answer": "1232818464|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "tile_first_class-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "TILE first-class relational",
+      "answer": "5669962|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "tile_first_class-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "TILE first-class relational",
+      "answer": "5668989|residential|5671663|residential|42421877"
+    },
+    {
+      "id": "tile_first_class-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "TILE first-class relational",
+      "answer": "|Q1025095|8"
+    },
+    {
+      "id": "tile_first_class-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "TILE first-class relational",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "tile_first_class-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "TILE first-class relational",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "tile_first_class-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "TILE first-class relational",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "tile_first_class-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "TILE first-class relational",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|62"
+    },
+    {
+      "id": "tile_first_class-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "TILE first-class relational",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "tile_first_class-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "TILE first-class relational",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "tile_first_class-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "TILE first-class relational",
+      "answer": "radix-ui|59|@radix-ui/primitive;@radix-ui/react-accessible-icon;@radix-ui/react-accordion;@radix-ui/react-alert-dialog;@radix-ui/react-arrow"
+    },
+    {
+      "id": "tile_first_class-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "TILE first-class relational",
+      "answer": "debug|8|cypress;eslint;express;ioredis;mocha;morgan;socket.io;tsup"
+    },
+    {
+      "id": "tile_first_class_embedded-1",
+      "fixture": "OpenStreetMap extract",
+      "task": "longest_way_middle_node_window",
+      "variant": "TILE first-class embedded",
+      "answer": "1232818464|footway|62|30|11436266236|31|11436266237"
+    },
+    {
+      "id": "tile_first_class_embedded-2",
+      "fixture": "OpenStreetMap extract",
+      "task": "closest_consecutive_node_refs",
+      "variant": "TILE first-class embedded",
+      "answer": "5669962|residential|6|12179524683|12179524684"
+    },
+    {
+      "id": "tile_first_class_embedded-3",
+      "fixture": "OpenStreetMap extract",
+      "task": "lowest_shared_node_pair_details",
+      "variant": "TILE first-class embedded",
+      "answer": "5668989|residential|5671663|residential|42421877"
+    },
+    {
+      "id": "tile_first_class_embedded-4",
+      "fixture": "Wikidata truthy triples",
+      "task": "uk_human_most_occupations_birthplace",
+      "variant": "TILE first-class embedded",
+      "answer": "insufficient information"
+    },
+    {
+      "id": "tile_first_class_embedded-5",
+      "fixture": "Wikidata truthy triples",
+      "task": "douglas_adams_education_after_occupation_check",
+      "variant": "TILE first-class embedded",
+      "answer": "Douglas Adams|Brentwood School;St John's College"
+    },
+    {
+      "id": "tile_first_class_embedded-6",
+      "fixture": "Wikidata truthy triples",
+      "task": "cambridge_born_screenwriter_deathplace",
+      "variant": "TILE first-class embedded",
+      "answer": "Douglas Adams|Santa Barbara"
+    },
+    {
+      "id": "tile_first_class_embedded-7",
+      "fixture": "MusicBrainz release groups",
+      "task": "ok_computer_neighbor_albums",
+      "variant": "TILE first-class embedded",
+      "answer": "Radiohead|Radiotick Tracks 2|OK Computer|1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands"
+    },
+    {
+      "id": "tile_first_class_embedded-8",
+      "fixture": "MusicBrainz release groups",
+      "task": "largest_album_date_span",
+      "variant": "TILE first-class embedded",
+      "answer": "The Rolling Stones|Greatest Hits|Foreign Tongues|62"
+    },
+    {
+      "id": "tile_first_class_embedded-9",
+      "fixture": "MusicBrainz release groups",
+      "task": "hundredth_album_by_artist",
+      "variant": "TILE first-class embedded",
+      "answer": "David Bowie|I Can’t Give Everything Away (2002–2016)|2025-09-12||Metallica|72 Seasons|2023-04-14||Pink Floyd|8-Tracks|2026-06-05||The Beatles|Beatles Bop – Hamburg Days|2001-09-10||The Rolling Stones|Foreign Tongues|2026-07-10"
+    },
+    {
+      "id": "tile_first_class_embedded-10",
+      "fixture": "npm dependency metadata",
+      "task": "vite_peer_with_most_peer_deps",
+      "variant": "TILE first-class embedded",
+      "answer": "vitest|4.1.8|12|^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "id": "tile_first_class_embedded-11",
+      "fixture": "npm dependency metadata",
+      "task": "highest_total_dependency_window",
+      "variant": "TILE first-class embedded",
+      "answer": "radix-ui|59|dependency:@radix-ui/primitive;dependency:@radix-ui/react-accessible-icon;dependency:@radix-ui/react-accordion;dependency:@radix-ui/react-alert-dialog;dependency:@radix-ui/react-arrow"
+    },
+    {
+      "id": "tile_first_class_embedded-12",
+      "fixture": "npm dependency metadata",
+      "task": "most_shared_dependency_packages",
+      "variant": "TILE first-class embedded",
+      "answer": "react|18|@radix-ui/react-dialog;@radix-ui/react-dropdown-menu;@radix-ui/react-select;@radix-ui/react-tooltip;@react-three/drei;@react-three/fiber;@reduxjs/toolkit;@storybook/react-vite;@tanstack/react-query;@tanstack/react-table;framer-motion;lucide-react;next;radix-ui;react-dom;react-router;recharts;zustand"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+export const TILE_VERSION = 'TILE/5';
+export const PRIMITIVE_HEADER_TILE_VERSION = 'TILE/4';
+export const COLUMN_REF_TILE_VERSION = 'TILE/3';
+export const COMPACT_TILE_VERSION = 'TILE/2';
+export const LEGACY_TILE_VERSION = 'TILE/1';
+export const LEGACY_TDT_VERSION = 'TDT/1';
+export const COMPACT_TDT_VERSION = 'TDT/2';
+export const COLUMN_REF_TDT_VERSION = 'TDT/3';
+export const PRIMITIVE_HEADER_TDT_VERSION = 'TDT/4';
+export const TDT_VERSION = 'TDT/5';
+export const ROOT_PATH = 'root';
+export const PROPERTIES_PATH = '$properties';
+
+export const DEFAULT_NORMALIZED_MIN_SHARED_KEYS = 2;
+export const DEFAULT_NORMALIZED_MIN_OVERLAP_RATIO = 0.5;
+export const DEFAULT_NORMALIZED_MAX_COLUMNS = 48;
+export const DEFAULT_NORMALIZED_MAX_PATHS = 16;

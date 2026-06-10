@@ -1,0 +1,69 @@
+{
+  "name": "@software-dlc/tile",
+  "version": "0.1.0",
+  "description": "A compact tabular encoding for JSON values.",
+  "type": "module",
+  "license": "MIT",
+  "author": "SoftwareDLC",
+  "homepage": "https://github.com/SoftwareDLC/tile#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareDLC/tile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SoftwareDLC/tile/issues"
+  },
+  "keywords": [
+    "json",
+    "tile",
+    "tabular",
+    "encoding",
+    "token-reduction",
+    "prompt-optimization",
+    "llm"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "benchmark": "pnpm benchmark:fixtures && pnpm benchmark:run",
+    "benchmark:fixtures": "tsx scripts/fetch-benchmark-fixtures.ts",
+    "benchmark:reasoning": "tsx scripts/run-reasoning-eval.ts",
+    "benchmark:run": "tsx scripts/run-benchmarks.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "harness:design": "tsx scripts/design-first-class-tile.ts",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^20.19.25",
+    "eslint": "^9.39.1",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^2.1.9",
+    "yaml": "^2.9.0"
+  }
+}

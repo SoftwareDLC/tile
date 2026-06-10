@@ -1,0 +1,170 @@
+[
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "Compact JSON",
+    "chars": 133692,
+    "estimated_tokens": 33423,
+    "chars_vs_compact_json": 1
+  },
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "Pretty JSON",
+    "chars": 219242,
+    "estimated_tokens": 54811,
+    "chars_vs_compact_json": 1.639903659156868
+  },
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "TILE path",
+    "chars": 175912,
+    "estimated_tokens": 43978,
+    "chars_vs_compact_json": 1.3158004966639738
+  },
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "TILE normalized",
+    "chars": 179372,
+    "estimated_tokens": 44843,
+    "chars_vs_compact_json": 1.3416808784370045
+  },
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "TILE first-class relational",
+    "chars": 41996,
+    "estimated_tokens": 10499,
+    "chars_vs_compact_json": 0.31412500373993957
+  },
+  {
+    "fixture": "OpenStreetMap extract",
+    "variant": "TILE first-class embedded",
+    "chars": 39339,
+    "estimated_tokens": 9835,
+    "chars_vs_compact_json": 0.29425096490440716
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "Compact JSON",
+    "chars": 213753,
+    "estimated_tokens": 53439,
+    "chars_vs_compact_json": 1
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "Pretty JSON",
+    "chars": 302951,
+    "estimated_tokens": 75738,
+    "chars_vs_compact_json": 1.417294728027209
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "TILE path",
+    "chars": 88628,
+    "estimated_tokens": 22157,
+    "chars_vs_compact_json": 0.4146280987869176
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "TILE normalized",
+    "chars": 88628,
+    "estimated_tokens": 22157,
+    "chars_vs_compact_json": 0.4146280987869176
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "TILE first-class relational",
+    "chars": 69190,
+    "estimated_tokens": 17298,
+    "chars_vs_compact_json": 0.3236913633960693
+  },
+  {
+    "fixture": "Wikidata truthy triples",
+    "variant": "TILE first-class embedded",
+    "chars": 44386,
+    "estimated_tokens": 11097,
+    "chars_vs_compact_json": 0.20765088677117982
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "Compact JSON",
+    "chars": 171855,
+    "estimated_tokens": 42964,
+    "chars_vs_compact_json": 1
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "Pretty JSON",
+    "chars": 218494,
+    "estimated_tokens": 54624,
+    "chars_vs_compact_json": 1.2713857612522184
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "TILE path",
+    "chars": 109581,
+    "estimated_tokens": 27396,
+    "chars_vs_compact_json": 0.6376363795059788
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "TILE normalized",
+    "chars": 109581,
+    "estimated_tokens": 27396,
+    "chars_vs_compact_json": 0.6376363795059788
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "TILE first-class relational",
+    "chars": 100474,
+    "estimated_tokens": 25119,
+    "chars_vs_compact_json": 0.584644031305461
+  },
+  {
+    "fixture": "MusicBrainz release groups",
+    "variant": "TILE first-class embedded",
+    "chars": 63648,
+    "estimated_tokens": 15912,
+    "chars_vs_compact_json": 0.37035873265252683
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "Compact JSON",
+    "chars": 114892,
+    "estimated_tokens": 28723,
+    "chars_vs_compact_json": 1
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "Pretty JSON",
+    "chars": 167173,
+    "estimated_tokens": 41794,
+    "chars_vs_compact_json": 1.4550447376666782
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "TILE path",
+    "chars": 59868,
+    "estimated_tokens": 14967,
+    "chars_vs_compact_json": 0.5210806670612401
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "TILE normalized",
+    "chars": 59868,
+    "estimated_tokens": 14967,
+    "chars_vs_compact_json": 0.5210806670612401
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "TILE first-class relational",
+    "chars": 50185,
+    "estimated_tokens": 12547,
+    "chars_vs_compact_json": 0.4368015179472896
+  },
+  {
+    "fixture": "npm dependency metadata",
+    "variant": "TILE first-class embedded",
+    "chars": 39115,
+    "estimated_tokens": 9779,
+    "chars_vs_compact_json": 0.34045016189116734
+  }
+]

@@ -1,0 +1,7325 @@
+{
+  "fixture": "npm_dependency_metadata",
+  "source": "https://registry.npmjs.org",
+  "description": "large npm latest-version package metadata and dependency edges for selected packages.",
+  "profile": "large",
+  "packages": [
+    {
+      "name": "express",
+      "version": "5.2.1",
+      "license": "MIT",
+      "dependency_count": 28,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "react",
+      "version": "19.2.7",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "vite",
+      "version": "8.0.16",
+      "license": "MIT",
+      "dependency_count": 5,
+      "peer_dependency_count": 12
+    },
+    {
+      "name": "typescript",
+      "version": "6.0.3",
+      "license": "Apache-2.0",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 3
+    },
+    {
+      "name": "next",
+      "version": "16.2.9",
+      "license": "MIT",
+      "dependency_count": 6,
+      "peer_dependency_count": 6
+    },
+    {
+      "name": "vue",
+      "version": "3.5.35",
+      "license": "MIT",
+      "dependency_count": 5,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "svelte",
+      "version": "5.56.3",
+      "license": "MIT",
+      "dependency_count": 16,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@sveltejs/kit",
+      "version": "2.64.0",
+      "license": "MIT",
+      "dependency_count": 12,
+      "peer_dependency_count": 5
+    },
+    {
+      "name": "@angular/core",
+      "version": "22.0.1",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 3
+    },
+    {
+      "name": "webpack",
+      "version": "5.107.2",
+      "license": "MIT",
+      "dependency_count": 23,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "rollup",
+      "version": "4.61.1",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "eslint",
+      "version": "10.4.1",
+      "license": "MIT",
+      "dependency_count": 30,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "prettier",
+      "version": "3.8.4",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "8.61.0",
+      "license": "MIT",
+      "dependency_count": 4,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "vitest",
+      "version": "4.1.8",
+      "license": "MIT",
+      "dependency_count": 20,
+      "peer_dependency_count": 12
+    },
+    {
+      "name": "jest",
+      "version": "30.4.2",
+      "license": "MIT",
+      "dependency_count": 4,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "playwright",
+      "version": "1.60.0",
+      "license": "Apache-2.0",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@storybook/react-vite",
+      "version": "10.4.3",
+      "license": "MIT",
+      "dependency_count": 9,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.3.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.15",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "sass",
+      "version": "1.100.0",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "lodash",
+      "version": "4.18.1",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "axios",
+      "version": "1.17.0",
+      "license": "MIT",
+      "dependency_count": 4,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "commander",
+      "version": "15.0.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "chalk",
+      "version": "5.6.2",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "dotenv",
+      "version": "17.4.2",
+      "license": "BSD-2-Clause",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "zod",
+      "version": "4.4.3",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "yup",
+      "version": "1.7.1",
+      "license": "MIT",
+      "dependency_count": 4,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.7",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "@types/node",
+      "version": "25.9.2",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "fastify",
+      "version": "5.8.5",
+      "license": "MIT",
+      "dependency_count": 15,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "koa",
+      "version": "3.2.1",
+      "license": "MIT",
+      "dependency_count": 18,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "hono",
+      "version": "4.12.25",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@nestjs/core",
+      "version": "11.1.26",
+      "license": "MIT",
+      "dependency_count": 5,
+      "peer_dependency_count": 6
+    },
+    {
+      "name": "rxjs",
+      "version": "7.8.2",
+      "license": "Apache-2.0",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "date-fns",
+      "version": "4.4.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "dayjs",
+      "version": "1.11.21",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "uuid",
+      "version": "14.0.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "mongoose",
+      "version": "9.7.0",
+      "license": "MIT",
+      "dependency_count": 6,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "pg",
+      "version": "8.21.0",
+      "license": "MIT",
+      "dependency_count": 6,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "mysql2",
+      "version": "3.22.5",
+      "license": "MIT",
+      "dependency_count": 8,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "redis",
+      "version": "6.0.0",
+      "license": "MIT",
+      "dependency_count": 5,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "ioredis",
+      "version": "5.11.1",
+      "license": "MIT",
+      "dependency_count": 7,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "graphql",
+      "version": "16.14.2",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@apollo/server",
+      "version": "5.5.1",
+      "license": "MIT",
+      "dependency_count": 20,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "yaml",
+      "version": "2.9.0",
+      "license": "ISC",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "execa",
+      "version": "9.6.1",
+      "license": "MIT",
+      "dependency_count": 12,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "tsx",
+      "version": "4.22.4",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "tsup",
+      "version": "8.5.1",
+      "license": "MIT",
+      "dependency_count": 17,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "vitepress",
+      "version": "1.6.4",
+      "license": "MIT",
+      "dependency_count": 18,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "astro",
+      "version": "6.4.6",
+      "license": "MIT",
+      "dependency_count": 55,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "remix",
+      "version": "2.17.5",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "react-router",
+      "version": "7.17.0",
+      "license": "MIT",
+      "dependency_count": 2,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "license": "MIT",
+      "dependency_count": 6,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "redux",
+      "version": "5.0.1",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "zustand",
+      "version": "5.0.14",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "@tanstack/react-query",
+      "version": "5.101.0",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "@tanstack/react-table",
+      "version": "8.21.3",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "framer-motion",
+      "version": "12.40.0",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 3
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.17.0",
+      "license": "ISC",
+      "dependency_count": 0,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "classnames",
+      "version": "2.5.1",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.6.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "0.7.1",
+      "license": "Apache-2.0",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "radix-ui",
+      "version": "1.5.0",
+      "license": "MIT",
+      "dependency_count": 55,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "license": "MIT",
+      "dependency_count": 14,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "license": "MIT",
+      "dependency_count": 7,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "license": "MIT",
+      "dependency_count": 22,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "license": "MIT",
+      "dependency_count": 12,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "three",
+      "version": "0.184.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "@react-three/fiber",
+      "version": "9.6.1",
+      "license": "MIT",
+      "dependency_count": 10,
+      "peer_dependency_count": 8
+    },
+    {
+      "name": "@react-three/drei",
+      "version": "10.7.7",
+      "license": "MIT",
+      "dependency_count": 21,
+      "peer_dependency_count": 4
+    },
+    {
+      "name": "d3",
+      "version": "7.9.0",
+      "license": "ISC",
+      "dependency_count": 30,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "chart.js",
+      "version": "4.5.1",
+      "license": "MIT",
+      "dependency_count": 1,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "recharts",
+      "version": "3.8.1",
+      "license": "MIT",
+      "dependency_count": 11,
+      "peer_dependency_count": 3
+    },
+    {
+      "name": "prisma",
+      "version": "7.8.0",
+      "license": "Apache-2.0",
+      "dependency_count": 6,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "@prisma/client",
+      "version": "7.8.0",
+      "license": "Apache-2.0",
+      "dependency_count": 1,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "drizzle-orm",
+      "version": "0.45.2",
+      "license": "Apache-2.0",
+      "dependency_count": 0,
+      "peer_dependency_count": 28
+    },
+    {
+      "name": "better-sqlite3",
+      "version": "12.10.0",
+      "license": "MIT",
+      "dependency_count": 2,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "socket.io",
+      "version": "4.8.3",
+      "license": "MIT",
+      "dependency_count": 7,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "ws",
+      "version": "8.21.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "bullmq",
+      "version": "5.78.0",
+      "license": "MIT",
+      "dependency_count": 6,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "minio",
+      "version": "8.0.7",
+      "license": "Apache-2.0",
+      "dependency_count": 13,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "sharp",
+      "version": "0.35.0",
+      "license": "Apache-2.0",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "jimp",
+      "version": "1.6.1",
+      "license": "MIT",
+      "dependency_count": 27,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "pdf-lib",
+      "version": "1.17.1",
+      "license": "MIT",
+      "dependency_count": 4,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "puppeteer",
+      "version": "25.1.0",
+      "license": "Apache-2.0",
+      "dependency_count": 6,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "cypress",
+      "version": "15.17.0",
+      "license": "MIT",
+      "dependency_count": 39,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "mocha",
+      "version": "11.7.6",
+      "license": "MIT",
+      "dependency_count": 21,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "chai",
+      "version": "6.2.2",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "sinon",
+      "version": "22.0.0",
+      "license": "BSD-3-Clause",
+      "dependency_count": 4,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "msw",
+      "version": "2.14.6",
+      "license": "MIT",
+      "dependency_count": 18,
+      "peer_dependency_count": 1
+    },
+    {
+      "name": "nock",
+      "version": "14.0.15",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "supertest",
+      "version": "7.2.2",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "jsonwebtoken",
+      "version": "9.0.3",
+      "license": "MIT",
+      "dependency_count": 10,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "bcrypt",
+      "version": "6.0.0",
+      "license": "MIT",
+      "dependency_count": 2,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "bcryptjs",
+      "version": "3.0.3",
+      "license": "BSD-3-Clause",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "passport",
+      "version": "0.7.0",
+      "license": "MIT",
+      "dependency_count": 3,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "helmet",
+      "version": "8.2.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "cors",
+      "version": "2.8.6",
+      "license": "MIT",
+      "dependency_count": 2,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "morgan",
+      "version": "1.11.0",
+      "license": "MIT",
+      "dependency_count": 5,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "winston",
+      "version": "3.19.0",
+      "license": "MIT",
+      "dependency_count": 11,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "pino",
+      "version": "10.3.1",
+      "license": "MIT",
+      "dependency_count": 11,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "nodemailer",
+      "version": "8.0.11",
+      "license": "MIT-0",
+      "dependency_count": 0,
+      "peer_dependency_count": 0
+    },
+    {
+      "name": "openai",
+      "version": "6.42.0",
+      "license": "Apache-2.0",
+      "dependency_count": 0,
+      "peer_dependency_count": 2
+    },
+    {
+      "name": "stripe",
+      "version": "22.2.0",
+      "license": "MIT",
+      "dependency_count": 0,
+      "peer_dependency_count": 1
+    }
+  ],
+  "dependencies": [
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "qs",
+      "range": "^6.14.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "depd",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "etag",
+      "range": "^1.8.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "once",
+      "range": "^1.4.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "send",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "vary",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "^4.4.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "fresh",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "cookie",
+      "range": "^0.7.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "router",
+      "range": "^2.2.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "accepts",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "type-is",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "parseurl",
+      "range": "^1.3.3"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "statuses",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "encodeurl",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "mime-types",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "proxy-addr",
+      "range": "^2.0.7"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "body-parser",
+      "range": "^2.2.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "escape-html",
+      "range": "^1.0.3"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "http-errors",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "on-finished",
+      "range": "^2.4.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "content-type",
+      "range": "^1.0.5"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "finalhandler",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "range-parser",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "serve-static",
+      "range": "^2.2.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "cookie-signature",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "merge-descriptors",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "express",
+      "version": "5.2.1",
+      "type": "dependency",
+      "dependency": "content-disposition",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "dependency",
+      "dependency": "postcss",
+      "range": "^8.5.15"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "dependency",
+      "dependency": "rolldown",
+      "range": "1.0.3"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "dependency",
+      "dependency": "picomatch",
+      "range": "^4.0.4"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "dependency",
+      "dependency": "tinyglobby",
+      "range": "^0.2.17"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "dependency",
+      "dependency": "lightningcss",
+      "range": "^1.32.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "tsx",
+      "range": "^4.8.1"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "jiti",
+      "range": ">=1.21.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "less",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "sass",
+      "range": "^1.70.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "yaml",
+      "range": "^2.4.2"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "stylus",
+      "range": ">=0.54.8"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "terser",
+      "range": "^5.16.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "esbuild",
+      "range": "^0.27.0 || ^0.28.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "sugarss",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "@types/node",
+      "range": "^20.19.0 || >=22.12.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "sass-embedded",
+      "range": "^1.70.0"
+    },
+    {
+      "package": "vite",
+      "version": "8.0.16",
+      "type": "peerDependency",
+      "dependency": "@vitejs/devtools",
+      "range": "^0.1.18"
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "type": "dependency",
+      "dependency": "@rolldown/pluginutils",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "type": "peerDependency",
+      "dependency": "@rolldown/plugin-babel",
+      "range": "^0.1.7 || ^0.2.0"
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "type": "peerDependency",
+      "dependency": "babel-plugin-react-compiler",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "version": "6.0.2",
+      "type": "peerDependency",
+      "dependency": "vite",
+      "range": "^8.0.0"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "postcss",
+      "range": "8.4.31"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "@next/env",
+      "range": "16.2.9"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "styled-jsx",
+      "range": "5.1.6"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "@swc/helpers",
+      "range": "0.5.15"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "caniuse-lite",
+      "range": "^1.0.30001579"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "dependency",
+      "dependency": "baseline-browser-mapping",
+      "range": "^2.9.19"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "sass",
+      "range": "^1.3.0"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "@playwright/test",
+      "range": "^1.51.1"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "@opentelemetry/api",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "next",
+      "version": "16.2.9",
+      "type": "peerDependency",
+      "dependency": "babel-plugin-react-compiler",
+      "range": "*"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "dependency",
+      "dependency": "@vue/shared",
+      "range": "3.5.35"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "dependency",
+      "dependency": "@vue/runtime-dom",
+      "range": "3.5.35"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "dependency",
+      "dependency": "@vue/compiler-dom",
+      "range": "3.5.35"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "dependency",
+      "dependency": "@vue/compiler-sfc",
+      "range": "3.5.35"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "dependency",
+      "dependency": "@vue/server-renderer",
+      "range": "3.5.35"
+    },
+    {
+      "package": "vue",
+      "version": "3.5.35",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": "*"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "@jridgewell/remapping",
+      "range": "^2.3.4"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "@jridgewell/sourcemap-codec",
+      "range": "^1.5.0"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "@sveltejs/acorn-typescript",
+      "range": "^1.0.10"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "@types/estree",
+      "range": "^1.0.5"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "@types/trusted-types",
+      "range": "^2.0.7"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "acorn",
+      "range": "^8.12.1"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "aria-query",
+      "range": "5.3.1"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "axobject-query",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "clsx",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "devalue",
+      "range": "^5.8.1"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "esm-env",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "esrap",
+      "range": "^2.2.11"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "is-reference",
+      "range": "^3.0.3"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "locate-character",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "magic-string",
+      "range": "^0.30.11"
+    },
+    {
+      "package": "svelte",
+      "version": "5.56.3",
+      "type": "dependency",
+      "dependency": "zimmerframe",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "sirv",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "acorn",
+      "range": "^8.16.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "kleur",
+      "range": "^4.1.5"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "cookie",
+      "range": "^0.6.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "mrmime",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "devalue",
+      "range": "^5.8.1"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "esm-env",
+      "range": "^1.2.2"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "magic-string",
+      "range": "^0.30.5"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "@types/cookie",
+      "range": "^0.6.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "set-cookie-parser",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "@standard-schema/spec",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "dependency",
+      "dependency": "@sveltejs/acorn-typescript",
+      "range": "^1.0.9"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "peerDependency",
+      "dependency": "vite",
+      "range": "^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "peerDependency",
+      "dependency": "svelte",
+      "range": "^4.0.0 || ^5.0.0-next.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": "^5.3.3 || ^6.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "peerDependency",
+      "dependency": "@opentelemetry/api",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@sveltejs/kit",
+      "version": "2.64.0",
+      "type": "peerDependency",
+      "dependency": "@sveltejs/vite-plugin-svelte",
+      "range": "^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0 || ^7.0.0"
+    },
+    {
+      "package": "@angular/core",
+      "version": "22.0.1",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "^2.3.0"
+    },
+    {
+      "package": "@angular/core",
+      "version": "22.0.1",
+      "type": "peerDependency",
+      "dependency": "rxjs",
+      "range": "^6.5.3 || ^7.4.0"
+    },
+    {
+      "package": "@angular/core",
+      "version": "22.0.1",
+      "type": "peerDependency",
+      "dependency": "zone.js",
+      "range": "~0.15.0 || ~0.16.0"
+    },
+    {
+      "package": "@angular/core",
+      "version": "22.0.1",
+      "type": "peerDependency",
+      "dependency": "@angular/compiler",
+      "range": "22.0.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "@types/estree",
+      "range": "^1.0.8"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "@types/json-schema",
+      "range": "^7.0.15"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "@webassemblyjs/ast",
+      "range": "^1.14.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "@webassemblyjs/wasm-edit",
+      "range": "^1.14.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "@webassemblyjs/wasm-parser",
+      "range": "^1.14.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "acorn",
+      "range": "^8.16.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "acorn-import-phases",
+      "range": "^1.0.3"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "browserslist",
+      "range": "^4.28.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "chrome-trace-event",
+      "range": "^1.0.2"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "enhanced-resolve",
+      "range": "^5.22.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "es-module-lexer",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "eslint-scope",
+      "range": "5.1.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "events",
+      "range": "^3.2.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "glob-to-regexp",
+      "range": "^0.4.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "graceful-fs",
+      "range": "^4.2.11"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "loader-runner",
+      "range": "^4.3.2"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "mime-db",
+      "range": "^1.54.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "neo-async",
+      "range": "^2.6.2"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "schema-utils",
+      "range": "^4.3.3"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "tapable",
+      "range": "^2.3.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "terser-webpack-plugin",
+      "range": "^5.5.0"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "watchpack",
+      "range": "^2.5.1"
+    },
+    {
+      "package": "webpack",
+      "version": "5.107.2",
+      "type": "dependency",
+      "dependency": "webpack-sources",
+      "range": "^3.5.0"
+    },
+    {
+      "package": "rollup",
+      "version": "4.61.1",
+      "type": "dependency",
+      "dependency": "@types/estree",
+      "range": "1.0.9"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint-community/eslint-utils",
+      "range": "^4.8.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint-community/regexpp",
+      "range": "^4.12.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint/config-array",
+      "range": "^0.23.5"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint/config-helpers",
+      "range": "^0.6.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint/core",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@eslint/plugin-kit",
+      "range": "^0.7.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@humanfs/node",
+      "range": "^0.16.6"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@humanwhocodes/module-importer",
+      "range": "^1.0.1"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@humanwhocodes/retry",
+      "range": "^0.4.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "@types/estree",
+      "range": "^1.0.6"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "ajv",
+      "range": "^6.14.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "cross-spawn",
+      "range": "^7.0.6"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "^4.3.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "escape-string-regexp",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "eslint-scope",
+      "range": "^9.1.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "eslint-visitor-keys",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "espree",
+      "range": "^11.2.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "esquery",
+      "range": "^1.7.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "esutils",
+      "range": "^2.0.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "fast-deep-equal",
+      "range": "^3.1.3"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "file-entry-cache",
+      "range": "^8.0.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "find-up",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "glob-parent",
+      "range": "^6.0.2"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "ignore",
+      "range": "^5.2.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "imurmurhash",
+      "range": "^0.1.4"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "is-glob",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "json-stable-stringify-without-jsonify",
+      "range": "^1.0.1"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "minimatch",
+      "range": "^10.2.4"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "natural-compare",
+      "range": "^1.4.0"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "dependency",
+      "dependency": "optionator",
+      "range": "^0.9.3"
+    },
+    {
+      "package": "eslint",
+      "version": "10.4.1",
+      "type": "peerDependency",
+      "dependency": "jiti",
+      "range": "*"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "dependency",
+      "dependency": "@typescript-eslint/utils",
+      "range": "8.61.0"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "dependency",
+      "dependency": "@typescript-eslint/parser",
+      "range": "8.61.0"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "dependency",
+      "dependency": "@typescript-eslint/eslint-plugin",
+      "range": "8.61.0"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "dependency",
+      "dependency": "@typescript-eslint/typescript-estree",
+      "range": "8.61.0"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "peerDependency",
+      "dependency": "eslint",
+      "range": "^8.57.0 || ^9.0.0 || ^10.0.0"
+    },
+    {
+      "package": "typescript-eslint",
+      "version": "8.61.0",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": ">=4.8.4 <6.1.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "obug",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "vite",
+      "range": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "pathe",
+      "range": "^2.0.3"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "std-env",
+      "range": "^4.0.0-rc.1"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "tinyexec",
+      "range": "^1.0.2"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "picomatch",
+      "range": "^4.0.3"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "tinybench",
+      "range": "^2.9.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "tinyglobby",
+      "range": "^0.2.15"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/spy",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "expect-type",
+      "range": "^1.3.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "tinyrainbow",
+      "range": "^3.1.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "magic-string",
+      "range": "^0.30.21"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/utils",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/expect",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/mocker",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/runner",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "es-module-lexer",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/snapshot",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "why-is-node-running",
+      "range": "^2.3.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "dependency",
+      "dependency": "@vitest/pretty-format",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "vite",
+      "range": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "jsdom",
+      "range": "*"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "happy-dom",
+      "range": "*"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/ui",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@types/node",
+      "range": "^20.0.0 || ^22.0.0 || >=24.0.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@edge-runtime/vm",
+      "range": "*"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@opentelemetry/api",
+      "range": "^1.9.0"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/coverage-v8",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/browser-preview",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/coverage-istanbul",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/browser-playwright",
+      "range": "4.1.8"
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.8",
+      "type": "peerDependency",
+      "dependency": "@vitest/browser-webdriverio",
+      "range": "4.1.8"
+    },
+    {
+      "package": "jest",
+      "version": "30.4.2",
+      "type": "dependency",
+      "dependency": "@jest/core",
+      "range": "30.4.2"
+    },
+    {
+      "package": "jest",
+      "version": "30.4.2",
+      "type": "dependency",
+      "dependency": "@jest/types",
+      "range": "30.4.1"
+    },
+    {
+      "package": "jest",
+      "version": "30.4.2",
+      "type": "dependency",
+      "dependency": "import-local",
+      "range": "^3.2.0"
+    },
+    {
+      "package": "jest",
+      "version": "30.4.2",
+      "type": "dependency",
+      "dependency": "jest-cli",
+      "range": "30.4.2"
+    },
+    {
+      "package": "jest",
+      "version": "30.4.2",
+      "type": "peerDependency",
+      "dependency": "node-notifier",
+      "range": "^8.0.1 || ^9.0.0 || ^10.0.0"
+    },
+    {
+      "package": "playwright",
+      "version": "1.60.0",
+      "type": "dependency",
+      "dependency": "playwright-core",
+      "range": "1.60.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "resolve",
+      "range": "^1.22.8"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "empathic",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "magic-string",
+      "range": "^0.30.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "react-docgen",
+      "range": "^8.0.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "tsconfig-paths",
+      "range": "^4.2.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "@storybook/react",
+      "range": "10.4.3"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "@rollup/pluginutils",
+      "range": "^5.0.2"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "@storybook/builder-vite",
+      "range": "10.4.3"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "dependency",
+      "dependency": "@joshwooding/vite-plugin-react-docgen-typescript",
+      "range": "^0.7.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "peerDependency",
+      "dependency": "vite",
+      "range": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "@storybook/react-vite",
+      "version": "10.4.3",
+      "type": "peerDependency",
+      "dependency": "storybook",
+      "range": "^10.4.3"
+    },
+    {
+      "package": "postcss",
+      "version": "8.5.15",
+      "type": "dependency",
+      "dependency": "nanoid",
+      "range": "^3.3.12"
+    },
+    {
+      "package": "postcss",
+      "version": "8.5.15",
+      "type": "dependency",
+      "dependency": "picocolors",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "postcss",
+      "version": "8.5.15",
+      "type": "dependency",
+      "dependency": "source-map-js",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "sass",
+      "version": "1.100.0",
+      "type": "dependency",
+      "dependency": "chokidar",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "sass",
+      "version": "1.100.0",
+      "type": "dependency",
+      "dependency": "immutable",
+      "range": "^5.1.5"
+    },
+    {
+      "package": "sass",
+      "version": "1.100.0",
+      "type": "dependency",
+      "dependency": "source-map-js",
+      "range": ">=0.6.2 <2.0.0"
+    },
+    {
+      "package": "axios",
+      "version": "1.17.0",
+      "type": "dependency",
+      "dependency": "form-data",
+      "range": "^4.0.5"
+    },
+    {
+      "package": "axios",
+      "version": "1.17.0",
+      "type": "dependency",
+      "dependency": "proxy-from-env",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "axios",
+      "version": "1.17.0",
+      "type": "dependency",
+      "dependency": "follow-redirects",
+      "range": "^1.16.0"
+    },
+    {
+      "package": "axios",
+      "version": "1.17.0",
+      "type": "dependency",
+      "dependency": "https-proxy-agent",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "debug",
+      "version": "4.4.3",
+      "type": "dependency",
+      "dependency": "ms",
+      "range": "^2.1.3"
+    },
+    {
+      "package": "yup",
+      "version": "1.7.1",
+      "type": "dependency",
+      "dependency": "property-expr",
+      "range": "^2.0.5"
+    },
+    {
+      "package": "yup",
+      "version": "1.7.1",
+      "type": "dependency",
+      "dependency": "tiny-case",
+      "range": "^1.0.3"
+    },
+    {
+      "package": "yup",
+      "version": "1.7.1",
+      "type": "dependency",
+      "dependency": "toposort",
+      "range": "^2.0.2"
+    },
+    {
+      "package": "yup",
+      "version": "1.7.1",
+      "type": "dependency",
+      "dependency": "type-fest",
+      "range": "^2.19.0"
+    },
+    {
+      "package": "react-dom",
+      "version": "19.2.7",
+      "type": "dependency",
+      "dependency": "scheduler",
+      "range": "^0.27.0"
+    },
+    {
+      "package": "react-dom",
+      "version": "19.2.7",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^19.2.7"
+    },
+    {
+      "package": "@types/node",
+      "version": "25.9.2",
+      "type": "dependency",
+      "dependency": "undici-types",
+      "range": ">=7.24.0 <7.24.7"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "@fastify/ajv-compiler",
+      "range": "^4.0.5"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "@fastify/error",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "@fastify/fast-json-stringify-compiler",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "@fastify/proxy-addr",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "abstract-logging",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "avvio",
+      "range": "^9.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "fast-json-stringify",
+      "range": "^6.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "find-my-way",
+      "range": "^9.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "light-my-request",
+      "range": "^6.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "pino",
+      "range": "^9.14.0 || ^10.1.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "process-warning",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "rfdc",
+      "range": "^1.3.1"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "secure-json-parse",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "semver",
+      "range": "^7.6.0"
+    },
+    {
+      "package": "fastify",
+      "version": "5.8.5",
+      "type": "dependency",
+      "dependency": "toad-cache",
+      "range": "^3.7.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "accepts",
+      "range": "^1.3.8"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "content-disposition",
+      "range": "~1.0.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "content-type",
+      "range": "^1.0.5"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "cookies",
+      "range": "~0.9.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "delegates",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "destroy",
+      "range": "^1.2.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "encodeurl",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "escape-html",
+      "range": "^1.0.3"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "fresh",
+      "range": "~0.5.2"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "http-assert",
+      "range": "^1.5.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "http-errors",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "koa-compose",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "mime-types",
+      "range": "^3.0.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "on-finished",
+      "range": "^2.4.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "parseurl",
+      "range": "^1.3.3"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "statuses",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "type-is",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "koa",
+      "version": "3.2.1",
+      "type": "dependency",
+      "dependency": "vary",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "dependency",
+      "dependency": "fast-safe-stringify",
+      "range": "2.1.1"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "dependency",
+      "dependency": "iterare",
+      "range": "1.2.1"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "dependency",
+      "dependency": "path-to-regexp",
+      "range": "8.4.2"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "2.8.1"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "dependency",
+      "dependency": "uid",
+      "range": "2.0.2"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "@nestjs/common",
+      "range": "^11.0.0"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "@nestjs/microservices",
+      "range": "^11.0.0"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "@nestjs/platform-express",
+      "range": "^11.0.0"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "@nestjs/websockets",
+      "range": "^11.0.0"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "reflect-metadata",
+      "range": "^0.1.12 || ^0.2.0"
+    },
+    {
+      "package": "@nestjs/core",
+      "version": "11.1.26",
+      "type": "peerDependency",
+      "dependency": "rxjs",
+      "range": "^7.1.0"
+    },
+    {
+      "package": "rxjs",
+      "version": "7.8.2",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "kareem",
+      "range": "3.3.0"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "mongodb",
+      "range": "~7.2"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "mpath",
+      "range": "0.9.0"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "mquery",
+      "range": "6.0.0"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "ms",
+      "range": "2.1.3"
+    },
+    {
+      "package": "mongoose",
+      "version": "9.7.0",
+      "type": "dependency",
+      "dependency": "sift",
+      "range": "17.1.3"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pg-connection-string",
+      "range": "^2.13.0"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pg-pool",
+      "range": "^3.14.0"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pg-protocol",
+      "range": "^1.14.0"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pg-types",
+      "range": "2.2.0"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pgpass",
+      "range": "1.0.5"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "dependency",
+      "dependency": "pg-cloudflare",
+      "range": "^1.4.0"
+    },
+    {
+      "package": "pg",
+      "version": "8.21.0",
+      "type": "peerDependency",
+      "dependency": "pg-native",
+      "range": ">=3.0.1"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "aws-ssl-profiles",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "denque",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "generate-function",
+      "range": "^2.3.1"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "iconv-lite",
+      "range": "^0.7.2"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "long",
+      "range": "^5.3.2"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "lru.min",
+      "range": "^1.1.4"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "named-placeholders",
+      "range": "^1.1.6"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "dependency",
+      "dependency": "sql-escaper",
+      "range": "^1.3.3"
+    },
+    {
+      "package": "mysql2",
+      "version": "3.22.5",
+      "type": "peerDependency",
+      "dependency": "@types/node",
+      "range": ">= 8"
+    },
+    {
+      "package": "redis",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "@redis/bloom",
+      "range": "6.0.0"
+    },
+    {
+      "package": "redis",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "@redis/client",
+      "range": "6.0.0"
+    },
+    {
+      "package": "redis",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "@redis/json",
+      "range": "6.0.0"
+    },
+    {
+      "package": "redis",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "@redis/search",
+      "range": "6.0.0"
+    },
+    {
+      "package": "redis",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "@redis/time-series",
+      "range": "6.0.0"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "@ioredis/commands",
+      "range": "1.10.0"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "cluster-key-slot",
+      "range": "1.1.1"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "4.4.3"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "denque",
+      "range": "2.1.0"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "redis-errors",
+      "range": "1.2.0"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "redis-parser",
+      "range": "3.0.0"
+    },
+    {
+      "package": "ioredis",
+      "version": "5.11.1",
+      "type": "dependency",
+      "dependency": "standard-as-callback",
+      "range": "2.1.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/cache-control-types",
+      "range": "^1.0.3"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/server-gateway-interface",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/usage-reporting-protobuf",
+      "range": "^4.1.1"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.createhash",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.fetcher",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.isnodelike",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.keyvaluecache",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.logger",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.usagereporting",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@apollo/utils.withrequired",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "@graphql-tools/schema",
+      "range": "^10.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "async-retry",
+      "range": "^1.2.1"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "body-parser",
+      "range": "^2.2.2"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "content-type",
+      "range": "^1.0.5"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "cors",
+      "range": "^2.8.5"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "finalhandler",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "loglevel",
+      "range": "^1.6.8"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "lru-cache",
+      "range": "^11.1.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "negotiator",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "dependency",
+      "dependency": "whatwg-mimetype",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "@apollo/server",
+      "version": "5.5.1",
+      "type": "peerDependency",
+      "dependency": "graphql",
+      "range": "^16.11.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "@sindresorhus/merge-streams",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "cross-spawn",
+      "range": "^7.0.6"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "figures",
+      "range": "^6.1.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "get-stream",
+      "range": "^9.0.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "human-signals",
+      "range": "^8.0.1"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "is-plain-obj",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "is-stream",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "npm-run-path",
+      "range": "^6.0.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "pretty-ms",
+      "range": "^9.2.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "signal-exit",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "strip-final-newline",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "execa",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "yoctocolors",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "tsx",
+      "version": "4.22.4",
+      "type": "dependency",
+      "dependency": "esbuild",
+      "range": "~0.28.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "bundle-require",
+      "range": "^5.1.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "cac",
+      "range": "^6.7.14"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "chokidar",
+      "range": "^4.0.3"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "consola",
+      "range": "^3.4.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "^4.4.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "esbuild",
+      "range": "^0.27.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "fix-dts-default-cjs-exports",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "joycon",
+      "range": "^3.1.1"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "picocolors",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "postcss-load-config",
+      "range": "^6.0.1"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "resolve-from",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "rollup",
+      "range": "^4.34.8"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "source-map",
+      "range": "^0.7.6"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "sucrase",
+      "range": "^3.35.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "tinyexec",
+      "range": "^0.3.2"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "tinyglobby",
+      "range": "^0.2.11"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "dependency",
+      "dependency": "tree-kill",
+      "range": "^1.2.2"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "peerDependency",
+      "dependency": "@microsoft/api-extractor",
+      "range": "^7.36.0"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "peerDependency",
+      "dependency": "@swc/core",
+      "range": "^1"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "peerDependency",
+      "dependency": "postcss",
+      "range": "^8.4.12"
+    },
+    {
+      "package": "tsup",
+      "version": "8.5.1",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": ">=4.5.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "vue",
+      "range": "^3.5.13"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "vite",
+      "range": "^5.4.14"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "shiki",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "mark.js",
+      "range": "8.11.1"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "focus-trap",
+      "range": "^7.6.4"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "minisearch",
+      "range": "^7.1.1"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@vue/shared",
+      "range": "^3.5.13"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@vueuse/core",
+      "range": "^12.4.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@docsearch/js",
+      "range": "3.8.2"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@shikijs/core",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@docsearch/css",
+      "range": "3.8.2"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@shikijs/types",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@vue/devtools-api",
+      "range": "^7.7.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@types/markdown-it",
+      "range": "^14.1.2"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@vitejs/plugin-vue",
+      "range": "^5.2.1"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@vueuse/integrations",
+      "range": "^12.4.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@shikijs/transformers",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "dependency",
+      "dependency": "@iconify-json/simple-icons",
+      "range": "^1.2.21"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "peerDependency",
+      "dependency": "postcss",
+      "range": "^8"
+    },
+    {
+      "package": "vitepress",
+      "version": "1.6.4",
+      "type": "peerDependency",
+      "dependency": "markdown-it-mathjax3",
+      "range": "^4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@astrojs/compiler",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@capsizecss/unpack",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@clack/prompts",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@oslojs/encoding",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@rollup/pluginutils",
+      "range": "^5.3.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "aria-query",
+      "range": "^5.3.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "axobject-query",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "ci-info",
+      "range": "^4.4.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "clsx",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "common-ancestor-path",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "cookie",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "devalue",
+      "range": "^5.8.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "diff",
+      "range": "^8.0.3"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "dset",
+      "range": "^3.1.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "es-module-lexer",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "esbuild",
+      "range": "^0.27.3"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "flattie",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "fontace",
+      "range": "~0.4.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "get-tsconfig",
+      "range": "5.0.0-beta.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "github-slugger",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "html-escaper",
+      "range": "3.0.3"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "http-cache-semantics",
+      "range": "^4.2.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "js-yaml",
+      "range": "^4.1.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "jsonc-parser",
+      "range": "^3.3.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "magic-string",
+      "range": "^0.30.21"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "magicast",
+      "range": "^0.5.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "mrmime",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "neotraverse",
+      "range": "^0.6.18"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "obug",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "p-limit",
+      "range": "^7.3.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "p-queue",
+      "range": "^9.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "package-manager-detector",
+      "range": "^1.6.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "piccolore",
+      "range": "^0.1.3"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "picomatch",
+      "range": "^4.0.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "rehype",
+      "range": "^13.0.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "semver",
+      "range": "^7.7.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "shiki",
+      "range": "^4.0.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "smol-toml",
+      "range": "^1.6.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "svgo",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "tinyclip",
+      "range": "^0.1.12"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "tinyexec",
+      "range": "^1.0.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "tinyglobby",
+      "range": "^0.2.15"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "ultrahtml",
+      "range": "^1.6.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "unifont",
+      "range": "~0.7.4"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "unist-util-visit",
+      "range": "^5.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "unstorage",
+      "range": "^1.17.5"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "vfile",
+      "range": "^6.0.3"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "vite",
+      "range": "^7.3.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "vitefu",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "xxhash-wasm",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "yargs-parser",
+      "range": "^22.0.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "zod",
+      "range": "^4.3.6"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@astrojs/internal-helpers",
+      "range": "0.10.0"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@astrojs/telemetry",
+      "range": "3.3.2"
+    },
+    {
+      "package": "astro",
+      "version": "6.4.6",
+      "type": "dependency",
+      "dependency": "@astrojs/markdown-remark",
+      "range": "7.2.0"
+    },
+    {
+      "package": "react-router",
+      "version": "7.17.0",
+      "type": "dependency",
+      "dependency": "cookie",
+      "range": "^1.0.1"
+    },
+    {
+      "package": "react-router",
+      "version": "7.17.0",
+      "type": "dependency",
+      "dependency": "set-cookie-parser",
+      "range": "^2.6.0"
+    },
+    {
+      "package": "react-router",
+      "version": "7.17.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": ">=18"
+    },
+    {
+      "package": "react-router",
+      "version": "7.17.0",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": ">=18"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "@standard-schema/spec",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "@standard-schema/utils",
+      "range": "^0.3.0"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "immer",
+      "range": "^11.0.0"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "redux",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "redux-thunk",
+      "range": "^3.1.0"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "dependency",
+      "dependency": "reselect",
+      "range": "^5.1.0"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.9.0 || ^17.0.0 || ^18 || ^19"
+    },
+    {
+      "package": "@reduxjs/toolkit",
+      "version": "2.12.0",
+      "type": "peerDependency",
+      "dependency": "react-redux",
+      "range": "^7.2.1 || ^8.1.3 || ^9.0.0"
+    },
+    {
+      "package": "zustand",
+      "version": "5.0.14",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": ">=18.0.0"
+    },
+    {
+      "package": "zustand",
+      "version": "5.0.14",
+      "type": "peerDependency",
+      "dependency": "immer",
+      "range": ">=9.0.6"
+    },
+    {
+      "package": "zustand",
+      "version": "5.0.14",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": ">=18.0.0"
+    },
+    {
+      "package": "zustand",
+      "version": "5.0.14",
+      "type": "peerDependency",
+      "dependency": "use-sync-external-store",
+      "range": ">=1.2.0"
+    },
+    {
+      "package": "@tanstack/react-query",
+      "version": "5.101.0",
+      "type": "dependency",
+      "dependency": "@tanstack/query-core",
+      "range": "5.101.0"
+    },
+    {
+      "package": "@tanstack/react-query",
+      "version": "5.101.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^18 || ^19"
+    },
+    {
+      "package": "@tanstack/react-table",
+      "version": "8.21.3",
+      "type": "dependency",
+      "dependency": "@tanstack/table-core",
+      "range": "8.21.3"
+    },
+    {
+      "package": "@tanstack/react-table",
+      "version": "8.21.3",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": ">=16.8"
+    },
+    {
+      "package": "@tanstack/react-table",
+      "version": "8.21.3",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": ">=16.8"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "^2.4.0"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "dependency",
+      "dependency": "motion-dom",
+      "range": "^12.40.0"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "dependency",
+      "dependency": "motion-utils",
+      "range": "^12.39.0"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "framer-motion",
+      "version": "12.40.0",
+      "type": "peerDependency",
+      "dependency": "@emotion/is-prop-valid",
+      "range": "*"
+    },
+    {
+      "package": "lucide-react",
+      "version": "1.17.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "class-variance-authority",
+      "version": "0.7.1",
+      "type": "dependency",
+      "dependency": "clsx",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/primitive",
+      "range": "1.1.4"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-form",
+      "range": "0.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-menu",
+      "range": "2.1.17"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-slot",
+      "range": "1.2.5"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-tabs",
+      "range": "1.1.14"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-arrow",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-label",
+      "range": "2.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-toast",
+      "range": "1.2.16"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-avatar",
+      "range": "1.1.12"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dialog",
+      "range": "1.1.16"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-popper",
+      "range": "1.3.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-portal",
+      "range": "1.1.11"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-select",
+      "range": "2.3.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-slider",
+      "range": "1.4.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-switch",
+      "range": "1.3.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-toggle",
+      "range": "1.1.11"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context",
+      "range": "1.1.4"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-menubar",
+      "range": "1.1.17"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-popover",
+      "range": "1.1.16"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-toolbar",
+      "range": "1.1.12"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-tooltip",
+      "range": "1.2.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-checkbox",
+      "range": "1.3.4"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-presence",
+      "range": "1.1.6"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-progress",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-size",
+      "range": "1.1.2"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-accordion",
+      "range": "1.2.13"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-direction",
+      "range": "1.1.2"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-primitive",
+      "range": "2.1.5"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-separator",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-collection",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-hover-card",
+      "range": "1.1.16"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-collapsible",
+      "range": "1.1.13"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-scope",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-radio-group",
+      "range": "1.4.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-scroll-area",
+      "range": "1.2.11"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-alert-dialog",
+      "range": "1.1.16"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-aspect-ratio",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-compose-refs",
+      "range": "1.1.3"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context-menu",
+      "range": "2.3.0"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-guards",
+      "range": "1.1.4"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-roving-focus",
+      "range": "1.1.12"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-toggle-group",
+      "range": "1.1.12"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dropdown-menu",
+      "range": "2.1.17"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-accessible-icon",
+      "range": "1.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-navigation-menu",
+      "range": "1.2.15"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-is-hydrated",
+      "range": "0.1.1"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-visually-hidden",
+      "range": "1.2.5"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-callback-ref",
+      "range": "1.1.2"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-effect-event",
+      "range": "0.0.3"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dismissable-layer",
+      "range": "1.1.12"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-layout-effect",
+      "range": "1.1.2"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-escape-keydown",
+      "range": "1.1.2"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-password-toggle-field",
+      "range": "0.1.4"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-controllable-state",
+      "range": "1.2.3"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-one-time-password-field",
+      "range": "0.1.9"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": "*"
+    },
+    {
+      "package": "radix-ui",
+      "version": "1.5.0",
+      "type": "peerDependency",
+      "dependency": "@types/react-dom",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "aria-hidden",
+      "range": "^1.2.4"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-id",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/primitive",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "react-remove-scroll",
+      "range": "^2.7.2"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-slot",
+      "range": "1.2.5"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-portal",
+      "range": "1.1.11"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-presence",
+      "range": "1.1.6"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-primitive",
+      "range": "2.1.5"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-scope",
+      "range": "1.1.9"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-compose-refs",
+      "range": "1.1.3"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-guards",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dismissable-layer",
+      "range": "1.1.12"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-controllable-state",
+      "range": "1.2.3"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "version": "1.1.16",
+      "type": "peerDependency",
+      "dependency": "@types/react-dom",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-id",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/primitive",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-menu",
+      "range": "2.1.17"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-primitive",
+      "range": "2.1.5"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-compose-refs",
+      "range": "1.1.3"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-controllable-state",
+      "range": "1.2.3"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.17",
+      "type": "peerDependency",
+      "dependency": "@types/react-dom",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "aria-hidden",
+      "range": "^1.2.4"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/number",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-id",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/primitive",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "react-remove-scroll",
+      "range": "^2.7.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-slot",
+      "range": "1.2.5"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-popper",
+      "range": "1.3.0"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-portal",
+      "range": "1.1.11"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-presence",
+      "range": "1.1.6"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-direction",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-primitive",
+      "range": "2.1.5"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-collection",
+      "range": "1.1.9"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-scope",
+      "range": "1.1.9"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-compose-refs",
+      "range": "1.1.3"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-focus-guards",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-previous",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-visually-hidden",
+      "range": "1.2.5"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-callback-ref",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dismissable-layer",
+      "range": "1.1.12"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-layout-effect",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-controllable-state",
+      "range": "1.2.3"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-select",
+      "version": "2.3.0",
+      "type": "peerDependency",
+      "dependency": "@types/react-dom",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-id",
+      "range": "1.1.2"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/primitive",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-slot",
+      "range": "1.2.5"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-popper",
+      "range": "1.3.0"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-portal",
+      "range": "1.1.11"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-context",
+      "range": "1.1.4"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-presence",
+      "range": "1.1.6"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-primitive",
+      "range": "2.1.5"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-compose-refs",
+      "range": "1.1.3"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-visually-hidden",
+      "range": "1.2.5"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-dismissable-layer",
+      "range": "1.1.12"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "dependency",
+      "dependency": "@radix-ui/react-use-controllable-state",
+      "range": "1.2.3"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "peerDependency",
+      "dependency": "@types/react",
+      "range": "*"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "version": "1.2.9",
+      "type": "peerDependency",
+      "dependency": "@types/react-dom",
+      "range": "*"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "@babel/runtime",
+      "range": "^7.17.8"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "@types/webxr",
+      "range": "*"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "base64-js",
+      "range": "^1.5.1"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "buffer",
+      "range": "^6.0.3"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "its-fine",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "react-use-measure",
+      "range": "^2.1.7"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "scheduler",
+      "range": "^0.27.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "suspend-react",
+      "range": "^0.1.3"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "use-sync-external-store",
+      "range": "^1.4.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "dependency",
+      "dependency": "zustand",
+      "range": "^5.0.3"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "expo",
+      "range": ">=43.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "expo-asset",
+      "range": ">=8.4"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "expo-file-system",
+      "range": ">=11.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "expo-gl",
+      "range": ">=11.0"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": ">=19 <19.3"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": ">=19 <19.3"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "react-native",
+      "range": ">=0.78"
+    },
+    {
+      "package": "@react-three/fiber",
+      "version": "9.6.1",
+      "type": "peerDependency",
+      "dependency": "three",
+      "range": ">=0.156"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "maath",
+      "range": "^0.10.8"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "hls.js",
+      "range": "^1.5.17"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "zustand",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "meshline",
+      "range": "^3.3.1"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "stats-gl",
+      "range": "^2.2.8"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "stats.js",
+      "range": "^0.17.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "cross-env",
+      "range": "^7.0.3"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "detect-gpu",
+      "range": "^5.0.56"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "glsl-noise",
+      "range": "^0.0.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "tunnel-rat",
+      "range": "^0.1.2"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "three-stdlib",
+      "range": "^2.35.6"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "suspend-react",
+      "range": "^0.1.3"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "utility-types",
+      "range": "^3.11.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "@babel/runtime",
+      "range": "^7.26.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "three-mesh-bvh",
+      "range": "^0.8.3"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "camera-controls",
+      "range": "^3.1.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "troika-three-text",
+      "range": "^0.52.4"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "@use-gesture/react",
+      "range": "^10.3.1"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "@monogrid/gainmap-js",
+      "range": "^3.0.6"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "@mediapipe/tasks-vision",
+      "range": "0.10.17"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "dependency",
+      "dependency": "use-sync-external-store",
+      "range": "^1.4.0"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^19"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "peerDependency",
+      "dependency": "three",
+      "range": ">=0.159"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^19"
+    },
+    {
+      "package": "@react-three/drei",
+      "version": "10.7.7",
+      "type": "peerDependency",
+      "dependency": "@react-three/fiber",
+      "range": "^9.0.0"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-dsv",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-geo",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-axis",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-drag",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-ease",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-path",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-time",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-zoom",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-array",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-brush",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-chord",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-color",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-fetch",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-force",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-scale",
+      "range": "4"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-shape",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-timer",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-format",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-random",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-contour",
+      "range": "4"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-polygon",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-delaunay",
+      "range": "6"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-dispatch",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-quadtree",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-hierarchy",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-selection",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-transition",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-interpolate",
+      "range": "3"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-time-format",
+      "range": "4"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "type": "dependency",
+      "dependency": "d3-scale-chromatic",
+      "range": "3"
+    },
+    {
+      "package": "chart.js",
+      "version": "4.5.1",
+      "type": "dependency",
+      "dependency": "@kurkle/color",
+      "range": "^0.3.0"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "clsx",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "immer",
+      "range": "^10.1.1"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "reselect",
+      "range": "5.1.1"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "es-toolkit",
+      "range": "^1.39.3"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "react-redux",
+      "range": "8.x.x || 9.x.x"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "eventemitter3",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "tiny-invariant",
+      "range": "^1.3.3"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "victory-vendor",
+      "range": "^37.0.2"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "@reduxjs/toolkit",
+      "range": "^1.9.0 || 2.x.x"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "decimal.js-light",
+      "range": "^2.5.1"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "dependency",
+      "dependency": "use-sync-external-store",
+      "range": "^1.2.2"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "peerDependency",
+      "dependency": "react",
+      "range": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "peerDependency",
+      "dependency": "react-is",
+      "range": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "recharts",
+      "version": "3.8.1",
+      "type": "peerDependency",
+      "dependency": "react-dom",
+      "range": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "mysql2",
+      "range": "3.15.3"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "postgres",
+      "range": "3.4.7"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "@prisma/dev",
+      "range": "0.24.3"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "@prisma/config",
+      "range": "7.8.0"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "@prisma/engines",
+      "range": "7.8.0"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "@prisma/studio-core",
+      "range": "0.27.3"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": ">=5.4.0"
+    },
+    {
+      "package": "prisma",
+      "version": "7.8.0",
+      "type": "peerDependency",
+      "dependency": "better-sqlite3",
+      "range": ">=9.0.0"
+    },
+    {
+      "package": "@prisma/client",
+      "version": "7.8.0",
+      "type": "dependency",
+      "dependency": "@prisma/client-runtime-utils",
+      "range": "7.8.0"
+    },
+    {
+      "package": "@prisma/client",
+      "version": "7.8.0",
+      "type": "peerDependency",
+      "dependency": "prisma",
+      "range": "*"
+    },
+    {
+      "package": "@prisma/client",
+      "version": "7.8.0",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": ">=5.4.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "pg",
+      "range": ">=8"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "gel",
+      "range": ">=2"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "knex",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "kysely",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "mysql2",
+      "range": ">=2"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "sql.js",
+      "range": ">=1"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "sqlite3",
+      "range": ">=5"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "postgres",
+      "range": ">=3"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@types/pg",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "bun-types",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "expo-sqlite",
+      "range": ">=14.0.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@types/sql.js",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@libsql/client",
+      "range": ">=0.10.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@prisma/client",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@upstash/redis",
+      "range": ">=1.34.7"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "better-sqlite3",
+      "range": ">=7"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@xata.io/client",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@vercel/postgres",
+      "range": ">=0.8.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@opentelemetry/api",
+      "range": "^1.4.1"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@libsql/client-wasm",
+      "range": ">=0.10.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@electric-sql/pglite",
+      "range": ">=0.2.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@planetscale/database",
+      "range": ">=1.13"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@tidbcloud/serverless",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@types/better-sqlite3",
+      "range": "*"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@aws-sdk/client-rds-data",
+      "range": ">=3"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@neondatabase/serverless",
+      "range": ">=0.10.0"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@cloudflare/workers-types",
+      "range": ">=4"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.2",
+      "type": "peerDependency",
+      "dependency": "@op-engineering/op-sqlite",
+      "range": ">=2"
+    },
+    {
+      "package": "better-sqlite3",
+      "version": "12.10.0",
+      "type": "dependency",
+      "dependency": "bindings",
+      "range": "^1.5.0"
+    },
+    {
+      "package": "better-sqlite3",
+      "version": "12.10.0",
+      "type": "dependency",
+      "dependency": "prebuild-install",
+      "range": "^7.1.1"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "accepts",
+      "range": "~1.3.4"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "base64id",
+      "range": "~2.0.0"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "cors",
+      "range": "~2.8.5"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "~4.4.1"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "engine.io",
+      "range": "~6.6.0"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "socket.io-adapter",
+      "range": "~2.5.2"
+    },
+    {
+      "package": "socket.io",
+      "version": "4.8.3",
+      "type": "dependency",
+      "dependency": "socket.io-parser",
+      "range": "~4.2.4"
+    },
+    {
+      "package": "ws",
+      "version": "8.21.0",
+      "type": "peerDependency",
+      "dependency": "bufferutil",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "ws",
+      "version": "8.21.0",
+      "type": "peerDependency",
+      "dependency": "utf-8-validate",
+      "range": ">=5.0.2"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "cron-parser",
+      "range": "4.9.0"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "ioredis",
+      "range": "5.10.1"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "msgpackr",
+      "range": "2.0.2"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "node-abort-controller",
+      "range": "3.1.1"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "semver",
+      "range": "7.8.0"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "2.8.1"
+    },
+    {
+      "package": "bullmq",
+      "version": "5.78.0",
+      "type": "peerDependency",
+      "dependency": "redis",
+      "range": ">=5.0.0"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "async",
+      "range": "^3.2.4"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "block-stream2",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "browser-or-node",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "buffer-crc32",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "eventemitter3",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "fast-xml-parser",
+      "range": "^5.3.4"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "ipaddr.js",
+      "range": "^2.0.1"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "lodash",
+      "range": "^4.17.21"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "mime-types",
+      "range": "^2.1.35"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "query-string",
+      "range": "^7.1.3"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "stream-json",
+      "range": "^1.8.0"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "through2",
+      "range": "^4.0.2"
+    },
+    {
+      "package": "minio",
+      "version": "8.0.7",
+      "type": "dependency",
+      "dependency": "xml2js",
+      "range": "^0.5.0 || ^0.6.2"
+    },
+    {
+      "package": "sharp",
+      "version": "0.35.0",
+      "type": "dependency",
+      "dependency": "@img/colour",
+      "range": "^1.1.0"
+    },
+    {
+      "package": "sharp",
+      "version": "0.35.0",
+      "type": "dependency",
+      "dependency": "detect-libc",
+      "range": "^2.1.2"
+    },
+    {
+      "package": "sharp",
+      "version": "0.35.0",
+      "type": "dependency",
+      "dependency": "semver",
+      "range": "^7.8.4"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/core",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/diff",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/js-bmp",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/js-gif",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/js-jpeg",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/js-png",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/js-tiff",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-blit",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-blur",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-circle",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-color",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-contain",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-cover",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-crop",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-displace",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-dither",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-fisheye",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-flip",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-hash",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-mask",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-print",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-quantize",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-resize",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-rotate",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/plugin-threshold",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/types",
+      "range": "1.6.1"
+    },
+    {
+      "package": "jimp",
+      "version": "1.6.1",
+      "type": "dependency",
+      "dependency": "@jimp/utils",
+      "range": "1.6.1"
+    },
+    {
+      "package": "pdf-lib",
+      "version": "1.17.1",
+      "type": "dependency",
+      "dependency": "@pdf-lib/standard-fonts",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "pdf-lib",
+      "version": "1.17.1",
+      "type": "dependency",
+      "dependency": "@pdf-lib/upng",
+      "range": "^1.0.1"
+    },
+    {
+      "package": "pdf-lib",
+      "version": "1.17.1",
+      "type": "dependency",
+      "dependency": "pako",
+      "range": "^1.0.11"
+    },
+    {
+      "package": "pdf-lib",
+      "version": "1.17.1",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "^1.11.1"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "@puppeteer/browsers",
+      "range": "3.0.4"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "chromium-bidi",
+      "range": "16.0.1"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "lilconfig",
+      "range": "^3.1.3"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "devtools-protocol",
+      "range": "0.0.1624250"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "puppeteer-core",
+      "range": "25.1.0"
+    },
+    {
+      "package": "puppeteer",
+      "version": "25.1.0",
+      "type": "dependency",
+      "dependency": "typed-query-selector",
+      "range": "^2.12.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "tmp",
+      "range": "~0.2.4"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "arch",
+      "range": "^2.2.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "chalk",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "dayjs",
+      "range": "^1.10.4"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "^4.3.4"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "execa",
+      "range": "4.1.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "hasha",
+      "range": "5.2.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "tslib",
+      "range": "1.14.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "yauzl",
+      "range": "^3.3.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "buffer",
+      "range": "^5.7.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "listr2",
+      "range": "^9.0.5"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "lodash",
+      "range": "^4.17.23"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "ospath",
+      "range": "^1.2.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "ci-info",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "process",
+      "range": "^0.11.10"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "bluebird",
+      "range": "^3.7.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "cachedir",
+      "range": "^2.4.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "fs-extra",
+      "range": "^9.1.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "minimist",
+      "range": "^1.2.8"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "blob-util",
+      "range": "^2.0.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "commander",
+      "range": "^6.2.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "tree-kill",
+      "range": "1.2.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "untildify",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "@types/tmp",
+      "range": "^0.2.3"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "cli-table3",
+      "range": "0.6.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "executable",
+      "range": "^4.1.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "common-tags",
+      "range": "^1.8.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "log-symbols",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "pretty-bytes",
+      "range": "^5.6.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "@cypress/xvfb",
+      "range": "^1.2.4"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "@types/sizzle",
+      "range": "^2.3.2"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "eventemitter2",
+      "range": "6.4.7"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "proxy-from-env",
+      "range": "1.0.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "supports-color",
+      "range": "^8.1.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "@cypress/request",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "request-progress",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "systeminformation",
+      "range": "^5.31.1"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "is-installed-globally",
+      "range": "~0.4.0"
+    },
+    {
+      "package": "cypress",
+      "version": "15.17.0",
+      "type": "dependency",
+      "dependency": "@types/sinonjs__fake-timers",
+      "range": "8.1.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "he",
+      "range": "^1.2.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "ms",
+      "range": "^2.1.3"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "diff",
+      "range": "^7.0.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "glob",
+      "range": "^10.4.5"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "^4.3.5"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "yargs",
+      "range": "^17.7.2"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "find-up",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "js-yaml",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "chokidar",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "minimatch",
+      "range": "^9.0.5"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "picocolors",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "workerpool",
+      "range": "^9.2.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "log-symbols",
+      "range": "^4.1.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "yargs-parser",
+      "range": "^21.1.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "browser-stdout",
+      "range": "^1.3.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "is-path-inside",
+      "range": "^3.0.3"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "supports-color",
+      "range": "^8.1.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "yargs-unparser",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "strip-json-comments",
+      "range": "^3.1.1"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "escape-string-regexp",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "mocha",
+      "version": "11.7.6",
+      "type": "dependency",
+      "dependency": "serialize-javascript",
+      "range": "^6.0.2"
+    },
+    {
+      "package": "sinon",
+      "version": "22.0.0",
+      "type": "dependency",
+      "dependency": "@sinonjs/commons",
+      "range": "^3.0.1"
+    },
+    {
+      "package": "sinon",
+      "version": "22.0.0",
+      "type": "dependency",
+      "dependency": "@sinonjs/fake-timers",
+      "range": "^15.4.0"
+    },
+    {
+      "package": "sinon",
+      "version": "22.0.0",
+      "type": "dependency",
+      "dependency": "@sinonjs/samsam",
+      "range": "^10.0.2"
+    },
+    {
+      "package": "sinon",
+      "version": "22.0.0",
+      "type": "dependency",
+      "dependency": "diff",
+      "range": "^9.0.0"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "@inquirer/confirm",
+      "range": "^6.0.11"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "@mswjs/interceptors",
+      "range": "^0.41.3"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "@open-draft/deferred-promise",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "@types/statuses",
+      "range": "^2.0.6"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "cookie",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "graphql",
+      "range": "^16.13.2"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "headers-polyfill",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "is-node-process",
+      "range": "^1.2.0"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "outvariant",
+      "range": "^1.4.3"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "path-to-regexp",
+      "range": "^6.3.0"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "picocolors",
+      "range": "^1.1.1"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "rettime",
+      "range": "^0.11.11"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "statuses",
+      "range": "^2.0.2"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "strict-event-emitter",
+      "range": "^0.5.1"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "tough-cookie",
+      "range": "^6.0.1"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "type-fest",
+      "range": "^5.5.0"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "until-async",
+      "range": "^3.0.2"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "dependency",
+      "dependency": "yargs",
+      "range": "^17.7.2"
+    },
+    {
+      "package": "msw",
+      "version": "2.14.6",
+      "type": "peerDependency",
+      "dependency": "typescript",
+      "range": ">= 4.8.x"
+    },
+    {
+      "package": "nock",
+      "version": "14.0.15",
+      "type": "dependency",
+      "dependency": "propagate",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "nock",
+      "version": "14.0.15",
+      "type": "dependency",
+      "dependency": "@mswjs/interceptors",
+      "range": "^0.41.0"
+    },
+    {
+      "package": "nock",
+      "version": "14.0.15",
+      "type": "dependency",
+      "dependency": "json-stringify-safe",
+      "range": "^5.0.1"
+    },
+    {
+      "package": "supertest",
+      "version": "7.2.2",
+      "type": "dependency",
+      "dependency": "methods",
+      "range": "^1.1.2"
+    },
+    {
+      "package": "supertest",
+      "version": "7.2.2",
+      "type": "dependency",
+      "dependency": "superagent",
+      "range": "^10.3.0"
+    },
+    {
+      "package": "supertest",
+      "version": "7.2.2",
+      "type": "dependency",
+      "dependency": "cookie-signature",
+      "range": "^1.2.2"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "ms",
+      "range": "^2.1.1"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "jws",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "semver",
+      "range": "^7.5.4"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.once",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.includes",
+      "range": "^4.3.0"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.isnumber",
+      "range": "^3.0.3"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.isstring",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.isboolean",
+      "range": "^3.0.3"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.isinteger",
+      "range": "^4.0.4"
+    },
+    {
+      "package": "jsonwebtoken",
+      "version": "9.0.3",
+      "type": "dependency",
+      "dependency": "lodash.isplainobject",
+      "range": "^4.0.6"
+    },
+    {
+      "package": "bcrypt",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "node-addon-api",
+      "range": "^8.3.0"
+    },
+    {
+      "package": "bcrypt",
+      "version": "6.0.0",
+      "type": "dependency",
+      "dependency": "node-gyp-build",
+      "range": "^4.8.4"
+    },
+    {
+      "package": "passport",
+      "version": "0.7.0",
+      "type": "dependency",
+      "dependency": "pause",
+      "range": "0.0.1"
+    },
+    {
+      "package": "passport",
+      "version": "0.7.0",
+      "type": "dependency",
+      "dependency": "utils-merge",
+      "range": "^1.0.1"
+    },
+    {
+      "package": "passport",
+      "version": "0.7.0",
+      "type": "dependency",
+      "dependency": "passport-strategy",
+      "range": "1.x.x"
+    },
+    {
+      "package": "cors",
+      "version": "2.8.6",
+      "type": "dependency",
+      "dependency": "object-assign",
+      "range": "^4"
+    },
+    {
+      "package": "cors",
+      "version": "2.8.6",
+      "type": "dependency",
+      "dependency": "vary",
+      "range": "^1"
+    },
+    {
+      "package": "morgan",
+      "version": "1.11.0",
+      "type": "dependency",
+      "dependency": "basic-auth",
+      "range": "~2.0.1"
+    },
+    {
+      "package": "morgan",
+      "version": "1.11.0",
+      "type": "dependency",
+      "dependency": "debug",
+      "range": "2.6.9"
+    },
+    {
+      "package": "morgan",
+      "version": "1.11.0",
+      "type": "dependency",
+      "dependency": "depd",
+      "range": "~2.0.0"
+    },
+    {
+      "package": "morgan",
+      "version": "1.11.0",
+      "type": "dependency",
+      "dependency": "on-finished",
+      "range": "~2.4.1"
+    },
+    {
+      "package": "morgan",
+      "version": "1.11.0",
+      "type": "dependency",
+      "dependency": "on-headers",
+      "range": "~1.1.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "async",
+      "range": "^3.2.3"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "logform",
+      "range": "^2.7.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "one-time",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "is-stream",
+      "range": "^2.0.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "stack-trace",
+      "range": "0.0.x"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "triple-beam",
+      "range": "^1.3.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "@colors/colors",
+      "range": "^1.6.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "readable-stream",
+      "range": "^3.4.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "@dabh/diagnostics",
+      "range": "^2.0.8"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "winston-transport",
+      "range": "^4.9.0"
+    },
+    {
+      "package": "winston",
+      "version": "3.19.0",
+      "type": "dependency",
+      "dependency": "safe-stable-stringify",
+      "range": "^2.3.1"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "atomic-sleep",
+      "range": "^1.0.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "on-exit-leak-free",
+      "range": "^2.1.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "pino-abstract-transport",
+      "range": "^3.0.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "pino-std-serializers",
+      "range": "^7.0.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "process-warning",
+      "range": "^5.0.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "quick-format-unescaped",
+      "range": "^4.0.3"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "real-require",
+      "range": "^0.2.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "safe-stable-stringify",
+      "range": "^2.3.1"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "@pinojs/redact",
+      "range": "^0.4.0"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "sonic-boom",
+      "range": "^4.0.1"
+    },
+    {
+      "package": "pino",
+      "version": "10.3.1",
+      "type": "dependency",
+      "dependency": "thread-stream",
+      "range": "^4.0.0"
+    },
+    {
+      "package": "openai",
+      "version": "6.42.0",
+      "type": "peerDependency",
+      "dependency": "ws",
+      "range": "^8.18.0"
+    },
+    {
+      "package": "openai",
+      "version": "6.42.0",
+      "type": "peerDependency",
+      "dependency": "zod",
+      "range": "^3.25 || ^4.0"
+    },
+    {
+      "package": "stripe",
+      "version": "22.2.0",
+      "type": "peerDependency",
+      "dependency": "@types/node",
+      "range": ">=18"
+    }
+  ]
+}
