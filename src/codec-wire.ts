@@ -52,7 +52,8 @@ export function parsePrimitiveCellHeader(
     (primitive_type !== 's' &&
       primitive_type !== 'n' &&
       primitive_type !== 'b' &&
-      primitive_type !== 'z') ||
+      primitive_type !== 'z' &&
+      primitive_type !== 'j') ||
     cell[1] !== ':'
   ) {
     return null;
@@ -125,7 +126,8 @@ export function parseTileColumnHeader(
       (primitive_type === 's' ||
         primitive_type === 'n' ||
         primitive_type === 'b' ||
-        primitive_type === 'z') &&
+        primitive_type === 'z' ||
+        primitive_type === 'j') &&
       header[type_separator_index] === ':' &&
       isUnescapedCharacterAt({
         value: header,

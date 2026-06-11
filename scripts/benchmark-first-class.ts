@@ -1,7 +1,6 @@
 import type { JsonTileFirstClassTable, JsonValue } from '../src/index.js';
 import {
   asArray,
-  asNumber,
   asObject,
   asString,
   continuationCell,
@@ -10,92 +9,118 @@ import {
 } from './benchmark-utils.js';
 
 function osmFirstClassTables(value: JsonValue): JsonTileFirstClassTable[] {
-  const ways = asArray(asObject(value).ways);
-  const way_rows = ways.map((way) => {
-    const object = asObject(way);
-    const node_refs = asArray(object.nodes);
-    return [
-      firstClassCell(object.id),
-      node_refs.length,
-      firstClassCell(asObject(object.tags).highway),
-      firstClassCell(asObject(object.tags).name)
-    ];
-  });
-  const way_node_rows = ways.flatMap((way) => {
-    const object = asObject(way);
-    return asArray(object.nodes).map((node_ref, index) => [
-      firstClassCell(object.id),
-      index,
-      firstClassCell(node_ref)
-    ]);
-  });
+  const node_rows = asArray(asObject(value).nodes)
+    .map((node) => asObject(node))
+    .map((node) => {
+      const tags = asObject(node.tags);
+
+      return [
+        firstClassCell(node.id),
+        firstClassCell(tags.name),
+        firstClassCell(tags.amenity),
+        firstClassCell(tags.cuisine),
+        firstClassCell(tags.brand),
+        firstClassCell(tags.shop),
+        firstClassCell(tags.tourism)
+      ];
+    })
+    .filter((row) => row.some((cell, index) => index > 0 && cell !== undefined));
+  const way_rows = asArray(asObject(value).ways)
+    .map((way) => asObject(way))
+    .map((way) => {
+      const tags = asObject(way.tags);
+
+      return [
+        firstClassCell(way.id),
+        firstClassCell(tags.name),
+        firstClassCell(tags.highway)
+      ];
+    })
+    .filter((row) => row.some((cell, index) => index > 0 && cell !== undefined));
 
   return [
     {
-      id: 'osm_ways',
-      kind: 'way_summary',
-      path: 'osm.ways.summary',
-      columns: ['id', 'node_count', 'highway', 'name'],
-      rows: way_rows
+      id: 'osm_named_nodes',
+      kind: 'named_nodes',
+      path: 'osm.nodes.tags',
+      columns: ['node_id', 'name', 'amenity', 'cuisine', 'brand', 'shop', 'tourism'],
+      rows: node_rows
     },
     {
-      id: 'osm_way_nodes',
-      kind: 'way_nodes',
-      path: 'osm.ways.nodes',
-      columns: ['way_id', 'node_index', 'node_ref'],
-      rows: way_node_rows
+      id: 'osm_named_ways',
+      kind: 'named_ways',
+      path: 'osm.ways.tags',
+      columns: ['way_id', 'name', 'highway'],
+      rows: way_rows
     }
   ];
 }
 
-function osmFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[] {
-  const nodes_by_id = new Map(
-    asArray(asObject(value).nodes)
-      .map((node) => asObject(node))
-      .map((node) => [asNumber(node.id), node] as const)
-      .filter((entry): entry is readonly [number, JsonObject] => entry[0] !== null)
-  );
-  const rows = asArray(asObject(value).ways).flatMap((way) => {
-    const object = asObject(way);
-    const tags = asObject(object.tags);
-    const node_refs = asArray(object.nodes);
-
-    return node_refs.map((node_ref, index) => {
-      const node_ref_id = asNumber(node_ref);
-      const node = node_ref_id === null ? undefined : nodes_by_id.get(node_ref_id);
-      const node_tags = asObject(node?.tags);
+function osmFeatureRows(value: JsonValue): JsonTileFirstClassTable['rows'] {
+  const node_rows = asArray(asObject(value).nodes)
+    .map((node) => asObject(node))
+    .map((node) => {
+      const tags = asObject(node.tags);
 
       return [
-        continuationCell(index, object.id),
-        continuationCell(index, node_refs.length),
-        continuationCell(index, tags.highway),
-        continuationCell(index, tags.name),
-        index,
-        firstClassCell(node_ref),
-        node_tags.amenity ? 'yes' : 'no',
-        firstClassCell(node_tags.amenity),
-        firstClassCell(node_tags.name)
+        'node',
+        firstClassCell(node.id),
+        firstClassCell(tags.name),
+        firstClassCell(tags.highway),
+        firstClassCell(tags.amenity),
+        firstClassCell(tags.cuisine),
+        firstClassCell(tags.brand),
+        firstClassCell(tags.shop),
+        firstClassCell(tags.tourism)
       ];
-    });
-  });
+    })
+    .filter((row) => row.some((cell, index) => index > 1 && cell !== undefined));
+  const way_rows = asArray(asObject(value).ways)
+    .map((way) => asObject(way))
+    .map((way) => {
+      const tags = asObject(way.tags);
+
+      return [
+        'way',
+        firstClassCell(way.id),
+        firstClassCell(tags.name),
+        firstClassCell(tags.highway),
+        firstClassCell(tags.amenity),
+        firstClassCell(tags.cuisine),
+        firstClassCell(tags.brand),
+        firstClassCell(tags.shop),
+        firstClassCell(tags.tourism)
+      ];
+    })
+    .filter((row) => row.some((cell, index) => index > 1 && cell !== undefined));
+
+  return [...node_rows, ...way_rows];
+}
+
+function osmFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[] {
+  const rows = osmFeatureRows(value).map((row, index) => [
+    continuationCell(index, 'all'),
+    ...row
+  ]);
 
   return [
     {
-      id: 'osm_way_nodes_embedded',
-      kind: 'way_nodes',
-      path: 'osm.ways.nodes',
+      id: 'osm_named_features_embedded',
+      kind: 'named_features',
+      path: 'osm.features.tags',
       columns: [
-        'way_id',
-        'node_count',
-        'highway',
-        'way_name',
+        'feature_group',
         {
           embedded_columns: [
-            'node_index',
-            'node_ref',
-            'node_has_tags',
-            'node_amenity',
-            'node_name'
+            'feature_type',
+            'id',
+            'name',
+            'highway',
+            'amenity',
+            'cuisine',
+            'brand',
+            'shop',
+            'tourism'
           ]
         }
       ],
@@ -105,77 +130,67 @@ function osmFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[
 }
 
 function wikidataFirstClassTables(value: JsonValue): JsonTileFirstClassTable[] {
-  const triple_rows = asArray(asObject(value).triples).map((triple) => {
-    const object = asObject(triple);
-    return [
-      firstClassCell(object.subject_id),
-      firstClassCell(object.subject_label),
-      firstClassCell(object.property_id),
-      firstClassCell(object.property_label),
-      firstClassCell(object.object_id),
-      firstClassCell(object.object_label)
-    ];
-  });
+  const occupation_rows = asArray(asObject(value).triples)
+    .map((triple) => asObject(triple))
+    .filter((triple) => asString(triple.property_id) === 'P106')
+    .map((triple) => [
+      firstClassCell(triple.subject_label),
+      firstClassCell(triple.object_label)
+    ])
+    .filter((row) => row.every((cell) => cell !== undefined));
 
   return [
     {
-      id: 'wikidata_triples',
-      kind: 'triples',
-      path: 'wikidata.triples',
-      columns: [
-        'subject_id',
-        'subject_label',
-        'property_id',
-        'property_label',
-        'object_id',
-        'object_label'
-      ],
-      rows: triple_rows
+      id: 'wikidata_subject_occupations',
+      kind: 'subject_occupations',
+      path: 'wikidata.triples.P106',
+      columns: ['subject_label', 'occupation_label'],
+      rows: occupation_rows
     }
   ];
 }
 
 function wikidataFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[] {
-  const triples_by_subject = new Map<string, JsonObject[]>();
+  const occupations_by_subject = new Map<string, string[]>();
   for (const triple of asArray(asObject(value).triples).map((entry) => asObject(entry))) {
-    const subject_id = asString(triple.subject_id);
-    if (!subject_id) {
+    if (asString(triple.property_id) !== 'P106') {
       continue;
     }
 
-    const triples = triples_by_subject.get(subject_id) ?? [];
-    triples.push(triple);
-    triples_by_subject.set(subject_id, triples);
+    const subject_id = asString(triple.subject_id);
+    const subject_label = asString(triple.subject_label);
+    const occupation_label = asString(triple.object_label);
+    if (!subject_id || !subject_label || !occupation_label) {
+      continue;
+    }
+
+    const key = `${subject_id}\u0000${subject_label}`;
+    const occupations = occupations_by_subject.get(key) ?? [];
+    occupations.push(occupation_label);
+    occupations_by_subject.set(key, occupations);
   }
 
-  const rows = [...triples_by_subject.entries()].flatMap(([, triples]) => {
-    const first_triple = triples[0];
+  const rows = [...occupations_by_subject.entries()].flatMap(([key, occupations]) => {
+    const [, subject_label] = key.split('\u0000');
+    const unique_occupations = [...new Set(occupations)].sort((left, right) =>
+      left.localeCompare(right)
+    );
 
-    return triples.map((triple, index) => [
-      continuationCell(index, first_triple?.subject_id),
-      continuationCell(index, first_triple?.subject_label),
-      firstClassCell(triple.property_id),
-      firstClassCell(triple.property_label),
-      firstClassCell(triple.object_id),
-      firstClassCell(triple.object_label)
+    return unique_occupations.map((occupation_label, index) => [
+      continuationCell(index, subject_label),
+      firstClassCell(occupation_label)
     ]);
   });
 
   return [
     {
-      id: 'wikidata_subject_claims_embedded',
-      kind: 'subject_claims',
-      path: 'wikidata.subjects.claims',
+      id: 'wikidata_subject_occupations_embedded',
+      kind: 'subject_occupations',
+      path: 'wikidata.subjects.occupations',
       columns: [
-        'subject_id',
         'subject_label',
         {
-          embedded_columns: [
-            'property_id',
-            'property_label',
-            'object_id',
-            'object_label'
-          ]
+          embedded_columns: ['occupation_label']
         }
       ],
       rows
@@ -184,50 +199,30 @@ function wikidataFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassT
 }
 
 function musicBrainzFirstClassTables(value: JsonValue): JsonTileFirstClassTable[] {
-  const artist_rows = asArray(asObject(value).artists).map((artist) => {
-    const object = asObject(artist);
-    return [firstClassCell(object.id), firstClassCell(object.name)];
-  });
+  const target_artists = new Set(['David Bowie', 'Queen', 'Radiohead']);
   const release_group_rows = asArray(asObject(value).release_groups).map(
     (release_group) => {
       const object = asObject(release_group);
       return [
-        firstClassCell(object.id),
-        firstClassCell(object.artist_id),
         firstClassCell(object.artist_name),
-        firstClassCell(object.title),
-        firstClassCell(object.first_release_date),
-        firstClassCell(object.primary_type)
+        firstClassCell(object.title)
       ];
     }
-  );
+  ).filter((row) => typeof row[0] === 'string' && target_artists.has(row[0]));
 
   return [
     {
-      id: 'musicbrainz_artists',
-      kind: 'artists',
-      path: 'musicbrainz.artists',
-      columns: ['id', 'name'],
-      rows: artist_rows
-    },
-    {
-      id: 'musicbrainz_release_groups',
-      kind: 'release_groups',
-      path: 'musicbrainz.release_groups',
-      columns: [
-        'id',
-        'artist_id',
-        'artist_name',
-        'title',
-        'first_release_date',
-        'primary_type'
-      ],
+      id: 'musicbrainz_release_titles',
+      kind: 'release_titles',
+      path: 'musicbrainz.release_groups.titles',
+      columns: ['artist_name', 'title'],
       rows: release_group_rows
     }
   ];
 }
 
 function musicBrainzFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[] {
+  const target_artists = new Set(['David Bowie', 'Queen', 'Radiohead']);
   const release_groups_by_artist = new Map<string, JsonObject[]>();
   for (const release_group of asArray(asObject(value).release_groups).map((entry) =>
     asObject(entry)
@@ -245,33 +240,28 @@ function musicBrainzFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstCla
   const rows = asArray(asObject(value).artists).flatMap((artist) => {
     const object = asObject(artist);
     const artist_id = asString(object.id);
+    const artist_name = asString(object.name);
+    if (!artist_name || !target_artists.has(artist_name)) {
+      return [];
+    }
+
     const release_groups = release_groups_by_artist.get(artist_id ?? '') ?? [];
 
     return release_groups.map((release_group, index) => [
-      continuationCell(index, object.id),
-      continuationCell(index, object.name),
-      firstClassCell(release_group.id),
-      firstClassCell(release_group.title),
-      firstClassCell(release_group.first_release_date),
-      firstClassCell(release_group.primary_type)
+      continuationCell(index, artist_name),
+      firstClassCell(release_group.title)
     ]);
   });
 
   return [
     {
-      id: 'musicbrainz_artist_release_groups_embedded',
-      kind: 'artist_release_groups',
-      path: 'musicbrainz.artists.release_groups',
+      id: 'musicbrainz_artist_titles_embedded',
+      kind: 'artist_titles',
+      path: 'musicbrainz.artists.titles',
       columns: [
-        'artist_id',
         'artist_name',
         {
-          embedded_columns: [
-            'release_group_id',
-            'title',
-            'first_release_date',
-            'primary_type'
-          ]
+          embedded_columns: ['title']
         }
       ],
       rows
@@ -282,56 +272,55 @@ function musicBrainzFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstCla
 function npmFirstClassTables(value: JsonValue): JsonTileFirstClassTable[] {
   const package_rows = asArray(asObject(value).packages).map((pkg) => {
     const object = asObject(pkg);
-    return [
-      firstClassCell(object.name),
-      firstClassCell(object.version),
-      firstClassCell(object.license),
-      firstClassCell(object.dependency_count),
-      firstClassCell(object.peer_dependency_count)
-    ];
+    return [firstClassCell(object.name)];
   });
-  const dependency_rows = asArray(asObject(value).dependencies).map((dependency) => {
-    const object = asObject(dependency);
-    return [
-      firstClassCell(object.package),
-      firstClassCell(object.version),
-      firstClassCell(object.type),
-      firstClassCell(object.dependency),
-      firstClassCell(object.range)
-    ];
-  });
+  const dependency_rows = asArray(asObject(value).dependencies)
+    .map((dependency) => asObject(dependency))
+    .filter((dependency) => {
+      const dependency_name = asString(dependency.dependency);
+      return dependency_name === 'react' || dependency_name === 'react-dom';
+    })
+    .map((dependency) => [
+      firstClassCell(dependency.package),
+      firstClassCell(dependency.dependency)
+    ]);
 
   return [
     {
       id: 'npm_packages',
       kind: 'packages',
       path: 'npm.packages',
-      columns: [
-        'name',
-        'version',
-        'license',
-        'dependency_count',
-        'peer_dependency_count'
-      ],
+      columns: ['package_name'],
       rows: package_rows
     },
     {
       id: 'npm_dependencies',
       kind: 'dependencies',
       path: 'npm.dependencies',
-      columns: ['package', 'version', 'type', 'dependency', 'range'],
+      columns: ['package_name', 'dependency_name'],
       rows: dependency_rows
     }
   ];
 }
 
 function npmFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[] {
+  const package_rows = asArray(asObject(value).packages).map((pkg) => {
+    const object = asObject(pkg);
+    return [firstClassCell(object.name)];
+  });
   const dependencies_by_package = new Map<string, JsonObject[]>();
   for (const dependency of asArray(asObject(value).dependencies).map((entry) =>
     asObject(entry)
   )) {
     const package_name = asString(dependency.package);
     if (!package_name) {
+      continue;
+    }
+
+    if (
+      asString(dependency.dependency) !== 'react' &&
+      asString(dependency.dependency) !== 'react-dom'
+    ) {
       continue;
     }
 
@@ -348,29 +337,26 @@ function npmFirstClassEmbeddedTables(value: JsonValue): JsonTileFirstClassTable[
 
     return embedded_rows.map((dependency, index) => [
       continuationCell(index, object.name),
-      continuationCell(index, object.version),
-      continuationCell(index, object.license),
-      continuationCell(index, object.dependency_count),
-      continuationCell(index, object.peer_dependency_count),
-      firstClassCell(dependency.type),
-      firstClassCell(dependency.dependency),
-      firstClassCell(dependency.range)
+      firstClassCell(dependency.dependency)
     ]);
   });
 
   return [
     {
+      id: 'npm_selected_packages',
+      kind: 'selected_packages',
+      path: 'npm.packages',
+      columns: ['package_name'],
+      rows: package_rows
+    },
+    {
       id: 'npm_package_dependencies_embedded',
       kind: 'package_dependencies',
       path: 'npm.packages.dependencies',
       columns: [
-        'package',
-        'version',
-        'license',
-        'dependency_count',
-        'peer_dependency_count',
+        'package_name',
         {
-          embedded_columns: ['dependency_type', 'dependency', 'range']
+          embedded_columns: ['dependency_name']
         }
       ],
       rows

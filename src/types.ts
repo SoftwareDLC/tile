@@ -16,9 +16,12 @@ export type JsonTileSizeComparison = {
 };
 
 export type JsonTileObjectTableStrategy = 'path' | 'normalized_shape';
+export type JsonTilePathEncodingStrategy = 'auto' | 'reference_table' | 'inline_json';
 
 export type JsonTileEncodeOptions = {
   object_table_strategy?: JsonTileObjectTableStrategy;
+  path_rules?: Readonly<Record<string, JsonTilePathEncodingStrategy>>;
+  inline_small_object_max_chars?: number;
   normalized_min_shared_keys?: number;
   normalized_min_overlap_ratio?: number;
   normalized_max_columns?: number;

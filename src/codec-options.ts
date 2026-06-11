@@ -1,4 +1,5 @@
 import {
+  DEFAULT_INLINE_SMALL_OBJECT_MAX_CHARS,
   DEFAULT_NORMALIZED_MAX_COLUMNS,
   DEFAULT_NORMALIZED_MAX_PATHS,
   DEFAULT_NORMALIZED_MIN_OVERLAP_RATIO,
@@ -22,6 +23,10 @@ export function normalizeEncodeOptions(
 ): NormalizedJsonTileEncodeOptions {
   return {
     object_table_strategy: options.object_table_strategy ?? 'path',
+    path_rules: options.path_rules ?? {},
+    inline_small_object_max_chars:
+      options.inline_small_object_max_chars ??
+      DEFAULT_INLINE_SMALL_OBJECT_MAX_CHARS,
     normalized_min_shared_keys:
       options.normalized_min_shared_keys ?? DEFAULT_NORMALIZED_MIN_SHARED_KEYS,
     normalized_min_overlap_ratio:

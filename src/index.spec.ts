@@ -98,19 +98,6 @@ describe('jsonTile', () => {
     expect(decodeTileToJson(tile)).toEqual(value);
   });
 
-  it('decodes legacy TDT version headers for existing artifacts', () => {
-    const value = {
-      user: {
-        id: 'u1',
-        name: 'Ada'
-      }
-    };
-    const tile = encodeJsonToTile(value);
-    const legacy_tdt = tile.replace('TILE/5', 'TDT/5');
-
-    expect(decodeTileToJson(legacy_tdt)).toEqual(value);
-  });
-
   it('encodes caller-provided first-class tables', () => {
     const tile = encodeFirstClassTablesToTile({
       tables: [
@@ -367,9 +354,122 @@ describe('jsonTile', () => {
 
     expect(tile).toContain('properties\t$properties');
     expect(tile).toContain('$id\tkey:s\tvalue');
-    expect(tile).toContain('p0\tslot\tr:t2:r1');
-    expect(tile).toContain('p1\tslot\tr:t3:r2');
+    expect(tile).toContain('p0\tslot\tr:t3:r1');
+    expect(tile).toContain('p1\tslot\tr:t4:r2');
     expect(decodeTileToJson(tile)).toEqual(value);
+  });
+
+  it('skips generated ids that overlap visible source keys and string values', () => {
+    const value = {
+      t0: 'r0',
+      arrays: [['a0']],
+      wrapper: {
+        p0: {
+          id: 'r1',
+          table: 't1'
+        }
+      }
+    };
+
+    const tile = encodeJsonToTile(value);
+
+    expect(tile).toContain('root@t2\tr2');
+    expect(tile).toContain('t2\tobject\troot');
+    expect(tile).toContain('t3\tarray\troot.arrays');
+    expect(tile).toContain('t4\tarray\troot.arrays[]');
+    expect(tile).toContain('t5\tproperties\t$properties');
+    expect(tile).toContain('r2\tr0\ta1\tp1');
+    expect(tile).toContain('a1');
+    expect(tile).toContain('a2\n\ta0');
+    expect(tile).toContain('p1\tp0\tr:t6:r3');
+    expect(tile).toContain('t6\tobject\troot.wrapper.p0');
+    expect(tile).toContain('r3\tr1\tt1');
+    expect(tile).not.toContain('root@t0');
+    expect(tile).not.toContain('\nt0\t');
+    expect(tile).not.toContain('\nr0\t');
+    expect(tile).not.toContain('\na0\n');
+    expect(tile).not.toContain('\np0\t');
+    expect(decodeTileToJson(tile)).toEqual(value);
+  });
+
+  it('inlines small schemaless leaf objects as JSON cells', () => {
+    const value = {
+      event: 'login',
+      metadata: {
+        ip: '127.0.0.1',
+        user_agent: 'Safari'
+      }
+    };
+
+    const tile = encodeJsonToTile(value);
+
+    expect(tile).toContain('metadata:j');
+    expect(tile).toContain(
+      '{"ip":"127.0.0.1","user_agent":"Safari"}'
+    );
+    expect(tile).not.toContain('root.metadata');
+    expect(decodeTileToJson(tile)).toEqual(value);
+  });
+
+  it('keeps repeated schema objects in tables by default', () => {
+    const value = {
+      events: [
+        { metadata: { browser: 'Safari', region: 'us' } },
+        { metadata: { browser: 'Chrome', region: 'eu' } }
+      ]
+    };
+
+    const tile = encodeJsonToTile(value);
+
+    expect(tile).toContain('p0\tmetadata\tr:');
+    expect(tile).toContain('object\troot.events[].metadata');
+    expect(tile).not.toContain('metadata:j');
+    expect(decodeTileToJson(tile)).toEqual(value);
+  });
+
+  it('allows path rules to force inline JSON or referenced tables', () => {
+    const value = {
+      event: 'login',
+      metadata: {
+        ip: '127.0.0.1',
+        user_agent: 'Safari'
+      },
+      actor: {
+        id: 'u1',
+        name: 'Ada'
+      }
+    };
+
+    const referenced_tile = encodeJsonToTile(value, {
+      path_rules: {
+        'root.metadata': 'reference_table'
+      }
+    });
+    expect(referenced_tile).toContain('metadata@');
+    expect(referenced_tile).toContain('object\troot.metadata');
+
+    const inline_tile = encodeJsonToTile(value, {
+      path_rules: {
+        'root.actor': 'inline_json'
+      }
+    });
+    expect(inline_tile).toContain('actor:j');
+    expect(inline_tile).not.toContain('object\troot.actor');
+    expect(decodeTileToJson(referenced_tile)).toEqual(value);
+    expect(decodeTileToJson(inline_tile)).toEqual(value);
+  });
+
+  it('rejects path rules for unknown object paths', () => {
+    expect(() =>
+      encodeJsonToTile(
+        { event: 'login' },
+        {
+          path_rules: {
+            'root.missing': 'inline_json'
+          }
+        }
+      )
+    ).toThrow('unknown object path');
   });
 
   it('round trips a primitive root value without creating data tables', () => {

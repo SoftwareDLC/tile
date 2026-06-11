@@ -1,74 +1,74 @@
 | Fixture | Task | Difficulty | Variant | Prompt chars | Est. prompt tokens | Prompt chars vs compact JSON |
 | --- | --- | ---: | --- | ---: | ---: | ---: |
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | Compact JSON | 134,135 | 33,534 | 100.0%
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | Pretty JSON | 219,684 | 54,921 | 163.8%
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | TILE path | 176,352 | 44,088 | 131.5%
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | TILE normalized | 179,818 | 44,955 | 134.1%
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | TILE first-class relational | 42,454 | 10,614 | 31.7%
-OpenStreetMap extract | longest_way_middle_node_window | 5 (very hard) | TILE first-class embedded | 39,795 | 9,949 | 29.7%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | Compact JSON | 134,105 | 33,527 | 100.0%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | Pretty JSON | 219,654 | 54,914 | 163.8%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | TILE path | 176,322 | 44,081 | 131.5%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | TILE normalized | 179,788 | 44,947 | 134.1%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | TILE first-class relational | 42,424 | 10,606 | 31.6%
-OpenStreetMap extract | closest_consecutive_node_refs | 5 (very hard) | TILE first-class embedded | 39,765 | 9,942 | 29.7%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | Compact JSON | 134,000 | 33,500 | 100.0%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | Pretty JSON | 219,549 | 54,888 | 163.8%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | TILE path | 176,217 | 44,055 | 131.5%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | TILE normalized | 179,683 | 44,921 | 134.1%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | TILE first-class relational | 42,319 | 10,580 | 31.6%
-OpenStreetMap extract | lowest_shared_node_pair_details | 5 (very hard) | TILE first-class embedded | 39,660 | 9,915 | 29.6%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | Compact JSON | 214,123 | 53,531 | 100.0%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | Pretty JSON | 303,320 | 75,830 | 141.7%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | TILE path | 88,995 | 22,249 | 41.6%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | TILE normalized | 89,001 | 22,251 | 41.6%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | TILE first-class relational | 69,575 | 17,394 | 32.5%
-Wikidata truthy triples | uk_human_most_occupations_birthplace | 5 (very hard) | TILE first-class embedded | 44,769 | 11,193 | 20.9%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | Compact JSON | 214,129 | 53,533 | 100.0%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | Pretty JSON | 303,326 | 75,832 | 141.7%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | TILE path | 89,001 | 22,251 | 41.6%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | TILE normalized | 89,007 | 22,252 | 41.6%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | TILE first-class relational | 69,581 | 17,396 | 32.5%
-Wikidata truthy triples | douglas_adams_education_after_occupation_check | 4 (harder) | TILE first-class embedded | 44,775 | 11,194 | 20.9%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | Compact JSON | 214,014 | 53,504 | 100.0%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | Pretty JSON | 303,211 | 75,803 | 141.7%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | TILE path | 88,886 | 22,222 | 41.5%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | TILE normalized | 88,892 | 22,223 | 41.5%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | TILE first-class relational | 69,466 | 17,367 | 32.5%
-Wikidata truthy triples | cambridge_born_screenwriter_deathplace | 5 (very hard) | TILE first-class embedded | 44,660 | 11,165 | 20.9%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | Compact JSON | 172,171 | 43,043 | 100.0%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | Pretty JSON | 218,809 | 54,703 | 127.1%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | TILE path | 109,894 | 27,474 | 63.8%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | TILE normalized | 109,900 | 27,475 | 63.8%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | TILE first-class relational | 100,805 | 25,202 | 58.5%
-MusicBrainz release groups | ok_computer_neighbor_albums | 5 (very hard) | TILE first-class embedded | 63,977 | 15,995 | 37.2%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | Compact JSON | 172,329 | 43,083 | 100.0%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | Pretty JSON | 218,967 | 54,742 | 127.1%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | TILE path | 110,052 | 27,513 | 63.9%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | TILE normalized | 110,058 | 27,515 | 63.9%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | TILE first-class relational | 100,963 | 25,241 | 58.6%
-MusicBrainz release groups | largest_album_date_span | 5 (very hard) | TILE first-class embedded | 64,135 | 16,034 | 37.2%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | Compact JSON | 172,338 | 43,085 | 100.0%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | Pretty JSON | 218,976 | 54,744 | 127.1%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | TILE path | 110,061 | 27,516 | 63.9%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | TILE normalized | 110,067 | 27,517 | 63.9%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | TILE first-class relational | 100,972 | 25,243 | 58.6%
-MusicBrainz release groups | hundredth_album_by_artist | 4 (harder) | TILE first-class embedded | 64,144 | 16,036 | 37.2%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | Compact JSON | 115,260 | 28,815 | 100.0%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | Pretty JSON | 167,540 | 41,885 | 145.4%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | TILE path | 60,233 | 15,059 | 52.3%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | TILE normalized | 60,239 | 15,060 | 52.3%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | TILE first-class relational | 50,568 | 12,642 | 43.9%
-npm dependency metadata | vite_peer_with_most_peer_deps | 5 (very hard) | TILE first-class embedded | 39,496 | 9,874 | 34.3%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | Compact JSON | 115,317 | 28,830 | 100.0%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | Pretty JSON | 167,597 | 41,900 | 145.3%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | TILE path | 60,290 | 15,073 | 52.3%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | TILE normalized | 60,296 | 15,074 | 52.3%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | TILE first-class relational | 50,625 | 12,657 | 43.9%
-npm dependency metadata | highest_total_dependency_window | 4 (harder) | TILE first-class embedded | 39,553 | 9,889 | 34.3%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | Compact JSON | 115,286 | 28,822 | 100.0%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | Pretty JSON | 167,566 | 41,892 | 145.3%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | TILE path | 60,259 | 15,065 | 52.3%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | TILE normalized | 60,265 | 15,067 | 52.3%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | TILE first-class relational | 50,594 | 12,649 | 43.9%
-npm dependency metadata | most_shared_dependency_packages | 5 (very hard) | TILE first-class embedded | 39,522 | 9,881 | 34.3%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | Compact JSON | 134,143 | 33,536 | 100.0%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | Pretty JSON | 219,692 | 54,923 | 163.8%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | TILE path | 176,360 | 44,090 | 131.5%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | TILE normalized | 119,960 | 29,990 | 89.4%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | TILE first-class relational | 9,852 | 2,463 | 7.3%
+OpenStreetMap extract | osm_east_asian_food_and_tea_venues | 3 (semantic filtering) | TILE first-class embedded | 12,703 | 3,176 | 9.5%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | Compact JSON | 134,031 | 33,508 | 100.0%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | Pretty JSON | 219,580 | 54,895 | 163.8%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | TILE path | 176,248 | 44,062 | 131.5%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | TILE normalized | 119,848 | 29,962 | 89.4%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | TILE first-class relational | 9,740 | 2,435 | 7.3%
+OpenStreetMap extract | osm_coffee_or_tea_cafes | 3 (semantic filtering) | TILE first-class embedded | 12,591 | 3,148 | 9.4%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | Compact JSON | 134,085 | 33,522 | 100.0%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | Pretty JSON | 219,634 | 54,909 | 163.8%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | TILE path | 176,302 | 44,076 | 131.5%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | TILE normalized | 119,902 | 29,976 | 89.4%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | TILE first-class relational | 9,794 | 2,449 | 7.3%
+OpenStreetMap extract | osm_person_named_ways | 3 (semantic name classification) | TILE first-class embedded | 12,645 | 3,162 | 9.4%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | Compact JSON | 214,104 | 53,526 | 100.0%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | Pretty JSON | 303,301 | 75,826 | 141.7%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | TILE path | 88,976 | 22,244 | 41.6%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | TILE normalized | 88,982 | 22,246 | 41.6%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | TILE first-class relational | 4,258 | 1,065 | 2.0%
+Wikidata truthy triples | wikidata_writer_musicians | 3 (semantic claim grouping) | TILE first-class embedded | 2,298 | 575 | 1.1%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | Compact JSON | 214,115 | 53,529 | 100.0%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | Pretty JSON | 303,312 | 75,828 | 141.7%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | TILE path | 88,987 | 22,247 | 41.6%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | TILE normalized | 88,993 | 22,249 | 41.6%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | TILE first-class relational | 4,269 | 1,068 | 2.0%
+Wikidata truthy triples | wikidata_inventor_mathematician_writers | 3 (semantic claim grouping) | TILE first-class embedded | 2,309 | 578 | 1.1%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | Compact JSON | 214,071 | 53,518 | 100.0%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | Pretty JSON | 303,268 | 75,817 | 141.7%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | TILE path | 88,943 | 22,236 | 41.5%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | TILE normalized | 88,949 | 22,238 | 41.6%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | TILE first-class relational | 4,225 | 1,057 | 2.0%
+Wikidata truthy triples | wikidata_douglas_adams_creative_occupations | 2 (local semantic extraction) | TILE first-class embedded | 2,265 | 567 | 1.1%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | Compact JSON | 172,152 | 43,038 | 100.0%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | Pretty JSON | 218,790 | 54,698 | 127.1%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | TILE path | 109,875 | 27,469 | 63.8%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | TILE normalized | 109,881 | 27,471 | 63.8%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | TILE first-class relational | 9,848 | 2,462 | 5.7%
+MusicBrainz release groups | musicbrainz_david_bowie_space_star_titles | 3 (artist-local title classification) | TILE first-class embedded | 7,373 | 1,844 | 4.3%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | Compact JSON | 172,182 | 43,046 | 100.0%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | Pretty JSON | 218,820 | 54,705 | 127.1%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | TILE path | 109,905 | 27,477 | 63.8%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | TILE normalized | 109,911 | 27,478 | 63.8%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | TILE first-class relational | 9,878 | 2,470 | 5.7%
+MusicBrainz release groups | musicbrainz_queen_best_collection_titles | 3 (artist-local title classification) | TILE first-class embedded | 7,403 | 1,851 | 4.3%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | Compact JSON | 172,206 | 43,052 | 100.0%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | Pretty JSON | 218,844 | 54,711 | 127.1%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | TILE path | 109,929 | 27,483 | 63.8%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | TILE normalized | 109,935 | 27,484 | 63.8%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | TILE first-class relational | 9,902 | 2,476 | 5.8%
+MusicBrainz release groups | musicbrainz_radiohead_live_or_broadcast_titles | 3 (title-context classification) | TILE first-class embedded | 7,427 | 1,857 | 4.3%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | Compact JSON | 115,261 | 28,816 | 100.0%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | Pretty JSON | 167,541 | 41,886 | 145.4%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | TILE path | 60,234 | 15,059 | 52.3%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | TILE normalized | 60,240 | 15,060 | 52.3%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | TILE first-class relational | 2,312 | 578 | 2.0%
+npm dependency metadata | npm_react_ecosystem_packages | 3 (package role classification) | TILE first-class embedded | 2,970 | 743 | 2.6%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | Compact JSON | 115,276 | 28,819 | 100.0%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | Pretty JSON | 167,556 | 41,889 | 145.4%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | TILE path | 60,249 | 15,063 | 52.3%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | TILE normalized | 60,255 | 15,064 | 52.3%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | TILE first-class relational | 2,327 | 582 | 2.0%
+npm dependency metadata | npm_database_and_storage_packages | 2 (package role classification) | TILE first-class embedded | 2,985 | 747 | 2.6%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | Compact JSON | 115,356 | 28,839 | 100.0%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | Pretty JSON | 167,636 | 41,909 | 145.3%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | TILE path | 60,329 | 15,083 | 52.3%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | TILE normalized | 60,335 | 15,084 | 52.3%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | TILE first-class relational | 2,407 | 602 | 2.1%
+npm dependency metadata | npm_testing_and_mocking_packages | 3 (package role classification) | TILE first-class embedded | 3,065 | 767 | 2.7%

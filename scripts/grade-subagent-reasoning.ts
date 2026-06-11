@@ -1,12 +1,32 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 type ExpectedCase = {
+  fixture_id: string;
   fixture: string;
   task: string;
+  variant_id: string;
   variant: string;
   expected_answer: string;
   perceived_difficulty: number;
   difficulty_label: string;
+  prompt_chars: number;
+  estimated_prompt_tokens: number;
+};
+
+type ReasoningTask = {
+  fixture: string;
+  id: string;
+  expected_answer: string;
+  perceived_difficulty: number;
+  difficulty_label: string;
+};
+
+type ReasoningCase = {
+  fixture_id: string;
+  fixture: string;
+  task: string;
+  variant_id: string;
+  variant: string;
   prompt_chars: number;
   estimated_prompt_tokens: number;
 };
@@ -77,15 +97,45 @@ function asNumber(value: unknown): number {
   return typeof value === 'number' && Number.isFinite(value) ? value : 0;
 }
 
+async function readExpectedCases(): Promise<ExpectedCase[]> {
+  const tasks = JSON.parse(
+    await readFile('benchmarks/results/reasoning-tasks.json', 'utf8')
+  ) as ReasoningTask[];
+  const cases = JSON.parse(
+    await readFile('benchmarks/results/reasoning-cases.json', 'utf8')
+  ) as ReasoningCase[];
+  const tasks_by_key = new Map(
+    tasks.map((task) => [[task.fixture, task.id].join('\u0000'), task])
+  );
+
+  return cases.map((entry) => {
+    const task = tasks_by_key.get([entry.fixture_id, entry.task].join('\u0000'));
+    if (!task) {
+      throw new Error(`Missing expected task ${entry.fixture_id} / ${entry.task}`);
+    }
+
+    return {
+      fixture_id: entry.fixture_id,
+      fixture: entry.fixture,
+      task: entry.task,
+      variant_id: entry.variant_id,
+      variant: entry.variant,
+      expected_answer: task.expected_answer,
+      perceived_difficulty: task.perceived_difficulty,
+      difficulty_label: task.difficulty_label,
+      prompt_chars: entry.prompt_chars,
+      estimated_prompt_tokens: entry.estimated_prompt_tokens
+    };
+  });
+}
+
 async function main(): Promise<void> {
   const answer_path = process.argv[2];
   if (!answer_path) {
     throw new Error('Usage: tsx scripts/grade-subagent-reasoning.ts <answers.json>');
   }
 
-  const expected_cases = JSON.parse(
-    await readFile('benchmarks/results/reasoning-prompts.json', 'utf8')
-  ) as ExpectedCase[];
+  const expected_cases = await readExpectedCases();
   const subagent_result = JSON.parse(
     await readFile(answer_path, 'utf8')
   ) as SubagentResult;

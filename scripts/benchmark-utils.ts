@@ -37,6 +37,7 @@ export type ReasoningTask = {
 };
 
 export type ReasoningRow = {
+  fixture_id: string;
   fixture: string;
   task: string;
   perceived_difficulty: number;
@@ -48,7 +49,20 @@ export type ReasoningRow = {
   prompt_chars_vs_compact_json: number;
 };
 
-export type ReasoningPromptCase = ReasoningRow & {
+export type ReasoningContext = {
+  fixture_id: string;
+  fixture: string;
+  variant_id: string;
+  variant: string;
+  text: string;
+  chars: number;
+  estimated_tokens: number;
+  chars_vs_compact_json: number;
+};
+
+export type ReasoningCase = ReasoningRow;
+
+export type ReasoningPromptCase = ReasoningCase & {
   question: string;
   expected_answer: string;
   prompt: string;
@@ -110,6 +124,10 @@ export function normalizedTileOptions(fixture_id: string): JsonTileEncodeOptions
   if (fixture_id === 'openstreetmap_extract') {
     return {
       object_table_strategy: 'normalized_shape',
+      path_rules: {
+        'root.nodes[].tags': 'inline_json',
+        'root.ways[].tags': 'inline_json'
+      },
       normalized_min_shared_keys: 2,
       normalized_min_overlap_ratio: 0.3
     };

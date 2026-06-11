@@ -16,6 +16,7 @@ export type {
   JsonTileFirstClassEmbeddedColumns,
   JsonTileFirstClassTable,
   JsonTileObjectTableStrategy,
+  JsonTilePathEncodingStrategy,
   JsonTileSizeComparison,
   JsonValue
 } from './types.js';

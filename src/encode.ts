@@ -17,12 +17,194 @@ import {
   validateJsonValue
 } from './codec-internals.js';
 import { escapeTileText } from './text.js';
-import type { JsonTileEncodeOptions, JsonValue } from './types.js';
 import type {
+  JsonObject,
+  JsonTileEncodeOptions,
+  JsonTilePathEncodingStrategy,
+  JsonValue
+} from './types.js';
+import type {
+  NormalizedJsonTileEncodeOptions,
   TileArrayRow,
   TileTableDraft,
   TileTableKind
 } from './codec-internals.js';
+
+type ObjectPathStats = {
+  path: string;
+  count: number;
+  max_compact_chars: number;
+  min_key_count: number;
+  key_counts: Map<string, number>;
+  all_primitive_leaf_objects: boolean;
+  has_relation_key: boolean;
+};
+
+function collectVisibleSourceTokens(value: JsonValue): Set<string> {
+  const tokens = new Set<string>();
+
+  function visit(input: JsonValue): void {
+    if (typeof input === 'string') {
+      tokens.add(input);
+      return;
+    }
+
+    if (Array.isArray(input)) {
+      input.forEach(visit);
+      return;
+    }
+
+    if (isJsonObject(input)) {
+      Object.entries(input).forEach(([key, child_value]) => {
+        tokens.add(key);
+        visit(child_value);
+      });
+    }
+  }
+
+  visit(value);
+  return tokens;
+}
+
+function isPrimitiveLeafObject(value: JsonObject): boolean {
+  return Object.values(value).every(
+    (child_value) =>
+      child_value === null ||
+      typeof child_value === 'string' ||
+      typeof child_value === 'number' ||
+      typeof child_value === 'boolean'
+  );
+}
+
+function hasRelationKey(keys: readonly string[]): boolean {
+  return keys.some(
+    (key) => key === 'id' || key === '$id' || /(?:^|_)id$/i.test(key)
+  );
+}
+
+function collectObjectPathStats(value: JsonValue): Map<string, ObjectPathStats> {
+  const stats_by_path = new Map<string, ObjectPathStats>();
+
+  function visit(input: JsonValue, path: string): void {
+    if (Array.isArray(input)) {
+      input.forEach((item) => visit(item, `${path}[]`));
+      return;
+    }
+
+    if (!isJsonObject(input)) {
+      return;
+    }
+
+    const keys = Object.keys(input);
+    const existing = stats_by_path.get(path);
+    const stats =
+      existing ??
+      {
+        path,
+        count: 0,
+        max_compact_chars: 0,
+        min_key_count: Number.POSITIVE_INFINITY,
+        key_counts: new Map<string, number>(),
+        all_primitive_leaf_objects: true,
+        has_relation_key: false
+      };
+
+    stats.count += 1;
+    stats.max_compact_chars = Math.max(
+      stats.max_compact_chars,
+      JSON.stringify(input).length
+    );
+    stats.min_key_count = Math.min(stats.min_key_count, keys.length);
+    stats.all_primitive_leaf_objects =
+      stats.all_primitive_leaf_objects && isPrimitiveLeafObject(input);
+    stats.has_relation_key = stats.has_relation_key || hasRelationKey(keys);
+    keys.forEach((key) => {
+      stats.key_counts.set(key, (stats.key_counts.get(key) ?? 0) + 1);
+    });
+    stats_by_path.set(path, stats);
+
+    Object.entries(input).forEach(([key, child_value]) => {
+      visit(child_value, `${path}${createPathSegment(key)}`);
+    });
+  }
+
+  visit(value, ROOT_PATH);
+  return stats_by_path;
+}
+
+function hasClearObjectSchema(stats: ObjectPathStats): boolean {
+  if (stats.count < 2) {
+    return false;
+  }
+
+  const shared_key_count = [...stats.key_counts.values()].filter(
+    (count) => count === stats.count
+  ).length;
+  const overlap_denominator = Math.max(stats.min_key_count, 1);
+
+  return shared_key_count / overlap_denominator >= 0.8;
+}
+
+function shouldAutoInlineSmallObject(input: {
+  path: string;
+  stats: ObjectPathStats;
+  options: NormalizedJsonTileEncodeOptions;
+}): boolean {
+  if (input.path === ROOT_PATH) {
+    return false;
+  }
+
+  return (
+    input.stats.all_primitive_leaf_objects &&
+    !input.stats.has_relation_key &&
+    !hasClearObjectSchema(input.stats) &&
+    input.stats.max_compact_chars <= input.options.inline_small_object_max_chars
+  );
+}
+
+function createObjectPathPlan(input: {
+  stats_by_path: Map<string, ObjectPathStats>;
+  options: NormalizedJsonTileEncodeOptions;
+}): Map<string, JsonTilePathEncodingStrategy> {
+  const plan = new Map<string, JsonTilePathEncodingStrategy>();
+  input.stats_by_path.forEach((stats, path) => {
+    plan.set(
+      path,
+      shouldAutoInlineSmallObject({ path, stats, options: input.options })
+        ? 'inline_json'
+        : 'reference_table'
+    );
+  });
+
+  Object.entries(input.options.path_rules).forEach(([path, raw_strategy]) => {
+    if (
+      raw_strategy !== 'auto' &&
+      raw_strategy !== 'reference_table' &&
+      raw_strategy !== 'inline_json'
+    ) {
+      throw new Error(
+        `Invalid TILE path rule strategy for ${path}: ${String(raw_strategy)}`
+      );
+    }
+
+    const strategy = raw_strategy;
+    if (strategy === 'auto') {
+      return;
+    }
+
+    if (!input.stats_by_path.has(path)) {
+      throw new Error(`TILE path rule references unknown object path: ${path}`);
+    }
+
+    plan.set(path, strategy);
+  });
+
+  return plan;
+}
+
+function encodeInlineJsonCell(value: JsonValue): string {
+  return `j:${escapeTileText(JSON.stringify(value))}`;
+}
 
 export function encodeJsonToTile(
   value: unknown,
@@ -30,6 +212,11 @@ export function encodeJsonToTile(
 ): string {
   const json_value = validateJsonValue(value);
   const normalized_options = normalizeEncodeOptions(options);
+  const visible_source_tokens = collectVisibleSourceTokens(json_value);
+  const object_path_plan = createObjectPathPlan({
+    stats_by_path: collectObjectPathStats(json_value),
+    options: normalized_options
+  });
   const tables: TileTableDraft[] = [];
   const table_by_key = new Map<string, TileTableDraft>();
   let properties_table: TileTableDraft | null = null;
@@ -38,15 +225,32 @@ export function encodeJsonToTile(
   let next_array_number = 0;
   let next_properties_object_number = 0;
 
+  function nextGeneratedId(prefix: string, next_number: number): {
+    id: string;
+    next_number: number;
+  } {
+    let candidate_number = next_number;
+    let id = `${prefix}${candidate_number.toString(36)}`;
+
+    while (visible_source_tokens.has(id)) {
+      candidate_number += 1;
+      id = `${prefix}${candidate_number.toString(36)}`;
+    }
+
+    return { id, next_number: candidate_number + 1 };
+  }
+
   function createTable(kind: TileTableKind, path: string): TileTableDraft {
     const table_key = `${kind}\u0000${path}`;
     const existing_table = table_by_key.get(table_key);
     if (existing_table) {
       return existing_table;
     }
+    const next_table_id = nextGeneratedId('t', next_table_number);
+    next_table_number = next_table_id.next_number;
 
     const table: TileTableDraft = {
-      id: `t${next_table_number.toString(36)}`,
+      id: next_table_id.id,
       kind,
       path,
       paths: [path],
@@ -58,7 +262,6 @@ export function encodeJsonToTile(
       array_rows: [],
       property_rows: []
     };
-    next_table_number += 1;
     tables.push(table);
     table_by_key.set(table_key, table);
 
@@ -70,8 +273,11 @@ export function encodeJsonToTile(
       return properties_table;
     }
 
+    const next_table_id = nextGeneratedId('t', next_table_number);
+    next_table_number = next_table_id.next_number;
+
     properties_table = {
-      id: `t${next_table_number.toString(36)}`,
+      id: next_table_id.id,
       kind: 'properties',
       path: PROPERTIES_PATH,
       paths: [PROPERTIES_PATH],
@@ -83,7 +289,6 @@ export function encodeJsonToTile(
       array_rows: [],
       property_rows: []
     };
-    next_table_number += 1;
 
     return properties_table;
   }
@@ -143,8 +348,9 @@ export function encodeJsonToTile(
   function encodeValue(input: JsonValue, path: string): string {
     if (Array.isArray(input)) {
       const table = getArrayTable(path);
-      const array_id = `a${next_array_number.toString(36)}`;
-      next_array_number += 1;
+      const next_array_id = nextGeneratedId('a', next_array_number);
+      const array_id = next_array_id.id;
+      next_array_number = next_array_id.next_number;
       table.array_ids.push(array_id);
 
       input.forEach((item, index) => {
@@ -159,10 +365,18 @@ export function encodeJsonToTile(
     }
 
     if (isJsonObject(input)) {
+      if (object_path_plan.get(path) === 'inline_json') {
+        return encodeInlineJsonCell(input);
+      }
+
       if (path !== ROOT_PATH && Object.keys(input).length === 1) {
         const table = getPropertiesTable();
-        const object_id = `p${next_properties_object_number.toString(36)}`;
-        next_properties_object_number += 1;
+        const next_object_id = nextGeneratedId(
+          'p',
+          next_properties_object_number
+        );
+        const object_id = next_object_id.id;
+        next_properties_object_number = next_object_id.next_number;
 
         Object.entries(input).forEach(([key, child_value]) => {
           table.property_rows.push({
@@ -179,8 +393,9 @@ export function encodeJsonToTile(
       }
 
       const table = getObjectTable(path, new Set(Object.keys(input)));
-      const row_id = `r${next_object_row_number.toString(36)}`;
-      next_object_row_number += 1;
+      const next_row_id = nextGeneratedId('r', next_object_row_number);
+      const row_id = next_row_id.id;
+      next_object_row_number = next_row_id.next_number;
       const cells_by_column = new Map<string, string>();
 
       Object.entries(input).forEach(([key, child_value]) => {

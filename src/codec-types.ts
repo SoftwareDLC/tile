@@ -1,7 +1,10 @@
-import type { JsonTileObjectTableStrategy } from './types.js';
+import type {
+  JsonTileObjectTableStrategy,
+  JsonTilePathEncodingStrategy
+} from './types.js';
 
 export type TileTableKind = 'object' | 'array' | 'properties';
-export type TilePrimitiveType = 's' | 'n' | 'b' | 'z';
+export type TilePrimitiveType = 's' | 'n' | 'b' | 'z' | 'j';
 
 export type TileObjectRow = {
   id: string;
@@ -67,6 +70,8 @@ export type TileOutputColumnPlan = {
 
 export type NormalizedJsonTileEncodeOptions = {
   object_table_strategy: JsonTileObjectTableStrategy;
+  path_rules: Readonly<Record<string, JsonTilePathEncodingStrategy>>;
+  inline_small_object_max_chars: number;
   normalized_min_shared_keys: number;
   normalized_min_overlap_ratio: number;
   normalized_max_columns: number;

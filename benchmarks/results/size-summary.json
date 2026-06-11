@@ -23,23 +23,23 @@
   {
     "fixture": "OpenStreetMap extract",
     "variant": "TILE normalized",
-    "chars": 179372,
-    "estimated_tokens": 44843,
-    "chars_vs_compact_json": 1.3416808784370045
+    "chars": 119506,
+    "estimated_tokens": 29877,
+    "chars_vs_compact_json": 0.8938904347305747
   },
   {
     "fixture": "OpenStreetMap extract",
     "variant": "TILE first-class relational",
-    "chars": 41996,
-    "estimated_tokens": 10499,
-    "chars_vs_compact_json": 0.31412500373993957
+    "chars": 9386,
+    "estimated_tokens": 2347,
+    "chars_vs_compact_json": 0.07020614546868922
   },
   {
     "fixture": "OpenStreetMap extract",
     "variant": "TILE first-class embedded",
-    "chars": 39339,
-    "estimated_tokens": 9835,
-    "chars_vs_compact_json": 0.29425096490440716
+    "chars": 12239,
+    "estimated_tokens": 3060,
+    "chars_vs_compact_json": 0.0915462406127517
   },
   {
     "fixture": "Wikidata truthy triples",
@@ -72,16 +72,16 @@
   {
     "fixture": "Wikidata truthy triples",
     "variant": "TILE first-class relational",
-    "chars": 69190,
-    "estimated_tokens": 17298,
-    "chars_vs_compact_json": 0.3236913633960693
+    "chars": 3892,
+    "estimated_tokens": 973,
+    "chars_vs_compact_json": 0.018207931584585946
   },
   {
     "fixture": "Wikidata truthy triples",
     "variant": "TILE first-class embedded",
-    "chars": 44386,
-    "estimated_tokens": 11097,
-    "chars_vs_compact_json": 0.20765088677117982
+    "chars": 1934,
+    "estimated_tokens": 484,
+    "chars_vs_compact_json": 0.009047826229339471
   },
   {
     "fixture": "MusicBrainz release groups",
@@ -114,16 +114,16 @@
   {
     "fixture": "MusicBrainz release groups",
     "variant": "TILE first-class relational",
-    "chars": 100474,
-    "estimated_tokens": 25119,
-    "chars_vs_compact_json": 0.584644031305461
+    "chars": 9536,
+    "estimated_tokens": 2384,
+    "chars_vs_compact_json": 0.055488638677955254
   },
   {
     "fixture": "MusicBrainz release groups",
     "variant": "TILE first-class embedded",
-    "chars": 63648,
-    "estimated_tokens": 15912,
-    "chars_vs_compact_json": 0.37035873265252683
+    "chars": 7063,
+    "estimated_tokens": 1766,
+    "chars_vs_compact_json": 0.041098600564429315
   },
   {
     "fixture": "npm dependency metadata",
@@ -156,15 +156,15 @@
   {
     "fixture": "npm dependency metadata",
     "variant": "TILE first-class relational",
-    "chars": 50185,
-    "estimated_tokens": 12547,
-    "chars_vs_compact_json": 0.4368015179472896
+    "chars": 1928,
+    "estimated_tokens": 482,
+    "chars_vs_compact_json": 0.016780976917452912
   },
   {
     "fixture": "npm dependency metadata",
     "variant": "TILE first-class embedded",
-    "chars": 39115,
-    "estimated_tokens": 9779,
-    "chars_vs_compact_json": 0.34045016189116734
+    "chars": 2588,
+    "estimated_tokens": 647,
+    "chars_vs_compact_json": 0.022525502210771854
   }
 ]

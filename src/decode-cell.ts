@@ -1,6 +1,6 @@
-import { parsePrimitiveCellHeader } from './codec-internals.js';
+import { parsePrimitiveCellHeader, validateJsonValue } from './codec-internals.js';
 import { unescapeTileText } from './text.js';
-import type { JsonObject, JsonPrimitive, JsonValue } from './types.js';
+import type { JsonObject, JsonValue } from './types.js';
 import type {
   ParsedTileColumn,
   ParsedTileTable,
@@ -47,6 +47,15 @@ export function parseTileCell(
     }
 
     return null;
+  }
+
+  if (primitive?.primitive_type === 'j') {
+    try {
+      return validateJsonValue(JSON.parse(unescapeTileText(payload)));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      throw new Error(`Invalid TILE JSON cell: ${message}`);
+    }
   }
 
   if (prefix === 'r:') {
@@ -354,7 +363,7 @@ function decodePropertiesReference(input: {
 function parsePrimitiveColumnPayload(input: {
   primitive_type: TilePrimitiveType;
   cell: string;
-}): JsonPrimitive {
+}): JsonValue {
   if (input.primitive_type === 's') {
     return unescapeTileText(input.cell);
   }
@@ -378,6 +387,15 @@ function parsePrimitiveColumnPayload(input: {
     }
 
     throw new Error(`Invalid TILE boolean cell: ${input.cell}`);
+  }
+
+  if (input.primitive_type === 'j') {
+    try {
+      return validateJsonValue(JSON.parse(unescapeTileText(input.cell)));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      throw new Error(`Invalid TILE JSON cell: ${message}`);
+    }
   }
 
   if (input.cell !== '1') {

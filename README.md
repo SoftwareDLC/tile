@@ -57,6 +57,23 @@ npx @software-dlc/tile size data.json
 - `encodeFirstClassTablesToTile(document)` writes caller-provided projection tables directly for LLM/context use. First-class projections are intentionally user-designed and are not decoded by `decodeTileToJson`.
 - `escapeTileText(value, delimiter?)` and `unescapeTileText(value)` expose TILE text escaping.
 
+`encodeJsonToTile` automatically keeps small schemaless leaf objects inline as
+typed JSON cells when that is clearer than creating another referenced object
+table. Callers can override object-path decisions when they know the data model:
+
+```ts
+const tile = encodeJsonToTile(value, {
+  path_rules: {
+    'root.events[].metadata': 'inline_json',
+    'root.events[].actor': 'reference_table'
+  }
+});
+```
+
+The default planner stays conservative: roots, repeated schema-like objects,
+objects with identity keys, and objects containing nested arrays or objects stay
+table-backed unless a caller rule says otherwise.
+
 First-class TILE documents can also choose a delimiter:
 
 ```ts
@@ -89,56 +106,97 @@ The default fixture profile targets larger structured samples around 100k-200k c
 TILE_BENCHMARK_PROFILE=small pnpm benchmark
 ```
 
-To run model-backed reasoning performance comparisons, first generate the benchmark prompts with `pnpm benchmark`, then run:
+To run model-backed reasoning performance comparisons, first generate the
+benchmark artifacts with `pnpm benchmark`, then run a narrow slice:
 
 ```sh
-OPENAI_API_KEY=... TILE_REASONING_MODEL=... pnpm benchmark:reasoning
+OPENAI_API_KEY=... pnpm benchmark:reasoning -- \
+  --model gpt-5.4-mini \
+  --variant-ids compact_json,tile_normalized,tile_first_class_embedded \
+  --task-ids osm_east_asian_food_and_tea_venues,osm_coffee_or_tea_cafes \
+  --max-output-tokens 512
 ```
 
-That optional step writes `benchmarks/results/reasoning-performance.md` with accuracy, latency, and API token usage for each JSON/TILE variant.
+Avoid running every generated fixture, question, and encoding variant in a single
+API-backed sweep unless you have a large token-per-minute quota. The large
+fixtures produce prompts in the tens of thousands of tokens; broad sweeps mostly
+measure API throughput and retry behavior. Prefer a staged workflow:
 
-Current size summary, generated on Node 20. Percentage columns are **characters as a percentage of compact JSON**, so lower is better. `100%` means the same size as compact JSON; `31.4%` means a 68.6% reduction; `131.6%` means 31.6% larger than compact JSON.
+1. Start with one fixture and one question family.
+2. Compare two or three variants, such as compact JSON, the automatic TILE
+   candidate, and one first-class projection.
+3. Use enough `--max-output-tokens` for the answer shape. Long list answers need
+   more than terse scalar answers.
+4. Expand to more variants only after the first slice shows useful signal.
+
+Useful filters:
+
+```sh
+OPENAI_API_KEY=... pnpm benchmark:reasoning -- \
+  --model gpt-5.4-mini \
+  --variant-ids tile_normalized,tile_first_class_embedded \
+  --task-ids osm_east_asian_food_and_tea_venues,osm_person_named_ways
+```
+
+That optional step assembles prompts from the normalized benchmark artifacts and
+writes `benchmarks/results/reasoning-performance.md` with accuracy, latency, and
+API token usage for each JSON/TILE variant.
+
+Current size summary, generated on Node 20. Percentage columns are **characters as a percentage of compact JSON**, so lower is better. `100%` means the same size as compact JSON; `7.0%` means a 93.0% reduction; `131.6%` means 31.6% larger than compact JSON.
 
 | Fixture | Compact JSON chars | Est. compact JSON tokens | Automatic TILE path chars vs compact JSON | TILE normalized chars vs compact JSON | First-class relational chars vs compact JSON | First-class embedded chars vs compact JSON |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| OpenStreetMap extract | 133,692 | 33,423 | 131.6% | 134.2% | 31.4% | 29.4% |
-| Wikidata truthy triples | 213,753 | 53,439 | 41.5% | 41.5% | 32.4% | 20.8% |
-| MusicBrainz release groups | 171,855 | 42,964 | 63.8% | 63.8% | 58.5% | 37.0% |
-| npm dependency metadata | 114,892 | 28,723 | 52.1% | 52.1% | 43.7% | 34.0% |
+| OpenStreetMap extract | 133,692 | 33,423 | 131.6% | 89.4% | 7.0% | 9.2% |
+| Wikidata truthy triples | 213,753 | 53,439 | 41.5% | 41.5% | 1.8% | 0.9% |
+| MusicBrainz release groups | 171,855 | 42,964 | 63.8% | 63.8% | 5.5% | 4.1% |
+| npm dependency metadata | 114,892 | 28,723 | 52.1% | 52.1% | 1.7% | 2.3% |
 
-Recorded blind `gpt-5.4-mini` reasoning run on the large adjacency-heavy prompts:
+Recorded `gpt-5.4-mini` semantic-list benchmark on question-aligned projections:
 
-| Variant | Cases | Correct | Accuracy | Avg. prompt tokens |
+| Fixture | Compact JSON avg list F1 | First-class embedded avg list F1 | Compact JSON avg API input tokens | First-class embedded avg API input tokens |
 | --- | ---: | ---: | ---: | ---: |
-| Compact JSON | 12 | 12 | 100.0% | 39,734 |
-| Pretty JSON | 12 | 10 | 83.3% | 56,838 |
-| TILE path | 12 | 12 | 100.0% | 27,221 |
-| TILE normalized | 12 | 9 | 75.0% | 27,438 |
-| TILE first-class relational | 12 | 9 | 75.0% | 16,466 |
-| TILE first-class embedded | 12 | 11 | 91.7% | 11,756 |
+| OpenStreetMap extract | 85.5% | 94.7% | 50,626 | 4,142 |
+| Wikidata truthy triples | 78.2% | 100.0% | 58,149 | 813 |
+| MusicBrainz release groups | 49.1% | 61.2% | 67,012 | 2,324 |
+| npm dependency metadata | 94.1% | 95.8% | 34,611 | 917 |
 
-These results are not meant to pick one universal best encoding. Different TILE projections are optimal for different lines of questioning:
+These are stochastic model-backed results, not universal constants. The useful
+signal is the pattern: when the first-class projection is designed around the
+question family, it can reduce prompt size by one to two orders of magnitude
+while preserving or improving answer quality.
+
+Benchmark results are not meant to pick one universal best encoding. Different TILE projections are optimal for different lines of questioning:
 
 - **Compact JSON** remains the broadest baseline when full original structure and familiar JSON semantics matter most.
-- **TILE path** is lossless JSON-to-TILE output. In this run it preserved compact JSON reasoning accuracy while using fewer prompt tokens on average, which makes it a strong default for broad questions over large structured JSON.
-- **TILE normalized** can reduce repeated shapes, but the current normalized representation exposes internal row ids. That helped size on some fixtures but hurt questions that asked for original OSM ids.
-- **First-class relational TILE** is a deliberate projection into domain tables. It is compact, but it makes the model perform explicit joins across tables, so it fits questions that naturally use relational joins and clearly named ids.
-- **First-class embedded TILE** keeps repeated local child rows under parent rows. It is the smallest high-performing variant here and fits adjacency-heavy questions where the answer depends on nearby child rows, sibling rows, or parent-child evidence. Its miss in this run came from one Wikidata grouped-claim question, which suggests that first-class projections need to preserve enough labels and local context for the intended question family.
+- **TILE path** is lossless JSON-to-TILE output. It can help broad structured prompts, but it is not automatically smaller for every data shape.
+- **TILE normalized** can reduce repeated shapes while preserving round trips, and path rules such as inline JSON cells can keep local metadata bags readable.
+- **First-class relational TILE** is a deliberate projection into domain tables. It fits questions that naturally use entity lists, filtered edge tables, or joins across clearly named ids.
+- **First-class embedded TILE** keeps the evidence for a question family local: subject-to-claims, artist-to-titles, package-to-relevant-dependencies, or OSM feature-to-tags. It is the strongest compression path when the user knows what kinds of questions they plan to ask.
 
-The benchmark compares character counts, estimated token budgets, and recorded reasoning accuracy across JSON and TILE variants. Full generated tables live in:
+First-class benchmark questions and first-class projections should be designed
+together. The question set is the contract for the projection. If a projection
+is built for way-node adjacency, it should not be used to judge venue-tag
+questions; if the questions ask about OSM cafes, cuisines, or street names, the
+projection must preserve POI tags and way names locally.
+
+The benchmark compares character counts, estimated token budgets, and recorded reasoning accuracy across JSON and TILE variants. Generated benchmark artifacts are normalized to avoid repeating the large encoded datasets in every question prompt:
 
 - `benchmarks/results/size-summary.md`
 - `benchmarks/results/reasoning-context-summary.md`
+- `benchmarks/results/reasoning-tasks.json` for the canonical question and expected-answer set
+- `benchmarks/results/reasoning-contexts.json` for each fixture/encoding context stored once
+- `benchmarks/results/reasoning-cases.json` for the lightweight task/context cross-product and prompt metrics
 - `benchmarks/results/reasoning-performance.md` after `pnpm benchmark:reasoning`
 - `benchmarks/results/subagent-reasoning-performance.md` after a recorded Codex subagent run
 
 To benchmark your own data, use the included fixtures as a template:
 
 1. Pick representative structured JSON near the size of the prompts you actually send.
-2. Generate automatic TILE with `encodeJsonToTile(value)` and first-class variants with `encodeFirstClassTablesToTile({ tables, delimiter })`.
-3. Try at least `delimiter: 'tab'` and `delimiter: 'pipe'` for first-class variants.
-4. Compare compact JSON, path TILE, relational TILE, embedded TILE, and delimiter variants on the same question set.
-5. Score both prompt size and answer quality. A smaller projection is only better when it preserves the ids, labels, ordering fields, and local evidence your questions need.
+2. Define the question families and evidence paths you care about.
+3. Generate automatic TILE with `encodeJsonToTile(value)` and question-aligned first-class variants with `encodeFirstClassTablesToTile({ tables, delimiter })`.
+4. Try at least `delimiter: 'tab'` and `delimiter: 'pipe'` for first-class variants.
+5. Compare compact JSON, path TILE, relational TILE, embedded TILE, and delimiter variants on the same question set, but do it in small API-backed batches.
+6. Score both prompt size and answer quality. A smaller projection is only better when it preserves the ids, labels, ordering fields, and local evidence your questions need.
 
 ## LLM Projection Harness
 

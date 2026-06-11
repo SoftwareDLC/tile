@@ -1,13 +1,8 @@
 import {
-  COLUMN_REF_TDT_VERSION,
   COLUMN_REF_TILE_VERSION,
-  COMPACT_TDT_VERSION,
   COMPACT_TILE_VERSION,
-  LEGACY_TDT_VERSION,
   LEGACY_TILE_VERSION,
-  PRIMITIVE_HEADER_TDT_VERSION,
   PRIMITIVE_HEADER_TILE_VERSION,
-  TDT_VERSION,
   TILE_VERSION,
   isTileTableKind,
   parseTileColumnHeader
@@ -27,7 +22,7 @@ function parseLegacyTileColumns(headers: string[]): ParsedTileColumn[] {
 
 function decodeLegacyTileToJson(tile: string): JsonValue {
   const lines = tile.split(/\r?\n/);
-  if (lines[0] !== LEGACY_TILE_VERSION && lines[0] !== LEGACY_TDT_VERSION) {
+  if (lines[0] !== LEGACY_TILE_VERSION) {
     throw new Error(`Unsupported TILE version: ${lines[0] ?? '<empty>'}`);
   }
 
@@ -95,10 +90,7 @@ function decodeCompactTileToJson(tile: string): JsonValue {
     .filter((section) => section.trim().length > 0);
   const header_lines = sections[0]?.split(/\r?\n/) ?? [];
 
-  if (
-    header_lines[0] !== COMPACT_TILE_VERSION &&
-    header_lines[0] !== COMPACT_TDT_VERSION
-  ) {
+  if (header_lines[0] !== COMPACT_TILE_VERSION) {
     throw new Error(`Unsupported TILE version: ${header_lines[0] ?? '<empty>'}`);
   }
 
@@ -156,11 +148,8 @@ function decodeColumnTileToJson(input: {
 
   if (
     header_lines[0] !== TILE_VERSION &&
-    header_lines[0] !== TDT_VERSION &&
     header_lines[0] !== PRIMITIVE_HEADER_TILE_VERSION &&
-    header_lines[0] !== PRIMITIVE_HEADER_TDT_VERSION &&
-    header_lines[0] !== COLUMN_REF_TILE_VERSION &&
-    header_lines[0] !== COLUMN_REF_TDT_VERSION
+    header_lines[0] !== COLUMN_REF_TILE_VERSION
   ) {
     throw new Error(`Unsupported TILE version: ${header_lines[0] ?? '<empty>'}`);
   }
@@ -223,25 +212,22 @@ function decodeColumnTileToJson(input: {
 
 export function decodeTileToJson(tile: string): JsonValue {
   const version = tile.split(/\r?\n/, 1)[0];
-  if (version === LEGACY_TILE_VERSION || version === LEGACY_TDT_VERSION) {
+  if (version === LEGACY_TILE_VERSION) {
     return decodeLegacyTileToJson(tile);
   }
 
-  if (version === COMPACT_TILE_VERSION || version === COMPACT_TDT_VERSION) {
+  if (version === COMPACT_TILE_VERSION) {
     return decodeCompactTileToJson(tile);
   }
 
-  if (version === COLUMN_REF_TILE_VERSION || version === COLUMN_REF_TDT_VERSION) {
+  if (version === COLUMN_REF_TILE_VERSION) {
     return decodeColumnTileToJson({
       tile,
       supports_primitive_headers: false
     });
   }
 
-  if (
-    version === PRIMITIVE_HEADER_TILE_VERSION ||
-    version === PRIMITIVE_HEADER_TDT_VERSION
-  ) {
+  if (version === PRIMITIVE_HEADER_TILE_VERSION) {
     return decodeColumnTileToJson({
       tile,
       supports_primitive_headers: true

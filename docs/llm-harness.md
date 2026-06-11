@@ -2,6 +2,12 @@
 
 TILE can encode arbitrary JSON losslessly, but the strongest token reductions come from first-class projections that understand the user’s data model. The harness in this repo helps an LLM design those projections before a developer implements them.
 
+The core workflow is question-driven compression. Decide what kinds of questions
+the user or downstream model needs to ask, preserve the evidence paths for those
+questions, and drop or separate structure that does not help that workload.
+First-class TILE is most useful when it turns a large general-purpose JSON
+document into a small, readable projection tailored to a known question family.
+
 ## Workflow
 
 1. Start with representative JSON from the user’s real data shape.
@@ -40,6 +46,40 @@ The generated prompt asks the model to produce:
 
 Use **path TILE** when the questions are broad and need the full original structure.
 
+Design benchmark questions and first-class projections together. The question set
+defines the evidence paths the projection must preserve; a benchmark that asks
+questions unsupported by the projection mostly measures a bad projection choice,
+not the encoding. For example, OSM venue questions need a POI/tag table with
+`name`, `amenity`, `cuisine`, and `brand`, while way-adjacency questions need
+ordered way-node refs near the parent way.
+
+This also means question-aligned first-class projections may be intentionally
+lossy. Use lossless path or normalized TILE when the model needs arbitrary
+original JSON. Use first-class relational or embedded TILE when the workload is
+known and compression around that workload is the goal.
+
+Use **inline JSON cells** for small or dynamic leaf objects that are more useful
+as local context than as separate tables. This is a good fit for metadata bags,
+tag maps, option maps, and sparse key/value annotations where the keys vary by
+row and the object has little relational meaning. In automatic TILE, callers can
+force this with `path_rules`, for example:
+
+```ts
+encodeJsonToTile(value, {
+  path_rules: {
+    'root.events[].metadata': 'inline_json'
+  }
+});
+```
+
+Do not inline objects that have stable entity fields, nested arrays, nested
+objects, or ids that later questions need to join against.
+
+Use the **properties table** for wrapper objects or dynamic property bags that
+must still preserve individual keys as rows. Prefer inline JSON when the entire
+small object is normally read as one local cell; prefer the properties table when
+questions inspect arbitrary individual keys across many objects.
+
 Use **first-class relational TILE** when the data naturally behaves like tables and the questions are joins, grouping, or filtering over stable ids.
 
 Use **first-class embedded TILE** when the questions require local adjacency:
@@ -49,6 +89,13 @@ Use **first-class embedded TILE** when the questions require local adjacency:
 - ordered sibling rows
 - edge lists grouped under entities
 - claims, dependencies, releases, events, or path segments that are meaningful only near their parent
+
+For embedded child groups, keep parent fields blank after the first child row so
+the model visually reads the children as belonging to the same parent. Choose
+embedded groups when the answer depends on a local scan such as sibling order,
+consecutive refs, parent tags plus child rows, or nearby evidence windows.
+Choose a separate referenced table when the child object is relation-heavy,
+shared by many parents, or queried independently.
 
 Avoid replacing user-visible ids with internal row ids when answers need original ids. Keep labels near ids when the model must answer in human-readable form.
 
@@ -68,10 +115,50 @@ Benchmark `tab` and `pipe` at minimum. Pipe-delimited first-class tables can som
 Use the repo benchmark scripts as a reference implementation rather than a universal answer. For your own data:
 
 1. Select representative structured JSON and target questions.
-2. Encode compact JSON, automatic path TILE, and each first-class projection.
-3. Include delimiter variants for first-class TILE, such as relational-tab, relational-pipe, embedded-tab, and embedded-pipe.
-4. Measure prompt characters/tokens and model answer quality on the same questions.
-5. Keep variants that preserve the evidence path: stable ids, labels, ordering fields, counts, tie-breakers, and parent-child adjacency.
+2. Separate **semantic answer tasks** from **deterministic function tasks**.
+3. Design first-class projections for those exact question families.
+4. Encode compact JSON, automatic path TILE, and each question-aligned first-class projection.
+5. Include delimiter variants for first-class TILE, such as relational-tab, relational-pipe, embedded-tab, and embedded-pipe.
+6. Measure prompt characters/tokens and model answer quality on the same questions, but run API-backed model benchmarks in small batches.
+7. Keep variants that preserve the evidence path: stable ids, labels, ordering fields, counts, tie-breakers, and parent-child adjacency.
+
+Large structured fixtures can produce prompts in the tens of thousands of input
+tokens. Do not start by running every fixture, every task, and every variant
+against the model at once; that often measures token-per-minute limits more than
+encoding quality. Start with a narrow slice:
+
+```sh
+OPENAI_API_KEY=... pnpm benchmark:reasoning -- \
+  --model gpt-5.4-mini \
+  --variant-ids compact_json,tile_normalized,tile_first_class_embedded \
+  --task-ids osm_east_asian_food_and_tea_venues,osm_coffee_or_tea_cafes \
+  --max-output-tokens 512
+```
+
+Use one fixture or question family first, compare two or three variants, and
+then expand only when the first slice shows a meaningful difference. Size tables
+and generated prompt metrics are cheap to produce for all variants; model calls
+should be batched around the hypothesis you are testing.
+
+Semantic answer tasks are questions a model should naturally answer after reading
+structured context, such as classifying venue cuisines, release-title themes,
+package roles, or claims that imply a human-readable category.
+
+Deterministic function tasks are different. For graph traversals, extrema,
+numeric tie-breakers, geospatial math, or exact adjacency scans, ask the model to
+write a small retrieval/scoring function instead of asking it to do the whole
+scan mentally. Then evaluate the generated function by executing it against the
+fixture and comparing the function output to an oracle. For example:
+
+```text
+Write a TypeScript function that receives this OSM JSON and returns:
+way_id|highway|node_count|previous_middle_node_index|previous_middle_node_ref|middle_node_index|middle_node_ref
+for the way with the most node references, where middle_node_index is
+floor(node_count / 2).
+```
+
+This tests whether TILE gives the model enough schema and locality context to
+write the right tool. It should not be graded with the exact-answer text grader.
 
 ## Implementation Shape
 

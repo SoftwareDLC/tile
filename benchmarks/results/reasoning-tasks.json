@@ -1,0 +1,110 @@
+[
+  {
+    "fixture": "openstreetmap_extract",
+    "id": "osm_east_asian_food_and_tea_venues",
+    "question": "Using venue names plus amenity/cuisine tags, list cafes or restaurants whose cuisine tag indicates East or Southeast Asian food, tea, noodles, ramen, sushi, Korean, Chinese, Japanese, Malaysian, Thai, Indonesian, or bubble tea. Answer as name|cuisine entries sorted alphabetically by name, one entry per line.",
+    "expected_answer": "Bowllin'|korean\nChihiro Tea|bubble_tea\nGenki Omakasa|sushi\nHeytea|bubble_tea\nKarakatta|ramen\nKung Fu Tea|bubble_tea\nLazy Sundaes|bubble_tea\nRamen Takumi|japanese\nRasa|malaysian;thai;indonesian\nSANUKI UDON|japanese\nSouth of the Clouds|chinese;noodle\nSpicy Moon|chinese\nWanpo Tea Shop|bubble_tea\nYum Cha|chinese",
+    "perceived_difficulty": 3,
+    "difficulty_label": "semantic filtering",
+    "difficulty_reason": "Requires interpreting cuisine tags as a regional/theme category rather than computing over ids."
+  },
+  {
+    "fixture": "openstreetmap_extract",
+    "id": "osm_coffee_or_tea_cafes",
+    "question": "List cafe venues that are clearly coffee or tea oriented based on cuisine, brand, or name. Include coffee_shop and bubble_tea cafes. Answer as venue names sorted alphabetically, one entry per line.",
+    "expected_answer": "Carmela Coffee\nChihiro Tea\nHeytea\nIrving Farm Coffee Roasters\nJoe Coffee Company\nKung Fu Tea\nLa Colombe Coffee Roasters\nLazy Sundaes\nMille-Feuille\nStarbucks\nStumptown\nTartinery\nThe Uncommons\nWanpo Tea Shop",
+    "perceived_difficulty": 3,
+    "difficulty_label": "semantic filtering",
+    "difficulty_reason": "Requires combining name, brand, amenity, and cuisine signals into a human category."
+  },
+  {
+    "fixture": "openstreetmap_extract",
+    "id": "osm_person_named_ways",
+    "question": "Which unique OSM way names appear to include person surnames or famous-person references such as Washington, Sullivan, MacDougal, LaGuardia, Thompson, Greene, Mercer, or Schwartz? Answer with unique way names sorted alphabetically, one entry per line.",
+    "expected_answer": "Greene Street\nLaGuardia Place\nMacDougal Alley\nMacDougal Street\nMacDougal Street / Washington Square West\nMercer Street\nSchwartz Plaza\nSchwartz Plaza / Washington Square East\nSullivan Street\nThompson Street\nWashington Mews\nWashington Place\nWashington Square East\nWashington Square East / University Place\nWashington Square North\nWashington Square North / Waverly Place\nWashington Square South\nWashington Square South / West 4th Street\nWashington Square West\nWest Washington Place",
+    "perceived_difficulty": 3,
+    "difficulty_label": "semantic name classification",
+    "difficulty_reason": "Requires classifying place names by likely person-name references instead of graph traversal."
+  },
+  {
+    "fixture": "wikidata_truthy_triples",
+    "id": "wikidata_writer_musicians",
+    "question": "Using P106 occupation claims, list subjects whose labeled occupations include both writer and musician. Ignore unlabeled Q-id occupation values. Answer subject labels sorted alphabetically, one entry per line.",
+    "expected_answer": "Bob Dylan\nDouglas Adams\nLeonardo da Vinci",
+    "perceived_difficulty": 3,
+    "difficulty_label": "semantic claim grouping",
+    "difficulty_reason": "Requires grouping claims by subject and matching human-readable occupation labels."
+  },
+  {
+    "fixture": "wikidata_truthy_triples",
+    "id": "wikidata_inventor_mathematician_writers",
+    "question": "Using P106 occupation claims, list subjects whose labeled occupations include inventor, mathematician, and writer. Ignore unlabeled Q-id occupation values. Answer subject labels sorted alphabetically, one entry per line.",
+    "expected_answer": "Ada Lovelace\nAlbert Einstein\nLeonardo da Vinci",
+    "perceived_difficulty": 3,
+    "difficulty_label": "semantic claim grouping",
+    "difficulty_reason": "Requires recognizing a polymath-like occupation combination from local subject claims."
+  },
+  {
+    "fixture": "wikidata_truthy_triples",
+    "id": "wikidata_douglas_adams_creative_occupations",
+    "question": "For Douglas Adams, list the labeled P106 occupations that are creative writing, performance, or music roles. Answer occupation labels sorted alphabetically, one entry per line.",
+    "expected_answer": "children's writer\ncomedian\nmusician\nnovelist\nplaywright\nscience fiction writer\nscreenwriter\nwriter",
+    "perceived_difficulty": 2,
+    "difficulty_label": "local semantic extraction",
+    "difficulty_reason": "Requires staying within one subject and selecting creative-role occupation labels."
+  },
+  {
+    "fixture": "musicbrainz_release_groups",
+    "id": "musicbrainz_david_bowie_space_star_titles",
+    "question": "For David Bowie only, list release-group titles with space, moon, star, Starman, or Ziggy imagery. Answer titles sorted alphabetically, one entry per line.",
+    "expected_answer": "David Bowie: Starman Audio Documentary\nMoonage Daydream: A Film by Brett Morgen\nPortrait of a Star\nRock ’n’ Roll Star!\nSpace Oddity / The Man Who Sold the World\nStarting Point\nThe Rise and Fall of Ziggy Stardust and the Spiders From Mars",
+    "perceived_difficulty": 3,
+    "difficulty_label": "artist-local title classification",
+    "difficulty_reason": "Requires staying within one artist group and interpreting title words as a space/star imagery category."
+  },
+  {
+    "fixture": "musicbrainz_release_groups",
+    "id": "musicbrainz_queen_best_collection_titles",
+    "question": "For Queen only, list release-group titles that look like best-of, greatest-hits, or collection releases based on the title text. Answer titles sorted alphabetically, one entry per line.",
+    "expected_answer": "Absolute Greatest\nBest of Queen\nBest Selection\nGrand Collection\nGreatest Hits\nGreatest Hits I & II\nGreatest Hits I, II & III: The Platinum Collection\nGreatest Hits II\nGreatest Hits III\nGreatest Hits in Japan\nGreatest Hits: We Will Rock You\nGreatest Karaoke Hits\nGreatest Video Hits 1\nGreatest Video Hits 2\nQueen Collection\nQueen Collection 2\nQueen Collection: 15 of the Best\nQueen: Greatest Video Hits\nStudio Collection\nThe 12″ Collection\nThe Best I\nThe Best II\nThe Greatest 3\nThe Queen Collection\nThe Singles Collection, Volume 1\nThe Singles Collection, Volume 2\nThe Singles Collection, Volume 3\nThe Singles Collection, Volume 4\nThe Ultimate Best Of Queen\nThe Ultimate Collection",
+    "perceived_difficulty": 3,
+    "difficulty_label": "artist-local title classification",
+    "difficulty_reason": "Requires staying within one artist group and classifying titles by release purpose."
+  },
+  {
+    "fixture": "musicbrainz_release_groups",
+    "id": "musicbrainz_radiohead_live_or_broadcast_titles",
+    "question": "For Radiohead only, list release-group titles that look like live, concert, broadcast, BBC, session, festival, dated-performance, or unplugged releases. Answer titles sorted alphabetically, one entry per line.",
+    "expected_answer": "1992‐11‐11: Huddersfield University, Huddersfield, UK\n1993‐09‐02: Signal Radio Studios: Cheshire, UK\n1994‐02‐21: Royal Berks Social Club, Reading, England, UK\n1994‐06‐26: Glastonbury Festival, NME Stage, Worthy Farm, Glastonbury, England, UK\n1995-06-01: PASTE.COM Presents: Radiohead Live at Tramps: New York, NY, USA\n1995‐04‐19: The Anson Rooms, Bristol, UK\n1995‐04‐25: Live Europe 1\n1995‐05‐02: Planet Rock Session, RAI Studios, Rome, Italy\n1995‐06‐10: Cabaret Metro, Chicago, IL, USA\n1995‐12‐01: Gino, Stockholm, Sweden\n1995‐12‐04: Planet Paradiso: Paradiso, Amsterdam, Netherlands\n1995‐12‐12: Warehouse, Toronto, ON, Canada\n1996‐04‐16: La Cigale, Paris, France\n1996‐07‐13: Planet Acoustic: T in the Park, Glasgow, UK\n1996‐08‐19: Continental Airlines Arena, East Rutherford, NJ, USA\n1997-06-28: Glastonbury Festival of Contemporary Performing Arts\n1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands\n1997‐07‐04: Eurockéennes Festival, Belfort, France\n2008-08-01: Lollapalooza, Chicago, IL\n27 5 94: The Astoria London Live\nBBC in Concert 601: Glastonbury Festival 1994\nBlack Sessions\nHail to the Thief: Live Recordings 2003–2009\nI Might Be Wrong: Live Recordings\nIn Rainbows: From the Basement\nLive From Planet Earth\nTake Me Back: Live Recordings 2000–2018\nThe Golden Unplugged Album\nUnplugged\nUnplugged and Unreleased\nUnplugged: The Complete Acoustic Sessions",
+    "perceived_difficulty": 3,
+    "difficulty_label": "title-context classification",
+    "difficulty_reason": "Requires recognizing performance/broadcast context from title wording."
+  },
+  {
+    "fixture": "npm_dependency_metadata",
+    "id": "npm_react_ecosystem_packages",
+    "question": "List selected packages that are clearly part of the React ecosystem because their package name contains react or their dependency edges include react or react-dom. Answer package names sorted alphabetically, one entry per line.",
+    "expected_answer": "@radix-ui/react-dialog\n@radix-ui/react-dropdown-menu\n@radix-ui/react-select\n@radix-ui/react-tooltip\n@react-three/drei\n@react-three/fiber\n@reduxjs/toolkit\n@storybook/react-vite\n@tanstack/react-query\n@tanstack/react-table\n@vitejs/plugin-react\nframer-motion\nlucide-react\nnext\nradix-ui\nreact\nreact-dom\nreact-router\nrecharts\nzustand",
+    "perceived_difficulty": 3,
+    "difficulty_label": "package role classification",
+    "difficulty_reason": "Requires combining package names with dependency edges to identify framework ecosystem membership."
+  },
+  {
+    "fixture": "npm_dependency_metadata",
+    "id": "npm_database_and_storage_packages",
+    "question": "List selected packages that are database, cache, ORM, SQL, or object-storage related based on package names such as prisma, drizzle, redis, sqlite, pg, mysql, mongoose, or minio. Answer package names sorted alphabetically, one entry per line.",
+    "expected_answer": "@prisma/client\nbetter-sqlite3\ndrizzle-orm\nioredis\nminio\nmongoose\nmysql2\npg\nprisma\nredis",
+    "perceived_difficulty": 2,
+    "difficulty_label": "package role classification",
+    "difficulty_reason": "Requires semantic package-name grouping rather than dependency counting."
+  },
+  {
+    "fixture": "npm_dependency_metadata",
+    "id": "npm_testing_and_mocking_packages",
+    "question": "List selected packages that are testing, browser automation, assertion, mocking, or HTTP-test tools: include tools like test runners, e2e runners, assertion libraries, mocking libraries, and supertest-style HTTP testing. Do not include linters or formatters. Answer package names sorted alphabetically, one entry per line.",
+    "expected_answer": "chai\ncypress\njest\nmocha\nmsw\nnock\nplaywright\nsinon\nsupertest\nvitest",
+    "perceived_difficulty": 3,
+    "difficulty_label": "package role classification",
+    "difficulty_reason": "Requires semantic package-role grouping from names and familiar library roles."
+  }
+]
