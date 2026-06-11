@@ -1,6 +1,6 @@
 {
   "name": "@software-dlc/tile",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Token-efficient tabular encoding for JSON and LLM prompt payloads.",
   "type": "module",
   "license": "MIT",

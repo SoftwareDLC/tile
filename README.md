@@ -21,13 +21,46 @@ pnpm add @software-dlc/tile
 
 ## Usage
 
+This repeated-record example is 855 compact JSON characters as JSON and 599
+characters as TILE.
+
 JSON input:
 
 ```json
 {
-  "users": [
-    { "id": "u1", "name": "Ada" },
-    { "id": "u2", "name": "Grace" }
+  "audit_events": [
+    {
+      "event_id": "evt_001",
+      "actor_display_name": "Ada Lovelace",
+      "actor_organization_slug": "software-dlc",
+      "repository_full_name": "SoftwareDLC/tile",
+      "event_type": "pull_request_opened",
+      "resource_identifier": "PR-42"
+    },
+    {
+      "event_id": "evt_002",
+      "actor_display_name": "Grace Hopper",
+      "actor_organization_slug": "software-dlc",
+      "repository_full_name": "SoftwareDLC/tile",
+      "event_type": "issue_comment_created",
+      "resource_identifier": "ISSUE-17"
+    },
+    {
+      "event_id": "evt_003",
+      "actor_display_name": "Ada Lovelace",
+      "actor_organization_slug": "software-dlc",
+      "repository_full_name": "SoftwareDLC/tile",
+      "event_type": "pull_request_merged",
+      "resource_identifier": "PR-42"
+    },
+    {
+      "event_id": "evt_004",
+      "actor_display_name": "Katherine Johnson",
+      "actor_organization_slug": "software-dlc",
+      "repository_full_name": "SoftwareDLC/tile",
+      "event_type": "release_published",
+      "resource_identifier": "v0.2.2"
+    }
   ]
 }
 ```
@@ -39,19 +72,23 @@ TILE/5
 root@t0	r0
 
 t0	object	root
-$id	users@t1
+$id	audit_events@t1
 r0	a0
 
-t1	array	root.users
+t1	array	root.audit_events
 $id	value@t2
 a0
 	r1
 	r2
+	r3
+	r4
 
-t2	object	root.users[]
-$id	id:s	name:s
-r1	u1	Ada
-r2	u2	Grace
+t2	object	root.audit_events[]
+$id	event_id:s	actor_display_name:s	actor_organization_slug:s	repository_full_name:s	event_type:s	resource_identifier:s
+r1	evt_001	Ada Lovelace	software-dlc	SoftwareDLC/tile	pull_request_opened	PR-42
+r2	evt_002	Grace Hopper	software-dlc	SoftwareDLC/tile	issue_comment_created	ISSUE-17
+r3	evt_003	Ada Lovelace	software-dlc	SoftwareDLC/tile	pull_request_merged	PR-42
+r4	evt_004	Katherine Johnson	software-dlc	SoftwareDLC/tile	release_published	v0.2.2
 ```
 
 ```ts
