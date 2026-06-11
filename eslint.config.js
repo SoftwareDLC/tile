@@ -20,7 +20,14 @@ export default tseslint.config(
     }
   },
   {
-    files: ['eslint.config.js'],
-    extends: [tseslint.configs.disableTypeChecked]
+    files: ['eslint.config.js', 'scripts/**/*.mjs'],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        URL: 'readonly'
+      }
+    }
   }
 );

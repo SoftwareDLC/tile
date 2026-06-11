@@ -2,6 +2,17 @@
 
 TILE (Tabular Interlinked Local Encoding) is a compact tabular encoding for JSON values. It preserves JSON round trips while representing repeated object and array structure as readable tables, which can be useful for prompt payloads, diffs, and inspection.
 
+## Why TILE?
+
+In recorded `gpt-5.4-mini` semantic-list benchmarks with question-aligned
+first-class embedded projections, TILE reduced API input tokens from
+34,611-67,012 to 813-4,142 while preserving or improving average list F1.
+
+Those numbers are not universal constants. The useful signal is that
+projection-aware tables can make large structured prompt payloads much smaller
+when the projection preserves the ids, labels, ordering fields, and local
+evidence needed for the question family.
+
 ## Install
 
 ```sh
@@ -9,6 +20,39 @@ pnpm add @software-dlc/tile
 ```
 
 ## Usage
+
+JSON input:
+
+```json
+{
+  "users": [
+    { "id": "u1", "name": "Ada" },
+    { "id": "u2", "name": "Grace" }
+  ]
+}
+```
+
+TILE output:
+
+```text
+TILE/5
+root@t0	r0
+
+t0	object	root
+$id	users@t1
+r0	a0
+
+t1	array	root.users
+$id	value@t2
+a0
+	r1
+	r2
+
+t2	object	root.users[]
+$id	id:s	name:s
+r1	u1	Ada
+r2	u2	Grace
+```
 
 ```ts
 import { decodeTileToJson, encodeJsonToTile } from '@software-dlc/tile';
@@ -219,6 +263,20 @@ See `docs/llm-harness.md` for the projection workflow and guidance.
 ```sh
 pnpm install
 pnpm check
+```
+
+Before publishing, run the package smoke test. It builds the package, creates an
+npm tarball, installs that tarball into a temporary consumer project, and checks
+ESM import, CommonJS require, and the installed `tile` binary:
+
+```sh
+pnpm test:package
+```
+
+Publish through `rtk` so the package uses the expected local npm setup:
+
+```sh
+rtk npm publish --access public
 ```
 
 ## License

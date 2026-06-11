@@ -1,7 +1,7 @@
 {
   "name": "@software-dlc/tile",
-  "version": "0.2.0",
-  "description": "A compact tabular encoding for JSON values.",
+  "version": "0.2.1",
+  "description": "Token-efficient tabular encoding for JSON and LLM prompt payloads.",
   "type": "module",
   "license": "MIT",
   "author": "SoftwareDLC",
@@ -15,12 +15,15 @@
   },
   "keywords": [
     "json",
+    "llm",
+    "prompt-engineering",
+    "prompt-optimization",
+    "token-reduction",
+    "serialization",
+    "typescript",
     "tile",
     "tabular",
-    "encoding",
-    "token-reduction",
-    "prompt-optimization",
-    "llm"
+    "encoding"
   ],
   "sideEffects": false,
   "files": [
@@ -60,6 +63,7 @@
     "harness:design": "tsx scripts/design-first-class-tile.ts",
     "lint": "eslint .",
     "test": "vitest run",
+    "test:package": "pnpm build && node scripts/smoke-package.mjs",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
