@@ -310,11 +310,18 @@ ESM import, CommonJS require, and the installed `tile` binary:
 pnpm test:package
 ```
 
-Publish through `rtk` so the package uses the expected local npm setup:
+The repo also includes an incubating Python package for first-class TILE prompt
+tables under `packages/python`. It shares conformance cases with the TypeScript
+encoder and can be checked with:
 
 ```sh
-rtk npm publish --access public
+pnpm test:python
 ```
+
+Release publishing is maintainer-only. Local coding agents may prepare and
+verify release artifacts, but a human maintainer runs all `git push`,
+`npm publish`, `twine upload`, PyPI, npm, and GitHub release commands. See
+`CONTRIBUTING.md` for the release checklist.
 
 ## License
 

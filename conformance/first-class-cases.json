@@ -1,0 +1,228 @@
+[
+  {
+    "id": "default-tab-with-embedded-columns",
+    "document": {
+      "tables": [
+        {
+          "id": "nodes",
+          "kind": "graph",
+          "path": "root.nodes",
+          "columns": [
+            "id",
+            "label",
+            {
+              "embedded_columns": [
+                "edge_id",
+                "relationship"
+              ]
+            }
+          ],
+          "rows": [
+            [
+              "n1",
+              "Ada\tLovelace",
+              "e1",
+              "uses"
+            ],
+            [
+              "",
+              null,
+              "e2",
+              "reads\nfrom"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "nodes\tgraph\troot.nodes\nid\tlabel\t[edge_id,relationship]\nn1\tAda\\tLovelace\te1\tuses\n\t\te2\treads\\nfrom"
+  },
+  {
+    "id": "comma-delimiter",
+    "document": {
+      "delimiter": "comma",
+      "tables": [
+        {
+          "id": "nodes",
+          "columns": [
+            "id",
+            "label",
+            {
+              "embedded_columns": [
+                "edge_id",
+                "relationship"
+              ]
+            }
+          ],
+          "rows": [
+            [
+              "n1",
+              "Ada Lovelace, pioneer|math",
+              "e1",
+              "uses"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "nodes\nid,label,[edge_id;relationship]\nn1,Ada Lovelace\\, pioneer|math,e1,uses"
+  },
+  {
+    "id": "pipe-delimiter",
+    "document": {
+      "delimiter": "pipe",
+      "tables": [
+        {
+          "id": "nodes",
+          "columns": [
+            "id",
+            "label",
+            {
+              "embedded_columns": [
+                "edge_id",
+                "relationship"
+              ]
+            }
+          ],
+          "rows": [
+            [
+              "n1",
+              "Ada Lovelace, pioneer|math",
+              "e1",
+              "uses"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "nodes\nid|label|[edge_id,relationship]\nn1|Ada Lovelace, pioneer\\|math|e1|uses"
+  },
+  {
+    "id": "space-delimiter",
+    "document": {
+      "delimiter": "space",
+      "tables": [
+        {
+          "id": "nodes",
+          "columns": [
+            "id",
+            "label",
+            {
+              "embedded_columns": [
+                "edge_id",
+                "relationship"
+              ]
+            }
+          ],
+          "rows": [
+            [
+              "n1",
+              "Ada Lovelace, pioneer|math",
+              "e1",
+              "uses"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "nodes\nid label [edge_id,relationship]\nn1 Ada\\sLovelace,\\spioneer|math e1 uses"
+  },
+  {
+    "id": "multiple-tables-and-primitive-cells",
+    "document": {
+      "tables": [
+        {
+          "id": "packages",
+          "kind": "package_index",
+          "columns": [
+            "name",
+            "version",
+            "selected",
+            "score"
+          ],
+          "rows": [
+            [
+              "software-dlc-tile",
+              "0.0.1",
+              true,
+              1.5
+            ],
+            [
+              "empty-note",
+              null,
+              false,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "imports",
+          "path": "python.imports",
+          "columns": [
+            "module",
+            "import_name"
+          ],
+          "rows": [
+            [
+              "software_dlc_tile",
+              "encode_first_class_tables_to_tile"
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "packages\tpackage_index\nname\tversion\tselected\tscore\nsoftware-dlc-tile\t0.0.1\ttrue\t1.5\nempty-note\t\tfalse\t0\n\nimports\t\tpython.imports\nmodule\timport_name\nsoftware_dlc_tile\tencode_first_class_tables_to_tile"
+  },
+  {
+    "id": "javascript-number-formatting",
+    "document": {
+      "tables": [
+        {
+          "id": "numbers",
+          "columns": [
+            "label",
+            "value"
+          ],
+          "rows": [
+            [
+              "negative_zero",
+              -0.0
+            ],
+            [
+              "decimal_fraction",
+              0.1
+            ],
+            [
+              "small_decimal",
+              0.00123
+            ],
+            [
+              "negative_decimal",
+              -12.34
+            ],
+            [
+              "small_exponent",
+              1e-7
+            ],
+            [
+              "small_decimal_boundary",
+              0.000001
+            ],
+            [
+              "large_decimal_boundary",
+              1e20
+            ],
+            [
+              "large_exponent",
+              1e21
+            ],
+            [
+              "fractional_large_exponent",
+              1.23e21
+            ]
+          ]
+        }
+      ]
+    },
+    "expected": "numbers\nlabel\tvalue\nnegative_zero\t0\ndecimal_fraction\t0.1\nsmall_decimal\t0.00123\nnegative_decimal\t-12.34\nsmall_exponent\t1e-7\nsmall_decimal_boundary\t0.000001\nlarge_decimal_boundary\t100000000000000000000\nlarge_exponent\t1e+21\nfractional_large_exponent\t1.23e+21"
+  }
+]

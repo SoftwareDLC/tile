@@ -64,6 +64,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:package": "pnpm build && node scripts/smoke-package.mjs",
+    "test:python": "python3 -m unittest discover packages/python/tests",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

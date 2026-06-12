@@ -12,6 +12,13 @@ import {
   unescapeTileText
 } from './index.js';
 import { runTileCli } from './cli.js';
+import type { JsonTileFirstClassDocument } from './types.js';
+
+type FirstClassConformanceCase = {
+  id: string;
+  document: JsonTileFirstClassDocument;
+  expected: string;
+};
 
 function stdinFrom(text: string): AsyncIterable<Buffer> {
   return Readable.from([Buffer.from(text)]);
@@ -38,6 +45,12 @@ describe('jsonTile', () => {
     'musicbrainz-release-groups.json',
     'npm-dependencies.json'
   ];
+  const first_class_conformance_cases = JSON.parse(
+    readFileSync(
+      new URL('../conformance/first-class-cases.json', import.meta.url),
+      'utf8'
+    )
+  ) as FirstClassConformanceCase[];
 
   it('round trips nested objects and arrays through tab-delimited tables', () => {
     const value = {
@@ -182,6 +195,15 @@ describe('jsonTile', () => {
       ].join('\n')
     );
   });
+
+  it.each(first_class_conformance_cases)(
+    'matches first-class conformance case $id',
+    (test_case) => {
+      expect(encodeFirstClassTablesToTile(test_case.document)).toBe(
+        test_case.expected
+      );
+    }
+  );
 
   it('rejects ambiguous embedded column names', () => {
     expect(() =>
