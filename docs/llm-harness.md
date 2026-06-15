@@ -122,6 +122,19 @@ Use the repo benchmark scripts as a reference implementation rather than a unive
 6. Measure prompt characters/tokens and model answer quality on the same questions, but run API-backed model benchmarks in small batches.
 7. Keep variants that preserve the evidence path: stable ids, labels, ordering fields, counts, tie-breakers, and parent-child adjacency.
 
+## Metric Taxonomy
+
+Keep benchmark metrics aligned with the task type:
+
+- **Structural comprehension** checks whether a model can read the format: field lookup, row counts, declared columns, malformed rows, and basic extraction. These are useful smoke tests, but they are not the strongest evidence for large structured workflows.
+- **Semantic answer evaluation** asks the model to answer directly from a structured context. Use exact match for scalar answers, list precision/recall/F1 for multi-item answers, and report quality per 1K input tokens so compression and answer quality are visible together.
+- **Executable retrieval evaluation** asks the model to write a retrieval, filtering, scoring, or traversal function instead of mentally scanning the whole dataset. Grade it by running the generated function against the fixture and comparing output to an oracle. Do not mix this score with direct-answer list F1.
+- **Reasoning over refined evidence** starts after retrieval or projection has reduced the data. Measure final answer quality, the reduced evidence size, and the total prompt/API cost across the pipeline.
+
+The generated benchmark artifacts carry `task_kind` and `evaluation_mode` fields
+so these tracks can live in the same fixture set without collapsing into one
+ambiguous "accuracy" number.
+
 Large structured fixtures can produce prompts in the tens of thousands of input
 tokens. Do not start by running every fixture, every task, and every variant
 against the model at once; that often measures token-per-minute limits more than

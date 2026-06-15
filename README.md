@@ -168,20 +168,139 @@ Supported delimiters are `tab`, `pipe`, `comma`, and `space`. `tab` is the defau
 
 ## Benchmarks
 
-The repo includes reproducible benchmark fixtures derived from real public datasets:
+The repo includes reproducible benchmark fixtures derived from real public
+datasets and a model-backed semantic-list retrieval harness. The benchmark is
+not meant to crown one universal encoding; it measures how much structured
+context can be removed when the projection preserves the evidence paths needed
+for a known question family.
 
-- OpenStreetMap node, way, and tag extracts
-- Wikidata direct-claim triples
-- MusicBrainz artist and release-group metadata
-- npm package and dependency metadata
+<details>
+<summary>Show benchmark fixture catalog</summary>
 
-Run them with:
+| Fixture | Source shape | Question family |
+| --- | --- | --- |
+| OpenStreetMap extract | Nodes, ways, names, amenities, and tags | Venue/tag filtering and named-way retrieval |
+| Wikidata truthy triples | Subject, property, value, and labels | Occupation and claim-list retrieval |
+| MusicBrainz release groups | Artists and release-group metadata | Artist-specific title classification |
+| npm dependency metadata | Packages and dependency edges | Ecosystem/package relationship retrieval |
+
+</details>
+
+### Size Compression
+
+Current size summary, generated on Node 20. Character savings are relative to
+compact JSON, so higher is better.
+
+```text
+Average character savings vs compact JSON across 4 fixtures:
+
+TILE first-class relational   [####################]   96.0% smaller |  1,547 est tok
+TILE first-class embedded     [####################]   95.9% smaller |  1,489 est tok
+TILE normalized               [########------------]   38.3% smaller | 23,599 est tok
+TILE path                     [######--------------]   27.8% smaller | 27,125 est tok
+Compact JSON                  [--------------------]    0.0% smaller | 39,637 est tok
+```
+
+Per-fixture character size. Percentages are characters as a percentage of compact
+JSON, so lower is better:
+
+```text
+OpenStreetMap extract
+  Compact JSON                  133,692 chars  | 100.0%
+  TILE path                     175,912 chars  | 131.6%
+  TILE normalized               119,506 chars  |  89.4%
+  TILE first-class relational     9,386 chars  |   7.0%
+  TILE first-class embedded      12,239 chars  |   9.2%
+
+Wikidata truthy triples
+  Compact JSON                  213,753 chars  | 100.0%
+  TILE path                      88,628 chars  |  41.5%
+  TILE normalized                88,628 chars  |  41.5%
+  TILE first-class relational     3,892 chars  |   1.8%
+  TILE first-class embedded       1,934 chars  |   0.9%
+
+MusicBrainz release groups
+  Compact JSON                  171,855 chars  | 100.0%
+  TILE path                     109,581 chars  |  63.8%
+  TILE normalized               109,581 chars  |  63.8%
+  TILE first-class relational     9,536 chars  |   5.5%
+  TILE first-class embedded       7,063 chars  |   4.1%
+
+npm dependency metadata
+  Compact JSON                  114,892 chars  | 100.0%
+  TILE path                      59,868 chars  |  52.1%
+  TILE normalized                59,868 chars  |  52.1%
+  TILE first-class relational     1,928 chars  |   1.7%
+  TILE first-class embedded       2,588 chars  |   2.3%
+```
+
+### Retrieval Quality
+
+Recorded `gpt-5.4-mini` semantic-list benchmark using 12 list-retrieval
+questions across 4 fixtures. The headline quality metric is average list F1
+because the tasks often ask for multi-item lists; exact-match accuracy is
+included but is stricter than the practical retrieval score.
+
+```text
+Efficiency ranking by average list F1 per 1K API input tokens:
+
+TILE first-class embedded     [####################]   42.9 F1/1K tok | 87.9% F1 |  2,049 input tok | 33.3% exact
+TILE first-class relational   [####################]   42.8 F1/1K tok | 85.9% F1 |  2,010 input tok | 16.7% exact
+TILE normalized               [#-------------------]    1.7 F1/1K tok | 77.8% F1 | 45,078 input tok | 16.7% exact
+Compact JSON                  [#-------------------]    1.5 F1/1K tok | 76.7% F1 | 52,599 input tok | 16.7% exact
+```
+
+Efficiency score = (average list F1 percentage / average API input tokens) x
+1,000. Higher is better.
+
+> Tip: On these recorded runs, first-class embedded TILE reached 87.9% average
+> list F1 vs compact JSON's 76.7%, while using 96.1% fewer API input tokens on
+> average.
+
+Per-fixture quality and API input tokens:
+
+```text
+OpenStreetMap extract
+  Compact JSON                  85.5% F1 | 50,626 tok |  1.7 F1/1K tok
+  TILE normalized               86.3% F1 | 53,060 tok |  1.6 F1/1K tok
+  TILE first-class relational   93.1% F1 |  3,254 tok | 28.6 F1/1K tok
+  TILE first-class embedded     94.7% F1 |  4,142 tok | 22.9 F1/1K tok
+
+Wikidata truthy triples
+  Compact JSON                  78.2% F1 | 58,149 tok |   1.3 F1/1K tok
+  TILE normalized               73.8% F1 | 38,639 tok |   1.9 F1/1K tok
+  TILE first-class relational   84.1% F1 |  1,269 tok |  66.3 F1/1K tok
+  TILE first-class embedded    100.0% F1 |    813 tok | 123.1 F1/1K tok
+
+MusicBrainz release groups
+  Compact JSON                  49.1% F1 | 67,012 tok |  0.7 F1/1K tok
+  TILE normalized               55.9% F1 | 58,611 tok |  1.0 F1/1K tok
+  TILE first-class relational   70.0% F1 |  2,815 tok | 24.9 F1/1K tok
+  TILE first-class embedded     61.2% F1 |  2,324 tok | 26.3 F1/1K tok
+
+npm dependency metadata
+  Compact JSON                  94.1% F1 | 34,611 tok |   2.7 F1/1K tok
+  TILE normalized               95.2% F1 | 30,002 tok |   3.2 F1/1K tok
+  TILE first-class relational   96.5% F1 |    702 tok | 137.5 F1/1K tok
+  TILE first-class embedded     95.8% F1 |    917 tok | 104.5 F1/1K tok
+```
+
+These are stochastic model-backed results, not universal constants. The useful
+signal is the pattern: when the first-class projection is designed around the
+question family, it can reduce prompt size by one to two orders of magnitude
+while preserving or improving answer quality.
+
+### Running Benchmarks
+
+Run the reproducible fixture and size benchmarks with:
 
 ```sh
 pnpm benchmark
 ```
 
-The default fixture profile targets larger structured samples around 100k-200k compact JSON characters. For a quick local smoke run, regenerate the smaller profile with:
+The default fixture profile targets larger structured samples around 100k-200k
+compact JSON characters. For a quick local smoke run, regenerate the smaller
+profile with:
 
 ```sh
 TILE_BENCHMARK_PROFILE=small pnpm benchmark
@@ -198,10 +317,10 @@ OPENAI_API_KEY=... pnpm benchmark:reasoning -- \
   --max-output-tokens 512
 ```
 
-Avoid running every generated fixture, question, and encoding variant in a single
-API-backed sweep unless you have a large token-per-minute quota. The large
-fixtures produce prompts in the tens of thousands of tokens; broad sweeps mostly
-measure API throughput and retry behavior. Prefer a staged workflow:
+Avoid running every generated fixture, question, and encoding variant in a
+single API-backed sweep unless you have a large token-per-minute quota. The
+large fixtures produce prompts in the tens of thousands of tokens; broad sweeps
+mostly measure API throughput and retry behavior. Prefer a staged workflow:
 
 1. Start with one fixture and one question family.
 2. Compare two or three variants, such as compact JSON, the automatic TILE
@@ -220,31 +339,9 @@ OPENAI_API_KEY=... pnpm benchmark:reasoning -- \
 ```
 
 That optional step assembles prompts from the normalized benchmark artifacts and
-writes `benchmarks/results/reasoning-performance.md` with accuracy, latency, and
-API token usage for each JSON/TILE variant.
-
-Current size summary, generated on Node 20. Percentage columns are **characters as a percentage of compact JSON**, so lower is better. `100%` means the same size as compact JSON; `7.0%` means a 93.0% reduction; `131.6%` means 31.6% larger than compact JSON.
-
-| Fixture | Compact JSON chars | Est. compact JSON tokens | Automatic TILE path chars vs compact JSON | TILE normalized chars vs compact JSON | First-class relational chars vs compact JSON | First-class embedded chars vs compact JSON |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| OpenStreetMap extract | 133,692 | 33,423 | 131.6% | 89.4% | 7.0% | 9.2% |
-| Wikidata truthy triples | 213,753 | 53,439 | 41.5% | 41.5% | 1.8% | 0.9% |
-| MusicBrainz release groups | 171,855 | 42,964 | 63.8% | 63.8% | 5.5% | 4.1% |
-| npm dependency metadata | 114,892 | 28,723 | 52.1% | 52.1% | 1.7% | 2.3% |
-
-Recorded `gpt-5.4-mini` semantic-list benchmark on question-aligned projections:
-
-| Fixture | Compact JSON avg list F1 | First-class embedded avg list F1 | Compact JSON avg API input tokens | First-class embedded avg API input tokens |
-| --- | ---: | ---: | ---: | ---: |
-| OpenStreetMap extract | 85.5% | 94.7% | 50,626 | 4,142 |
-| Wikidata truthy triples | 78.2% | 100.0% | 58,149 | 813 |
-| MusicBrainz release groups | 49.1% | 61.2% | 67,012 | 2,324 |
-| npm dependency metadata | 94.1% | 95.8% | 34,611 | 917 |
-
-These are stochastic model-backed results, not universal constants. The useful
-signal is the pattern: when the first-class projection is designed around the
-question family, it can reduce prompt size by one to two orders of magnitude
-while preserving or improving answer quality.
+writes `benchmarks/results/reasoning-performance.md` with task kind, evaluation
+mode, answer accuracy, exact-match rate, list F1, F1 per 1K input tokens,
+latency, and API token usage for each JSON/TILE variant.
 
 Benchmark results are not meant to pick one universal best encoding. Different TILE projections are optimal for different lines of questioning:
 
@@ -260,7 +357,10 @@ is built for way-node adjacency, it should not be used to judge venue-tag
 questions; if the questions ask about OSM cafes, cuisines, or street names, the
 projection must preserve POI tags and way names locally.
 
-The benchmark compares character counts, estimated token budgets, and recorded reasoning accuracy across JSON and TILE variants. Generated benchmark artifacts are normalized to avoid repeating the large encoded datasets in every question prompt:
+The benchmark compares character counts, estimated token budgets, task kind,
+evaluation mode, and recorded answer quality across JSON and TILE variants.
+Generated benchmark artifacts are normalized to avoid repeating the large
+encoded datasets in every question prompt:
 
 - `benchmarks/results/size-summary.md`
 - `benchmarks/results/reasoning-context-summary.md`

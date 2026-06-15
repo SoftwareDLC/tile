@@ -6,6 +6,8 @@ type ReasoningPromptCase = {
   fixture_id: string;
   fixture: string;
   task: string;
+  task_kind: string;
+  evaluation_mode: string;
   variant_id: string;
   variant: string;
   question: string;
@@ -19,6 +21,8 @@ type ReasoningPromptCase = {
 type ReasoningTask = {
   fixture: string;
   id: string;
+  task_kind: string;
+  evaluation_mode: string;
   question: string;
   expected_answer: string;
   perceived_difficulty: number;
@@ -37,6 +41,8 @@ type ReasoningCase = {
   fixture_id: string;
   fixture: string;
   task: string;
+  task_kind: string;
+  evaluation_mode: string;
   variant_id: string;
   variant: string;
   prompt_chars: number;
@@ -47,6 +53,9 @@ type ReasoningCase = {
 type ReasoningEvalRow = {
   fixture: string;
   task: string;
+  task_kind: string;
+  evaluation_mode: string;
+  variant_id: string;
   variant: string;
   model: string;
   repeat: number;
@@ -59,6 +68,7 @@ type ReasoningEvalRow = {
   latency_ms: number;
   prompt_chars: number;
   estimated_prompt_tokens: number;
+  prompt_chars_vs_compact_json: number;
   api_input_tokens: number | null;
   api_output_tokens: number | null;
   api_total_tokens: number | null;
@@ -68,16 +78,24 @@ type ReasoningEvalRow = {
 
 type ReasoningEvalSummaryRow = {
   fixture: string;
+  task_kind: string;
+  evaluation_mode: string;
+  variant_id: string;
   variant: string;
   model: string;
   cases: number;
   correct: number;
   accuracy: number;
+  exact_matches: number;
+  exact_match_rate: number;
   average_latency_ms: number;
   average_prompt_chars: number;
   average_estimated_prompt_tokens: number;
+  average_prompt_chars_vs_compact_json: number;
   average_list_f1: number | null;
+  list_f1_points_per_1k_input_tokens: number | null;
   average_api_input_tokens: number | null;
+  api_input_tokens_vs_compact_json: number | null;
   average_api_output_tokens: number | null;
   average_api_total_tokens: number | null;
 };
@@ -95,6 +113,8 @@ type CliOptions = {
 
 const RESULTS_DIR = new URL('../benchmarks/results/', import.meta.url);
 const RESPONSES_ENDPOINT = 'https://api.openai.com/v1/responses';
+const DEFAULT_TASK_KIND = 'semantic_answer';
+const DEFAULT_EVALUATION_MODE = 'list_f1_exact_answer';
 const USAGE = `Usage:
   pnpm benchmark:reasoning -- --model <model> [options]
 
@@ -447,6 +467,9 @@ async function readTasks(): Promise<ReasoningTask[]> {
     const row = asRecord(entry);
     const fixture = asString(row.fixture);
     const id = asString(row.id);
+    const task_kind = asString(row.task_kind) ?? DEFAULT_TASK_KIND;
+    const evaluation_mode =
+      asString(row.evaluation_mode) ?? DEFAULT_EVALUATION_MODE;
     const question = asString(row.question);
     const expected_answer = asString(row.expected_answer);
     const perceived_difficulty = asNumber(row.perceived_difficulty);
@@ -466,6 +489,8 @@ async function readTasks(): Promise<ReasoningTask[]> {
     return {
       fixture,
       id,
+      task_kind,
+      evaluation_mode,
       question,
       expected_answer,
       perceived_difficulty,
@@ -507,6 +532,9 @@ async function readCases(): Promise<ReasoningCase[]> {
     const fixture_id = asString(row.fixture_id);
     const fixture = asString(row.fixture);
     const task = asString(row.task);
+    const task_kind = asString(row.task_kind) ?? DEFAULT_TASK_KIND;
+    const evaluation_mode =
+      asString(row.evaluation_mode) ?? DEFAULT_EVALUATION_MODE;
     const variant_id = asString(row.variant_id);
     const variant = asString(row.variant);
     const prompt_chars = asNumber(row.prompt_chars);
@@ -530,6 +558,8 @@ async function readCases(): Promise<ReasoningCase[]> {
       fixture_id,
       fixture,
       task,
+      task_kind,
+      evaluation_mode,
       variant_id,
       variant,
       prompt_chars,
@@ -576,6 +606,8 @@ async function readPromptCases(): Promise<ReasoningPromptCase[]> {
 
     return {
       ...prompt_case,
+      task_kind: prompt_case.task_kind || task.task_kind,
+      evaluation_mode: prompt_case.evaluation_mode || task.evaluation_mode,
       question: task.question,
       expected_answer: task.expected_answer,
       prompt: buildPrompt({ context, task })
@@ -681,6 +713,9 @@ async function evaluateCase(input: {
   return {
     fixture: input.prompt_case.fixture,
     task: input.prompt_case.task,
+    task_kind: input.prompt_case.task_kind,
+    evaluation_mode: input.prompt_case.evaluation_mode,
+    variant_id: input.prompt_case.variant_id,
     variant: input.prompt_case.variant,
     model: input.model,
     repeat: input.repeat,
@@ -693,6 +728,7 @@ async function evaluateCase(input: {
     latency_ms,
     prompt_chars: input.prompt_case.prompt_chars,
     estimated_prompt_tokens: input.prompt_case.estimated_prompt_tokens,
+    prompt_chars_vs_compact_json: input.prompt_case.prompt_chars_vs_compact_json,
     api_input_tokens: result.usage.input_tokens,
     api_output_tokens: result.usage.output_tokens,
     api_total_tokens: result.usage.total_tokens,
@@ -712,40 +748,63 @@ function average(values: number[]): number | null {
 function summarizeRows(rows: ReasoningEvalRow[]): ReasoningEvalSummaryRow[] {
   const groups = new Map<string, ReasoningEvalRow[]>();
   rows.forEach((row) => {
-    const key = [row.fixture, row.variant, row.model].join('\u0000');
+    const key = [
+      row.fixture,
+      row.task_kind,
+      row.evaluation_mode,
+      row.variant_id,
+      row.variant,
+      row.model
+    ].join('\u0000');
     const group = groups.get(key) ?? [];
     group.push(row);
     groups.set(key, group);
   });
 
-  return [...groups.values()].map((group) => {
+  const summary = [...groups.values()].map((group) => {
     const first = group[0];
     if (!first) {
       throw new Error('Unexpected empty reasoning eval group');
     }
 
+    const average_api_input_tokens = average(
+      group
+        .map((row) => row.api_input_tokens)
+        .filter((value): value is number => value !== null)
+    );
+    const average_list_f1 = average(
+      group
+        .map((row) => row.list_f1)
+        .filter((value): value is number => value !== null)
+    );
+
     return {
       fixture: first.fixture,
+      task_kind: first.task_kind,
+      evaluation_mode: first.evaluation_mode,
+      variant_id: first.variant_id,
       variant: first.variant,
       model: first.model,
       cases: group.length,
       correct: group.filter((row) => row.correct).length,
       accuracy: group.filter((row) => row.correct).length / group.length,
+      exact_matches: group.filter((row) => row.exact_match).length,
+      exact_match_rate:
+        group.filter((row) => row.exact_match).length / group.length,
       average_latency_ms: Math.round(average(group.map((row) => row.latency_ms)) ?? 0),
       average_prompt_chars: Math.round(average(group.map((row) => row.prompt_chars)) ?? 0),
       average_estimated_prompt_tokens: Math.round(
         average(group.map((row) => row.estimated_prompt_tokens)) ?? 0
       ),
-      average_list_f1: average(
-        group
-          .map((row) => row.list_f1)
-          .filter((value): value is number => value !== null)
-      ),
-      average_api_input_tokens: average(
-        group
-          .map((row) => row.api_input_tokens)
-          .filter((value): value is number => value !== null)
-      ),
+      average_prompt_chars_vs_compact_json:
+        average(group.map((row) => row.prompt_chars_vs_compact_json)) ?? 0,
+      average_list_f1,
+      list_f1_points_per_1k_input_tokens:
+        average_list_f1 !== null && average_api_input_tokens !== null
+          ? (average_list_f1 * 100 * 1000) / average_api_input_tokens
+          : null,
+      average_api_input_tokens,
+      api_input_tokens_vs_compact_json: null,
       average_api_output_tokens: average(
         group
           .map((row) => row.api_output_tokens)
@@ -756,6 +815,32 @@ function summarizeRows(rows: ReasoningEvalRow[]): ReasoningEvalSummaryRow[] {
           .map((row) => row.api_total_tokens)
           .filter((value): value is number => value !== null)
       )
+    };
+  });
+
+  const compact_input_tokens_by_key = new Map<string, number>();
+  summary.forEach((row) => {
+    if (row.variant_id !== 'compact_json' || row.average_api_input_tokens === null) {
+      return;
+    }
+
+    compact_input_tokens_by_key.set(
+      [row.fixture, row.task_kind, row.evaluation_mode, row.model].join('\u0000'),
+      row.average_api_input_tokens
+    );
+  });
+
+  return summary.map((row) => {
+    const compact_input_tokens = compact_input_tokens_by_key.get(
+      [row.fixture, row.task_kind, row.evaluation_mode, row.model].join('\u0000')
+    );
+
+    return {
+      ...row,
+      api_input_tokens_vs_compact_json:
+        compact_input_tokens && row.average_api_input_tokens !== null
+          ? row.average_api_input_tokens / compact_input_tokens
+          : null
     };
   });
 }
@@ -772,21 +857,38 @@ function formatOptionalPercent(value: number | null): string {
   return value === null ? '' : formatPercent(value);
 }
 
+function formatOptionalRatio(value: number | null): string {
+  return value === null ? '' : `${(value * 100).toFixed(1)}%`;
+}
+
+function formatOptionalFixed(value: number | null, fraction_digits = 1): string {
+  return value === null ? '' : value.toFixed(fraction_digits);
+}
+
 function markdownSummary(rows: ReasoningEvalSummaryRow[]): string {
   return [
-    '| Fixture | Variant | Model | Cases | Accuracy | Avg list F1 | Avg latency ms | Avg API input tokens | Avg API output tokens |',
-    '| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+    '## Semantic answer evaluation',
+    '',
+    'These rows grade direct model answers over structured context. Deterministic retrieval or generated-function benchmarks should be reported separately with an executable oracle.',
+    '',
+    '| Fixture | Task kind | Evaluation mode | Variant | Model | Cases | Answer acc. | Exact match | Avg list F1 | F1 pts / 1K input tok | Avg API input tok | API input vs compact JSON | Prompt chars vs compact JSON | Avg latency ms |',
+    '| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
     ...rows.map((row) =>
       [
         row.fixture,
+        row.task_kind,
+        row.evaluation_mode,
         row.variant,
         row.model,
         row.cases.toLocaleString(),
         formatPercent(row.accuracy),
+        formatPercent(row.exact_match_rate),
         formatOptionalPercent(row.average_list_f1),
-        row.average_latency_ms.toLocaleString(),
+        formatOptionalFixed(row.list_f1_points_per_1k_input_tokens),
         formatNumber(row.average_api_input_tokens),
-        formatNumber(row.average_api_output_tokens)
+        formatOptionalRatio(row.api_input_tokens_vs_compact_json),
+        formatOptionalRatio(row.average_prompt_chars_vs_compact_json),
+        row.average_latency_ms.toLocaleString()
       ].join(' | ')
     )
   ].join('\n');

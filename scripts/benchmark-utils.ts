@@ -18,6 +18,12 @@ export type EncodedVariant = {
   text: string;
 };
 
+export type BenchmarkTaskKind = 'semantic_answer' | 'executable_retrieval';
+
+export type BenchmarkEvaluationMode =
+  | 'list_f1_exact_answer'
+  | 'generated_function_oracle';
+
 export type SizeRow = {
   fixture: string;
   variant: string;
@@ -29,6 +35,8 @@ export type SizeRow = {
 export type ReasoningTask = {
   fixture: string;
   id: string;
+  task_kind: BenchmarkTaskKind;
+  evaluation_mode: BenchmarkEvaluationMode;
   question: string;
   expected_answer: string;
   perceived_difficulty: 1 | 2 | 3 | 4 | 5;
@@ -40,6 +48,8 @@ export type ReasoningRow = {
   fixture_id: string;
   fixture: string;
   task: string;
+  task_kind: BenchmarkTaskKind;
+  evaluation_mode: BenchmarkEvaluationMode;
   perceived_difficulty: number;
   difficulty_label: string;
   variant_id: string;

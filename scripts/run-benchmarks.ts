@@ -164,6 +164,8 @@ function buildReasoningCases(input: {
         fixture_id: input.fixture.id,
         fixture: input.fixture.label,
         task: task.id,
+        task_kind: task.task_kind,
+        evaluation_mode: task.evaluation_mode,
         perceived_difficulty: task.perceived_difficulty,
         difficulty_label: task.difficulty_label,
         variant_id: context.variant_id,
@@ -194,12 +196,14 @@ function markdownSizeTable(rows: SizeRow[]): string {
 
 function markdownReasoningTable(rows: ReasoningRow[]): string {
   return [
-    '| Fixture | Task | Difficulty | Variant | Prompt chars | Est. prompt tokens | Prompt chars vs compact JSON |',
-    '| --- | --- | ---: | --- | ---: | ---: | ---: |',
+    '| Fixture | Task | Task kind | Evaluation mode | Difficulty | Variant | Prompt chars | Est. prompt tokens | Prompt chars vs compact JSON |',
+    '| --- | --- | --- | --- | ---: | --- | ---: | ---: | ---: |',
     ...rows.map((row) =>
       [
         row.fixture,
         row.task,
+        row.task_kind,
+        row.evaluation_mode,
         `${row.perceived_difficulty} (${row.difficulty_label})`,
         row.variant,
         row.prompt_chars.toLocaleString(),
@@ -267,6 +271,8 @@ async function main(): Promise<void> {
     fixture_id: row.fixture_id,
     fixture: row.fixture,
     task: row.task,
+    task_kind: row.task_kind,
+    evaluation_mode: row.evaluation_mode,
     perceived_difficulty: row.perceived_difficulty,
     difficulty_label: row.difficulty_label,
     variant_id: row.variant_id,

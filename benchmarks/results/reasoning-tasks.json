@@ -6,7 +6,9 @@
     "expected_answer": "Bowllin'|korean\nChihiro Tea|bubble_tea\nGenki Omakasa|sushi\nHeytea|bubble_tea\nKarakatta|ramen\nKung Fu Tea|bubble_tea\nLazy Sundaes|bubble_tea\nRamen Takumi|japanese\nRasa|malaysian;thai;indonesian\nSANUKI UDON|japanese\nSouth of the Clouds|chinese;noodle\nSpicy Moon|chinese\nWanpo Tea Shop|bubble_tea\nYum Cha|chinese",
     "perceived_difficulty": 3,
     "difficulty_label": "semantic filtering",
-    "difficulty_reason": "Requires interpreting cuisine tags as a regional/theme category rather than computing over ids."
+    "difficulty_reason": "Requires interpreting cuisine tags as a regional/theme category rather than computing over ids.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "openstreetmap_extract",
@@ -15,7 +17,9 @@
     "expected_answer": "Carmela Coffee\nChihiro Tea\nHeytea\nIrving Farm Coffee Roasters\nJoe Coffee Company\nKung Fu Tea\nLa Colombe Coffee Roasters\nLazy Sundaes\nMille-Feuille\nStarbucks\nStumptown\nTartinery\nThe Uncommons\nWanpo Tea Shop",
     "perceived_difficulty": 3,
     "difficulty_label": "semantic filtering",
-    "difficulty_reason": "Requires combining name, brand, amenity, and cuisine signals into a human category."
+    "difficulty_reason": "Requires combining name, brand, amenity, and cuisine signals into a human category.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "openstreetmap_extract",
@@ -24,7 +28,9 @@
     "expected_answer": "Greene Street\nLaGuardia Place\nMacDougal Alley\nMacDougal Street\nMacDougal Street / Washington Square West\nMercer Street\nSchwartz Plaza\nSchwartz Plaza / Washington Square East\nSullivan Street\nThompson Street\nWashington Mews\nWashington Place\nWashington Square East\nWashington Square East / University Place\nWashington Square North\nWashington Square North / Waverly Place\nWashington Square South\nWashington Square South / West 4th Street\nWashington Square West\nWest Washington Place",
     "perceived_difficulty": 3,
     "difficulty_label": "semantic name classification",
-    "difficulty_reason": "Requires classifying place names by likely person-name references instead of graph traversal."
+    "difficulty_reason": "Requires classifying place names by likely person-name references instead of graph traversal.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "wikidata_truthy_triples",
@@ -33,7 +39,9 @@
     "expected_answer": "Bob Dylan\nDouglas Adams\nLeonardo da Vinci",
     "perceived_difficulty": 3,
     "difficulty_label": "semantic claim grouping",
-    "difficulty_reason": "Requires grouping claims by subject and matching human-readable occupation labels."
+    "difficulty_reason": "Requires grouping claims by subject and matching human-readable occupation labels.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "wikidata_truthy_triples",
@@ -42,7 +50,9 @@
     "expected_answer": "Ada Lovelace\nAlbert Einstein\nLeonardo da Vinci",
     "perceived_difficulty": 3,
     "difficulty_label": "semantic claim grouping",
-    "difficulty_reason": "Requires recognizing a polymath-like occupation combination from local subject claims."
+    "difficulty_reason": "Requires recognizing a polymath-like occupation combination from local subject claims.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "wikidata_truthy_triples",
@@ -51,7 +61,9 @@
     "expected_answer": "children's writer\ncomedian\nmusician\nnovelist\nplaywright\nscience fiction writer\nscreenwriter\nwriter",
     "perceived_difficulty": 2,
     "difficulty_label": "local semantic extraction",
-    "difficulty_reason": "Requires staying within one subject and selecting creative-role occupation labels."
+    "difficulty_reason": "Requires staying within one subject and selecting creative-role occupation labels.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "musicbrainz_release_groups",
@@ -60,7 +72,9 @@
     "expected_answer": "David Bowie: Starman Audio Documentary\nMoonage Daydream: A Film by Brett Morgen\nPortrait of a Star\nRock ’n’ Roll Star!\nSpace Oddity / The Man Who Sold the World\nStarting Point\nThe Rise and Fall of Ziggy Stardust and the Spiders From Mars",
     "perceived_difficulty": 3,
     "difficulty_label": "artist-local title classification",
-    "difficulty_reason": "Requires staying within one artist group and interpreting title words as a space/star imagery category."
+    "difficulty_reason": "Requires staying within one artist group and interpreting title words as a space/star imagery category.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "musicbrainz_release_groups",
@@ -69,7 +83,9 @@
     "expected_answer": "Absolute Greatest\nBest of Queen\nBest Selection\nGrand Collection\nGreatest Hits\nGreatest Hits I & II\nGreatest Hits I, II & III: The Platinum Collection\nGreatest Hits II\nGreatest Hits III\nGreatest Hits in Japan\nGreatest Hits: We Will Rock You\nGreatest Karaoke Hits\nGreatest Video Hits 1\nGreatest Video Hits 2\nQueen Collection\nQueen Collection 2\nQueen Collection: 15 of the Best\nQueen: Greatest Video Hits\nStudio Collection\nThe 12″ Collection\nThe Best I\nThe Best II\nThe Greatest 3\nThe Queen Collection\nThe Singles Collection, Volume 1\nThe Singles Collection, Volume 2\nThe Singles Collection, Volume 3\nThe Singles Collection, Volume 4\nThe Ultimate Best Of Queen\nThe Ultimate Collection",
     "perceived_difficulty": 3,
     "difficulty_label": "artist-local title classification",
-    "difficulty_reason": "Requires staying within one artist group and classifying titles by release purpose."
+    "difficulty_reason": "Requires staying within one artist group and classifying titles by release purpose.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "musicbrainz_release_groups",
@@ -78,7 +94,9 @@
     "expected_answer": "1992‐11‐11: Huddersfield University, Huddersfield, UK\n1993‐09‐02: Signal Radio Studios: Cheshire, UK\n1994‐02‐21: Royal Berks Social Club, Reading, England, UK\n1994‐06‐26: Glastonbury Festival, NME Stage, Worthy Farm, Glastonbury, England, UK\n1995-06-01: PASTE.COM Presents: Radiohead Live at Tramps: New York, NY, USA\n1995‐04‐19: The Anson Rooms, Bristol, UK\n1995‐04‐25: Live Europe 1\n1995‐05‐02: Planet Rock Session, RAI Studios, Rome, Italy\n1995‐06‐10: Cabaret Metro, Chicago, IL, USA\n1995‐12‐01: Gino, Stockholm, Sweden\n1995‐12‐04: Planet Paradiso: Paradiso, Amsterdam, Netherlands\n1995‐12‐12: Warehouse, Toronto, ON, Canada\n1996‐04‐16: La Cigale, Paris, France\n1996‐07‐13: Planet Acoustic: T in the Park, Glasgow, UK\n1996‐08‐19: Continental Airlines Arena, East Rutherford, NJ, USA\n1997-06-28: Glastonbury Festival of Contemporary Performing Arts\n1997‐06‐24: Interactive: Muziekcentrum Vredenburg, Utrecht, Netherlands\n1997‐07‐04: Eurockéennes Festival, Belfort, France\n2008-08-01: Lollapalooza, Chicago, IL\n27 5 94: The Astoria London Live\nBBC in Concert 601: Glastonbury Festival 1994\nBlack Sessions\nHail to the Thief: Live Recordings 2003–2009\nI Might Be Wrong: Live Recordings\nIn Rainbows: From the Basement\nLive From Planet Earth\nTake Me Back: Live Recordings 2000–2018\nThe Golden Unplugged Album\nUnplugged\nUnplugged and Unreleased\nUnplugged: The Complete Acoustic Sessions",
     "perceived_difficulty": 3,
     "difficulty_label": "title-context classification",
-    "difficulty_reason": "Requires recognizing performance/broadcast context from title wording."
+    "difficulty_reason": "Requires recognizing performance/broadcast context from title wording.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "npm_dependency_metadata",
@@ -87,7 +105,9 @@
     "expected_answer": "@radix-ui/react-dialog\n@radix-ui/react-dropdown-menu\n@radix-ui/react-select\n@radix-ui/react-tooltip\n@react-three/drei\n@react-three/fiber\n@reduxjs/toolkit\n@storybook/react-vite\n@tanstack/react-query\n@tanstack/react-table\n@vitejs/plugin-react\nframer-motion\nlucide-react\nnext\nradix-ui\nreact\nreact-dom\nreact-router\nrecharts\nzustand",
     "perceived_difficulty": 3,
     "difficulty_label": "package role classification",
-    "difficulty_reason": "Requires combining package names with dependency edges to identify framework ecosystem membership."
+    "difficulty_reason": "Requires combining package names with dependency edges to identify framework ecosystem membership.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "npm_dependency_metadata",
@@ -96,7 +116,9 @@
     "expected_answer": "@prisma/client\nbetter-sqlite3\ndrizzle-orm\nioredis\nminio\nmongoose\nmysql2\npg\nprisma\nredis",
     "perceived_difficulty": 2,
     "difficulty_label": "package role classification",
-    "difficulty_reason": "Requires semantic package-name grouping rather than dependency counting."
+    "difficulty_reason": "Requires semantic package-name grouping rather than dependency counting.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   },
   {
     "fixture": "npm_dependency_metadata",
@@ -105,6 +127,8 @@
     "expected_answer": "chai\ncypress\njest\nmocha\nmsw\nnock\nplaywright\nsinon\nsupertest\nvitest",
     "perceived_difficulty": 3,
     "difficulty_label": "package role classification",
-    "difficulty_reason": "Requires semantic package-role grouping from names and familiar library roles."
+    "difficulty_reason": "Requires semantic package-role grouping from names and familiar library roles.",
+    "task_kind": "semantic_answer",
+    "evaluation_mode": "list_f1_exact_answer"
   }
 ]

@@ -4,6 +4,8 @@ import {
   asObject,
   asString,
   sortStrings,
+  type BenchmarkEvaluationMode,
+  type BenchmarkTaskKind,
   type JsonObject,
   type ReasoningTask
 } from './benchmark-utils.js';
@@ -324,7 +326,10 @@ export function buildReasoningTasks(values: Map<string, JsonValue>): ReasoningTa
     throw new Error('Missing one or more fixtures');
   }
 
-  return [
+  const task_kind: BenchmarkTaskKind = 'semantic_answer';
+  const evaluation_mode: BenchmarkEvaluationMode = 'list_f1_exact_answer';
+
+  const tasks: Omit<ReasoningTask, 'task_kind' | 'evaluation_mode'>[] = [
     {
       fixture: 'openstreetmap_extract',
       id: 'osm_east_asian_food_and_tea_venues',
@@ -458,4 +463,10 @@ export function buildReasoningTasks(values: Map<string, JsonValue>): ReasoningTa
         'Requires semantic package-role grouping from names and familiar library roles.'
     }
   ];
+
+  return tasks.map((task) => ({
+    ...task,
+    task_kind,
+    evaluation_mode
+  }));
 }
